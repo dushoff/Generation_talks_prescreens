@@ -1,10 +1,12 @@
 # Generation_talks
-### Hooks for the editor to set the default target
+
 current: target
 
 target pngtarget pdftarget vtarget acrtarget: origins.draft.pdf 
 
 ######################################################################
+
+Sources += $(wildcard *.txt)
 
 ## Talk for Origins symposium November 2016
 origins.draft.pdf: origins.txt
@@ -13,32 +15,25 @@ origins.draft.pdf: origins.txt
 
 # make files
 
-Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
+Sources += Makefile .gitignore README.md stuff.mk LICENSE.md
 include stuff.mk
 # include $(ms)/perl.def
 
-### Makestuff
-
-## Change this name to download a new version of the makestuff directory
-# Makefile: start.makestuff
-
-talkdir = $(ms)/talk
-format_files = beamer.tmp beamer.fmt
+## Link talkdir (using newtalk for guidance)
+-include $(ms)/newtalk.def
 subdirs += talkdir
 
-## Images
+## Link image_drop
 
-images = $(Drop)/courses/Lecture_images
-subdirs += images
+image_drop = $(Drop)/courses/Lecture_images
+subdirs += image_drop
+image_drop/%: image_drop ;
 
-images/%: images ;
-
-$(subdirs): 
-	$(MAKE) -f $(ms)/repos.mk gitroot=$(gitroot) $($@)
-	-$(RM) $@
+my_images = $(Drop)/my_images
+subdirs += my_images
+my_images/%: my_images ;
+my_images image_drop:
 	ln -s $($@) $@
-
-Makefile: $(ms) $(subdirs)
 
 ######################################################################
 
@@ -48,6 +43,6 @@ Makefile: $(ms) $(subdirs)
 -include $(ms)/visual.mk
 
 -include $(ms)/newlatex.mk
--include $(ms)/talk.mk
+-include $(ms)/newtalk.mk
 
 -include $(ms)/linkdirs.mk
