@@ -52,7 +52,7 @@ Models
 
 BCC
 
-FIG image_drop/flat.png
+CFIG image_drop/flat.png
 
 NCC
 
@@ -72,7 +72,9 @@ Small-scale events $\displaystyle \Leftrightarrow$ Large-scale patterns and outc
 
 ----------------------------------------------------------------------
 
-Dynamic models
+Dynamic modeling
+
+SUBH Connects scales
 
 BCC
 
@@ -173,9 +175,9 @@ Speed
 
 	Time scale is $C=1/r$
 
-		Ebola, $C \approx 1 month$
+		Ebola, $C \approx 1 \mathrm{month}$
 
-		HIV in SSA, $C \approx 18 month$
+		HIV in SSA, $C \approx 18 \mathrm{month}$
 
 ----------------------------------------------------------------------
 
