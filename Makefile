@@ -36,13 +36,12 @@ my_images image_drop:
 	ln -s $($@) $@
 
 subdirs += io
-io/%: io ;
+io/%: io
+	cd $< && $(MAKE) $*
 io: dushoff.github.io
 	$(link)
 
 ######################################################################
-
--include $(ms)/wrapR.mk
 
 -include $(ms)/git.mk
 -include $(ms)/visual.mk

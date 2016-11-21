@@ -1,5 +1,11 @@
-Champredon credit
 
-r_0/R_0 with numbers
+----------------------------------------------------------------------
 
-Subsection indices?
+Pictures for contact tracing and patient tracking (through time)
+
+	Nishiura 
+	Hallett
+
+Moment approximation pix: units on histogram x-axis
+
+See clearly

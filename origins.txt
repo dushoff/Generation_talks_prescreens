@@ -50,11 +50,11 @@ FIG Disease_data/us2000.Rout.pdf
 
 Models
 
-BC
+BCC
 
 FIG image_drop/flat.png
 
-NC
+NCC
 
 	A model is a simplified view of the world
 
@@ -171,6 +171,12 @@ Speed
 
 		Disease increases like $e^{rt}$
 
+	Time scale is $C=1/r$
+
+		Ebola, $C \approx 1 month$
+
+		HIV in SSA, $C \approx 18 month$
+
 ----------------------------------------------------------------------
 
 TSS Strength of epidemics
@@ -199,6 +205,12 @@ Basic reproductive number
 
 		Reduce number of susceptible people by a factor of \Rx\ \emph{or} \ldots
 
+	Examples:
+
+		Ebola, $\Rx \approx 2$
+
+		HIV in SSA, $\Rx \approx 5$
+
 ----------------------------------------------------------------------
 
 Linking little $r$ and big \Rx
@@ -211,7 +223,7 @@ Generation intervals
 
 BCC
 
-	The generation distribution measure generations of the disease
+	The generation distribution measures generations of the disease
 
 		Interval between ``index'' infection and resulting infection
 
@@ -236,6 +248,20 @@ FIG Generation_distributions/steps.Rout-1.pdf
 Generations and \Rx
 
 FIG Generation_distributions/steps.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Generations and \Rx
+
+BCC
+
+CFIG Generation_distributions/steps.Rout-1.pdf
+
+NCC
+
+CFIG Generation_distributions/steps.Rout-0.pdf
+
+EC
 
 ----------------------------------------------------------------------
 
@@ -277,6 +303,8 @@ TSEC Generation intervals through time
 
 Growing epidemics
 
+BC
+
 	Generation intervals look \emph{faster} at the beginning of an epidemic
 
 		A disproportionate number of people are infectious right now
@@ -285,11 +313,19 @@ Growing epidemics
 
 		We are biased towards observing faster events
 
+NC
+
+CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-3.pdf
+
+EC
+
 ----------------------------------------------------------------------
 
 Forward and backward intervals
 
 FIG my_images/GI_PRSB_1.jpg
+
+CREDIT 16 Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
 
 ----------------------------------------------------------------------
 
@@ -316,7 +352,7 @@ Conclusion
 	Backward intervals change if the number of infectious individuals is
 	changing as you look back
 
-	Forward intervals change if the number of susceptible individuals is
+	Forward intervals change if the number of \emph{susceptible} individuals is
 	changing as you look forward
 
 	Lack of care in defining generation intervals can lead to bias
@@ -343,29 +379,31 @@ The ``effective'' generation time
 		
 	We can show $\hat G$ is a ``filtered mean'' of the distribution $g$:
 
-		$$\exp(-\hat G/C) = \langle \exp(-\tau/C) \rangle_g$$,
+		$$\exp(-\hat G/C) = \langle \exp(-\tau/C) \rangle_g.$$,
 
 ----------------------------------------------------------------------
 
-Discount, $C = 15d$
+$C = 15d$
 
 FIG Generation_distributions/lognormal.filtered.Rout-0.pdf
 
 ----------------------------------------------------------------------
 
-Discount, $C = 30d$
+$C = 30d$
 
 FIG Generation_distributions/lognormal.filtered.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
-Discount, $C = 45d$
+$C = 45d$
 
 FIG Generation_distributions/lognormal.filtered.Rout-2.pdf
 
 ----------------------------------------------------------------------
 
 Example: Post-death transmission and safe burial
+
+BC
 
 	How much Ebola spread occurs before vs.\ after death
 
@@ -374,6 +412,12 @@ Example: Post-death transmission and safe burial
 		Funeral practices, disease knowledge
 
 	CREDIT Weitz and Dushoff \emph{Scientific Reports} 5:8751.
+
+NC
+
+FIG image_drop/burial_team.jpg
+
+EC
 
 ----------------------------------------------------------------------
 
@@ -521,7 +565,7 @@ EC
 
 Approximating the curve
 
-WIDEFIG Generation_distributions/lognormal.curve.Rout.pdf
+FIG Generation_distributions/lognormal.curve.Rout.pdf
 
 ----------------------------------------------------------------------
 
@@ -546,11 +590,19 @@ SEC Strength and Speed of Epidemics
 
 Strength: $\Rx$ -- the reproductive number
 
+BCC
+
 	Expected number of new cases per cases
 	
 	$\Rx = \beta D S/N$
 
 		Disease increases iff $\Rx>1$
+
+NCC
+
+CFIG image_drop/endemic.Rout-0.png
+
+EC
 
 ----------------------------------------------------------------------
 
@@ -560,7 +612,7 @@ BCC
 
 	$\ds i(t) \approx i(0) \exp(rt)$
 
-	$\ds T_c = 1/r$
+	$\ds C = 1/r$
 
 	$\ds T_2 = \ln(2)/r$
 
@@ -634,10 +686,6 @@ HIGHFIG io/hss.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
-SS Math
-
-----------------------------------------------------------------------
-
 Strength of intervention
 
 	Imagine we have an intervention that reduces transmission
@@ -651,7 +699,7 @@ Strength of intervention
 
 		$\ds \theta = 1/\left\langle 1/L(\tau) \right\rangle_{g(\tau)}$
 
-		$\theta$ is the harmonic mean of $L$, weighted by the generation
+		$\theta$ is \emph{the harmonic mean} of $L$, weighted by the generation
 		distribution $g$.
 
 	Outbreak can be controlled if $\theta > \Rx$
@@ -666,7 +714,7 @@ Speed of intervention
 	$\ds 1 =
 		\left\langle \frac{\exp(\phi\tau)}{L(\tau)} \right\rangle_{b(\tau)}$
 
-	$\phi$ is sort of a mean of the \emph{hazard} associated with $L$
+	$\phi$ is \emph{sort of a mean} of the \emph{hazard} associated with $L$
 
 		Averaged over the initial \emph{backwards} generation interval
 
@@ -674,4 +722,156 @@ Speed of intervention
 
 ----------------------------------------------------------------------
 
+A new way of looking
 
+FIG image_drop/lens.jpg
+
+----------------------------------------------------------------------
+
+Measuring the epidemic
+
+BCC
+
+CFIG image_drop/ew_measles.png
+
+NCC
+
+CFIG fitting_code/mexican_plots.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Measuring the intervention
+
+BCC
+
+CFIG image_drop/vaccination.jpg
+
+NCC
+
+CFIG image_drop/tutu.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+SS HIV example
+
+----------------------------------------------------------------------
+
+Can treatment stop the HIV epidemic?
+
+FIG image_drop/cocktail.jpg
+
+----------------------------------------------------------------------
+
+Are HIV generations fast or slow?
+
+BCC
+
+	Fast generations mean:
+
+		Testing and treating will help less
+
+		\emph{but} lower epidemic strength
+
+NCC
+
+\vspace{-0.4in}
+
+CFIG Generation_distributions/steps.Rout-1.pdf
+
+\vspace{-0.4in}
+
+CFIG Generation_distributions/steps.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Condom intervention
+
+FIG io/hss.Rout-4.pdf
+
+----------------------------------------------------------------------
+
+Find and treat
+
+FIG io/hss.Rout-5.pdf
+
+----------------------------------------------------------------------
+
+Low early transmission
+
+FIG io/test.scen.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+High early transmission
+
+FIG io/test.scen.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+Range of estimates
+
+FIG io/test.scen.Rout-4.pdf
+
+----------------------------------------------------------------------
+
+Find and treat
+
+FIG io/test.scen.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Low early transmission
+
+FIG io/test.scen.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+High early transmission
+
+FIG io/test.scen.Rout-3.pdf
+
+----------------------------------------------------------------------
+
+Range of estimates
+
+FIG io/test.scen.Rout-5.pdf
+
+----------------------------------------------------------------------
+
+Condom intervention
+
+FIG io/flat.scen.Rout-4.pdf
+
+----------------------------------------------------------------------
+
+Condom intervention
+
+FIG io/flat.scen.Rout-5.pdf
+
+----------------------------------------------------------------------
+
+Conclusion
+
+	This perspective helps us understand why find and treat predictions are
+	robust to assumptions about transmission
+
+	Sometimes ``strength'' and sometimes ``speed'' can help us see epidemic
+	control questions more clearly
+
+----------------------------------------------------------------------
+
+Thanks
+
+	Organizers
+
+	Audience
+
+	Collaborators
+
+	Funders: NSERC, CIHR
