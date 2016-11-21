@@ -35,6 +35,8 @@ my_images/%: my_images ;
 my_images image_drop:
 	ln -s $($@) $@
 
+subdirs += io
+io/%: io ;
 io: dushoff.github.io
 	$(link)
 
