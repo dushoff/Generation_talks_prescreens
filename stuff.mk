@@ -12,4 +12,5 @@ Makefile: $(ms) $(subdirs)
 
 $(ms):
 	- mkdir $(gitroot)
+	- cp local.mk $(gitroot)
 	cd $(dir $(ms)) && git clone $(msrepo)/$(notdir $(ms)).git
