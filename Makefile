@@ -15,7 +15,7 @@ origins.draft.pdf: origins.txt
 
 # make files
 
-Sources += Makefile .gitignore README.md stuff.mk LICENSE.md
+Sources += Makefile .gitignore README.md stuff.mk LICENSE.md todo.md
 include stuff.mk
 # include $(ms)/perl.def
 
@@ -34,6 +34,9 @@ subdirs += my_images
 my_images/%: my_images ;
 my_images image_drop:
 	ln -s $($@) $@
+
+io: dushoff.github.io
+	$(link)
 
 ######################################################################
 

@@ -6,7 +6,6 @@ Measuring the strength and speed of epidemics
 McMaster University Origins Institute Colloquium
 
 November 2016 
-Infectious Diseases
 
 \vfill
 
@@ -26,6 +25,10 @@ has become a key part of epidemic response. I will explore both the
 theory and practice of how key epidemiological parameters are
 measured, and how they are used to make predictions about epidemic
 spread, and to guide proposed control interventions.
+
+----------------------------------------------------------------------
+
+SEC Introduction
 
 ----------------------------------------------------------------------
 
@@ -290,24 +293,385 @@ FIG my_images/GI_PRSB_1.jpg
 
 ----------------------------------------------------------------------
 
-----------------------------------------------------------------------
+What changes backward intervals?
 
 FIG my_images/GI_PRSB_2.jpg
+
 ----------------------------------------------------------------------
+
+What changes forward intervals?
 
 FIG my_images/GI_PRSB_3.jpg
+
 ----------------------------------------------------------------------
+
+Comparison to simulations
 
 FIG my_images/GI_PRSB_4.jpg
-----------------------------------------------------------------------
-
-FIG my_images/GI_PRSB_5.jpg
-----------------------------------------------------------------------
-
-FIG my_images/GI_PRSB_6.jpg
 
 ----------------------------------------------------------------------
 
-# Estimation and filtering
+Conclusion
 
-# Strength and Speed
+	Backward intervals change if the number of infectious individuals is
+	changing as you look back
+
+	Forward intervals change if the number of susceptible individuals is
+	changing as you look forward
+
+	Lack of care in defining generation intervals can lead to bias
+
+		Results also tell us how to correct this bias
+
+----------------------------------------------------------------------
+
+SEC Estimating the effect of generation intervals
+
+----------------------------------------------------------------------
+
+The ``effective'' generation time
+
+	If the generation interval were absolutely fixed at a time interval
+	of $G$, then 
+
+		$${\Rx} = \exp(G/C)$$
+
+	\emph{Define} the effective generation time so that this remains
+	true:
+
+		$${\Rx} = \exp(\hat G/C)$$
+		
+	We can show $\hat G$ is a ``filtered mean'' of the distribution $g$:
+
+		$$\exp(-\hat G/C) = \langle \exp(-\tau/C) \rangle_g$$,
+
+----------------------------------------------------------------------
+
+Discount, $C = 15d$
+
+FIG Generation_distributions/lognormal.filtered.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Discount, $C = 30d$
+
+FIG Generation_distributions/lognormal.filtered.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Discount, $C = 45d$
+
+FIG Generation_distributions/lognormal.filtered.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+Example: Post-death transmission and safe burial
+
+	How much Ebola spread occurs before vs.\ after death
+
+	Highly context dependent
+
+		Funeral practices, disease knowledge
+
+	CREDIT Weitz and Dushoff \emph{Scientific Reports} 5:8751.
+
+----------------------------------------------------------------------
+
+Standard disease model 
+
+WIDEFIG SIR_model_family/seir.four.pdf
+
+----------------------------------------------------------------------
+
+Disease model including post-death transmission
+
+WIDEFIG SIR_model_family/seird.four.pdf
+
+----------------------------------------------------------------------
+
+Disease model including post-death transmission
+
+WIDEFIG SIR_model_family/brides.four.pdf
+
+----------------------------------------------------------------------
+
+Scenarios
+
+FIG my_images/weitz_full.pdf
+
+----------------------------------------------------------------------
+
+Conclusions
+
+	Different parameters can produce indistinguishable early dynamics
+
+	More after-death transmission implies
+
+		Higher \Ro
+
+		Larger epidemics
+
+		Larger importance of safe burials
+
+----------------------------------------------------------------------
+
+SS Moment approximations
+
+----------------------------------------------------------------------
+
+An approximation
+
+	We connect these quantities with a moment approximation
+
+	Define $\kappa = {\sigma^2_G}/{\mu^2_G}$ -- the squared
+	coefficient of variation of the generation distribution
+
+	$\Rx \approx (1 + \kappa \bar G/C)^{1/\kappa}$
+
+		Equal when $G$ has a gamma distribution
+
+		Simple and straightforward
+
+		When is it a useful approximation?
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-0.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-1.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-2.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-4.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-5.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Moment approximation
+
+BCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-6.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/gamHist.Rout-7.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Fitting to Ebola
+
+	Simulate generation intervals based on data and approach from
+	WHO report
+
+	Use both lognormals and gammas
+	
+		WHO used gammas
+
+		Lognormals should be more challenging
+
+----------------------------------------------------------------------
+
+Approximating the distribution
+
+BCC
+
+WIDEFIG Generation_distributions/lognormal.hist.Rout.pdf
+
+NCC
+
+WIDEFIG Generation_distributions/lognormal.ga.hist.Rout.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Approximating the curve
+
+WIDEFIG Generation_distributions/lognormal.curve.Rout.pdf
+
+----------------------------------------------------------------------
+
+Summary
+
+	Generation intervals are the missing link between $r$ and \Rx
+
+	We need better methods for estimating them, and propagating
+	uncertainty to other parts of the model
+
+	For many practical applications:
+
+		Knowing the mean generation interval is not enough
+
+		But knowing the mean and CV may be enough
+
+----------------------------------------------------------------------
+
+SEC Strength and Speed of Epidemics
+
+----------------------------------------------------------------------
+
+Strength: $\Rx$ -- the reproductive number
+
+	Expected number of new cases per cases
+	
+	$\Rx = \beta D S/N$
+
+		Disease increases iff $\Rx>1$
+
+----------------------------------------------------------------------
+
+Speed: $r$ -- the growth rate
+
+BCC
+
+	$\ds i(t) \approx i(0) \exp(rt)$
+
+	$\ds T_c = 1/r$
+
+	$\ds T_2 = \ln(2)/r$
+
+NCC
+
+CFIG SIR_simulations/hiv_plot.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+DEFHEAD \Rx\ and the generation interval
+
+	$\ds i(t) = \int{k(\tau)i(t-\tau) \,d\tau}$
+
+	$\Rx = \int{k(\tau) d\tau}$
+
+	Define the intrinsic generation interval distribution: $k(\tau) = \Rx
+	g(\tau)$
+
+----------------------------------------------------------------------
+
+DEFHEAD \Rx\ and the generation interval
+
+FIG io/ess.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+DEFHEAD \Rx\ and the generation interval
+
+FIG io/ess.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+DEFHEAD $r$ and the (other) generation interval
+
+	$\ds i(t) = \int{k(\tau)i(t-\tau) \,d\tau}$
+
+	if $i(t)$ grows like $\exp(rt)$, then 
+
+	$\ds 1 = \int{k(\tau) \exp(-r\tau) \,d\tau}$
+
+	$b_0(\tau) = k(\tau) \exp(-r\tau)$ is the initial \emph{backwards}
+	generation interval
+
+----------------------------------------------------------------------
+
+DEFHEAD $r$ and the (other) generation interval
+
+FIG io/ess.Rout-3.pdf
+
+----------------------------------------------------------------------
+
+HIGHFIG io/ess.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+HIGHFIG io/hss.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+HIGHFIG io/hss.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+HIGHFIG io/hss.Rout-3.pdf
+
+----------------------------------------------------------------------
+
+HIGHFIG io/hss.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+SS Math
+
+----------------------------------------------------------------------
+
+Strength of intervention
+
+	Imagine we have an intervention that reduces transmission
+
+		$k(\tau) \to k(\tau)/L(\tau)$
+
+		Define \emph{strength} $\theta = \Rx/\hatR$ -- the proportional amount
+		by which the intervention reduces transmission.
+
+	We then have:
+
+		$\ds \theta = 1/\left\langle 1/L(\tau) \right\rangle_{g(\tau)}$
+
+		$\theta$ is the harmonic mean of $L$, weighted by the generation
+		distribution $g$.
+
+	Outbreak can be controlled if $\theta > \Rx$
+
+----------------------------------------------------------------------
+
+Speed of intervention
+
+	Define the \emph{speed} of an intervention be $\phi = r-\hat r$ -- the
+	amount by which the intervention slows down spread. 
+
+	$\ds 1 =
+		\left\langle \frac{\exp(\phi\tau)}{L(\tau)} \right\rangle_{b(\tau)}$
+
+	$\phi$ is sort of a mean of the \emph{hazard} associated with $L$
+
+		Averaged over the initial \emph{backwards} generation interval
+
+	Outbreak can be controlled if $\phi > r$.
+
+----------------------------------------------------------------------
+
+
