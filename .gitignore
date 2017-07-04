@@ -22,6 +22,7 @@ local.mk
 
 talkdir
 web_drop
+my_images
 
 *.deps
 *.nav
