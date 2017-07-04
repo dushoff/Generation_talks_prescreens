@@ -6,6 +6,19 @@ target pngtarget pdftarget vtarget acrtarget: origins.draft.pdf
 
 ######################################################################
 
+# make files
+
+Sources += Makefile .gitignore README.md sub.mk LICENSE.md todo.md
+
+Drop = ~/Dropbox
+include sub.mk
+my_images = $(Drop)/my_images
+
+-include $(ms)/newtalk.def
+
+
+######################################################################
+
 Sources += $(wildcard *.txt)
 
 ## Talk for Origins symposium November 2016
@@ -13,27 +26,12 @@ origins.draft.pdf: origins.txt
 
 ######################################################################
 
-# make files
 
-Sources += Makefile .gitignore README.md stuff.mk LICENSE.md todo.md
-include stuff.mk
-# include $(ms)/perl.def
+## Directories
 
-## Link talkdir (using newtalk for guidance)
--include $(ms)/newtalk.def
-subdirs += talkdir
-
-## Link image_drop
-
-image_drop = $(Drop)/courses/Lecture_images
-subdirs += image_drop
-image_drop/%: image_drop ;
-
-my_images = $(Drop)/my_images
-subdirs += my_images
-my_images/%: my_images ;
-my_images image_drop:
-	ln -s $($@) $@
+dirs += Lecture_images
+dfiles: $(dirs:%=%/Makefile)
+Sources += $(ms) $(dirs)
 
 subdirs += io
 io/%: io
@@ -49,5 +47,5 @@ io: dushoff.github.io
 -include $(ms)/newlatex.mk
 -include $(ms)/newtalk.mk
 
--include $(ms)/linkdirs.mk
+-include $(ms)/modules.mk
 
