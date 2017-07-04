@@ -1,10 +1,9 @@
-Measuring the strength and speed of epidemics
+Epidemic strength and speed: rethinking metrics for infectious disease
+spread and control.
 
 \vfill
 
-McMaster University Origins Institute Colloquium
-
-November 2016 
+SMB 2017
 
 \vfill
 
@@ -18,13 +17,6 @@ Jonathan Dushoff
 
 EXTRA Abstract
 
-Epidemics, including the Mexican flu, Ebola and Zika virus hold
-unknown and often potentially serious dangers. Mathematical modeling
-has become a key part of epidemic response. I will explore both the
-theory and practice of how key epidemiological parameters are
-measured, and how they are used to make predictions about epidemic
-spread, and to guide proposed control interventions.
-
 ----------------------------------------------------------------------
 
 SEC Introduction
@@ -33,11 +25,11 @@ SEC Introduction
 
 Infectious diseases
 
-FIG image_drop/flu_masks.jpg
+FIG web_drop/flu_masks.jpg
 
 ----------------------------------------------------------------------
 
-FIG image_drop/burial_team.jpg
+FIG web_drop/burial_team.jpg
 
 ----------------------------------------------------------------------
 
@@ -51,7 +43,7 @@ Models
 
 BCC
 
-CFIG image_drop/flat.png
+CFIG web_drop/flat.png
 
 NCC
 
@@ -65,35 +57,37 @@ EC
 
 Dynamic models
 
+SUBH Connect scales
+
 WIDEFIG SIR_model_family/sir.three.pdf
 
 Small-scale events $\displaystyle \Leftrightarrow$ Large-scale patterns and outcomes
 
 ----------------------------------------------------------------------
 
-Dynamic modeling
+Measles
 
-SUBH Connects scales
+SUBH Dynamic modeling connects scales
 
 BCC
 
-CFIG image_drop/trans.jpg
+CFIG my_images/trans.jpg
 
 NCC
 
-CFIG image_drop/ew_measles.png
+CFIG web_drop/ew_measles.png
 
 EC
 
 ----------------------------------------------------------------------
 
-Dynamic modeling
+Ebola
 
-SUBH Connects scales
+SUBH Dynamic modeling connects scales
 
 BCC
 
-CFIG image_drop/ebola_ward.jpg
+CFIG web_drop/ebola_ward.jpg
 
 NCC
 
@@ -103,15 +97,17 @@ EC
 
 ----------------------------------------------------------------------
 
-Yellow fever in Panama
+Yellow fever
+
+SUBH Dynamic modeling connects scales
 
 BC
 
-CFIG image_drop/endemic.Rout-0.png
+CFIG web_drop/aedes.jpg
 
 NC
 
-CFIG image_drop/aedes.jpg
+CFIG my_images/endemic.Rout-0.png
 
 EC
 
@@ -178,17 +174,19 @@ Speed
 
 		HIV in SSA, $C \approx 18 \mathrm{month}$
 
+	ADD Ebola, HIV slides
+
 ----------------------------------------------------------------------
 
 TSS Strength of epidemics
 
 BC
 
-CFIG image_drop/endemic.Rout-0.png
+CFIG my_images/endemic.Rout-0.png
 
 NC
 
-CFIG image_drop/aedes.jpg
+CFIG web_drop/aedes.jpg
 
 EC
 
@@ -416,7 +414,7 @@ BC
 
 NC
 
-FIG image_drop/burial_team.jpg
+FIG web_drop/burial_team.jpg
 
 EC
 
@@ -601,7 +599,7 @@ BCC
 
 NCC
 
-CFIG image_drop/endemic.Rout-0.png
+CFIG my_images/endemic.Rout-0.png
 
 EC
 
@@ -725,7 +723,7 @@ Speed of intervention
 
 A new way of looking
 
-FIG image_drop/lens.jpg
+FIG web_drop/lens.jpg
 
 ----------------------------------------------------------------------
 
@@ -733,7 +731,7 @@ Measuring the epidemic
 
 BCC
 
-CFIG image_drop/ew_measles.png
+CFIG web_drop/ew_measles.png
 
 NCC
 
@@ -747,11 +745,11 @@ Measuring the intervention
 
 BCC
 
-CFIG image_drop/vaccination.jpg
+CFIG web_drop/vaccination.jpg
 
 NCC
 
-CFIG image_drop/tutu.jpg
+CFIG web_drop/tutu.jpg
 
 EC
 
@@ -763,7 +761,7 @@ SS HIV example
 
 Can treatment stop the HIV epidemic?
 
-FIG image_drop/cocktail.jpg
+FIG web_drop/cocktail.jpg
 
 ----------------------------------------------------------------------
 

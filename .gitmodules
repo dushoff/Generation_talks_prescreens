@@ -13,3 +13,15 @@
 [submodule "fitting_code"]
 	path = fitting_code
 	url = https://github.com/dushoff/fitting_code.git
+[submodule "SIR_model_family"]
+	path = SIR_model_family
+	url = https://github.com/dushoff/SIR_model_family.git
+[submodule "SIR_simulations"]
+	path = SIR_simulations
+	url = https://github.com/dushoff/SIR_simulations.git
+[submodule "Disease_data"]
+	path = Disease_data
+	url = https://github.com/mac-theobio/Disease_data.git
+[submodule "WA_Ebola_Outbreak"]
+	path = WA_Ebola_Outbreak
+	url = https://github.com/Outbreak-analysis/WA_Ebola_Outbreak.git

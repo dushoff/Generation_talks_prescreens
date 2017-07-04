@@ -20,19 +20,25 @@ my_images = $(Drop)/my_images
 
 Sources += $(wildcard *.txt)
 
-## Earlier stuff is probably in ~/git/talks
+## Earlier stuff is probably in
+## sd ~/git/talks
 
 ## Talk for Origins symposium November 2016
 origins.draft.pdf: origins.txt
 
 ## Talk for SMB Jul 2017
+smb.outline.pdf: smb.txt
 smb.draft.pdf: smb.txt
+
+## Copyright
+
+Sources += copy.tex
 
 ######################################################################
 
 ## Directories
 
-dirs += Lecture_images ss_pix Generation_distributions fitting_code
+dirs += Lecture_images ss_pix Generation_distributions fitting_code SIR_model_family/
 dfiles: $(dirs:%=%/Makefile)
 Sources += $(ms) $(dirs)
 
