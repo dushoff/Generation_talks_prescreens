@@ -1,4 +1,5 @@
-commit.txt
+commit.time
+target.mk
 .*.sw*
 
 *.pdf
@@ -19,8 +20,13 @@ commit.txt
 
 local.mk
 
-testdir/
-.testdir/
-subclone_dir/
+talkdir
+web_drop
+
+*.deps
+*.nav
+*.snm
+*.tex
+*.toc
 
 *.makestuff

@@ -38,6 +38,7 @@ Sources += copy.tex
 
 ## Directories
 
+
 dirs += Lecture_images ss_pix Generation_distributions fitting_code SIR_model_family/
 dfiles: $(dirs:%=%/Makefile)
 Sources += $(ms) $(dirs)
