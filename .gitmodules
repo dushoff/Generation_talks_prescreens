@@ -4,3 +4,12 @@
 [submodule "Lecture_images"]
 	path = Lecture_images
 	url = https://github.com/Bio3SS/Lecture_images.git
+[submodule "ss_pix"]
+	path = ss_pix
+	url = https://github.com/dushoff/ss_pix.git
+[submodule "Generation_distributions"]
+	path = Generation_distributions
+	url = https://github.com/dushoff/Generation_distributions.git
+[submodule "fitting_code"]
+	path = fitting_code
+	url = https://github.com/dushoff/fitting_code.git

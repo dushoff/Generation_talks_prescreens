@@ -1,8 +1,8 @@
 # Generation_talks
 
 current: target
-
-target pngtarget pdftarget vtarget acrtarget: origins.draft.pdf 
+target = Makefile
+-include target.mk
 
 ######################################################################
 
@@ -16,28 +16,25 @@ my_images = $(Drop)/my_images
 
 -include $(ms)/newtalk.def
 
-
 ######################################################################
 
 Sources += $(wildcard *.txt)
 
+## Earlier stuff is probably in ~/git/talks
+
 ## Talk for Origins symposium November 2016
 origins.draft.pdf: origins.txt
 
-######################################################################
+## Talk for SMB Jul 2017
+smb.draft.pdf: smb.txt
 
+######################################################################
 
 ## Directories
 
-dirs += Lecture_images
+dirs += Lecture_images ss_pix Generation_distributions fitting_code
 dfiles: $(dirs:%=%/Makefile)
 Sources += $(ms) $(dirs)
-
-subdirs += io
-io/%: io
-	cd $< && $(MAKE) $*
-io: dushoff.github.io
-	$(link)
 
 ######################################################################
 
@@ -48,4 +45,4 @@ io: dushoff.github.io
 -include $(ms)/newtalk.mk
 
 -include $(ms)/modules.mk
-
+-include $(ms)/images.mk
