@@ -212,13 +212,23 @@ Basic reproductive number
 
 ----------------------------------------------------------------------
 
+Final size
+
+ADD Content
+
+----------------------------------------------------------------------
+
+SEC Linking strength and speed 
+
+----------------------------------------------------------------------
+
 Linking little $r$ and big \Rx
 
 FIG my_images/weitz_full.pdf
 
 ----------------------------------------------------------------------
 
-Generation intervals
+TSS Generation intervals
 
 BCC
 
@@ -280,91 +290,23 @@ Conditional effect of generation time
 
 ----------------------------------------------------------------------
 
-TSEC Generation intervals through time
+Speed abstraction
 
-	Generation intervals can be estimated by:
+	$$
+	\mathrm{Epidemic~speed} = 
+	\mathrm{Epidemic~strength} \times
+	\mathrm{Generation~speed}
+	$$
 
-		Observing patients:
-		
-			How long does it take to become infectious?
-		
-			How long does it take to recover?
-
-			What is the time profile of infectiousness/activity?
-
-		Contact tracing
-
-			Who (probably) infected whom?
-
-			When did each become ill (serial interval)?
+	$$
+	\mathrm{Epidemic~strength} = 
+	{\mathrm{Epidemic~speed} \over
+	\mathrm{Generation~speed}}
+	$$
 
 ----------------------------------------------------------------------
 
-Growing epidemics
-
-BC
-
-	Generation intervals look \emph{faster} at the beginning of an epidemic
-
-		A disproportionate number of people are infectious right now
-
-		They haven't finished all of their transmitting
-
-		We are biased towards observing faster events
-
-NC
-
-CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-3.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Forward and backward intervals
-
-FIG my_images/GI_PRSB_1.jpg
-
-CREDIT 16 Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
-
-----------------------------------------------------------------------
-
-What changes backward intervals?
-
-FIG my_images/GI_PRSB_2.jpg
-
-----------------------------------------------------------------------
-
-What changes forward intervals?
-
-FIG my_images/GI_PRSB_3.jpg
-
-----------------------------------------------------------------------
-
-Comparison to simulations
-
-FIG my_images/GI_PRSB_4.jpg
-
-----------------------------------------------------------------------
-
-Conclusion
-
-	Backward intervals change if the number of infectious individuals is
-	changing as you look back
-
-	Forward intervals change if the number of \emph{susceptible} individuals is
-	changing as you look forward
-
-	Lack of care in defining generation intervals can lead to bias
-
-		Results also tell us how to correct this bias
-
-----------------------------------------------------------------------
-
-SEC Estimating the effect of generation intervals
-
-----------------------------------------------------------------------
-
-The ``effective'' generation time
+TSS The ``effective'' generation time
 
 	If the generation interval were absolutely fixed at a time interval
 	of $G$, then 
@@ -580,6 +522,86 @@ Summary
 		Knowing the mean generation interval is not enough
 
 		But knowing the mean and CV may be enough
+
+----------------------------------------------------------------------
+
+TSEC Generation intervals through time
+
+	Generation intervals can be estimated by:
+
+		Observing patients:
+		
+			How long does it take to become infectious?
+		
+			How long does it take to recover?
+
+			What is the time profile of infectiousness/activity?
+
+		Contact tracing
+
+			Who (probably) infected whom?
+
+			When did each become ill (serial interval)?
+
+----------------------------------------------------------------------
+
+Growing epidemics
+
+BC
+
+	Generation intervals look \emph{faster} at the beginning of an epidemic
+
+		A disproportionate number of people are infectious right now
+
+		They haven't finished all of their transmitting
+
+		We are biased towards observing faster events
+
+NC
+
+CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Forward and backward intervals
+
+FIG my_images/GI_PRSB_1.jpg
+
+CREDIT 16 Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
+
+----------------------------------------------------------------------
+
+What changes backward intervals?
+
+FIG my_images/GI_PRSB_2.jpg
+
+----------------------------------------------------------------------
+
+What changes forward intervals?
+
+FIG my_images/GI_PRSB_3.jpg
+
+----------------------------------------------------------------------
+
+Comparison to simulations
+
+FIG my_images/GI_PRSB_4.jpg
+
+----------------------------------------------------------------------
+
+Conclusion
+
+	Backward intervals change if the number of infectious individuals is
+	changing as you look back
+
+	Forward intervals change if the number of \emph{susceptible} individuals is
+	changing as you look forward
+
+	Lack of care in defining generation intervals can lead to bias
+
+		Results also tell us how to correct this bias
 
 ----------------------------------------------------------------------
 
