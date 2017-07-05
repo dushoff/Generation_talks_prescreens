@@ -23,6 +23,8 @@ local.mk
 talkdir
 web_drop
 my_images
+local.txt.format
+txt.format
 
 *.deps
 *.nav
