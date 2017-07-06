@@ -290,23 +290,68 @@ Conditional effect of generation time
 
 ----------------------------------------------------------------------
 
-Speed abstraction
+Linking framework
 
-	$$
+	$
 	\mathrm{Epidemic~speed} = 
 	\mathrm{Epidemic~strength} \times
 	\mathrm{Generation~speed}
-	$$
+	$
 
-	$$
+		$ r = \Rx / G $ (Wrong)
+
+	$
 	\mathrm{Epidemic~strength} = 
 	{\mathrm{Epidemic~speed} \over
 	\mathrm{Generation~speed}}
-	$$
+	$
+
+		$ \Rx = r G $ (Wrong)
 
 ----------------------------------------------------------------------
 
-TSS The ``effective'' generation time
+SS ``Effective'' generation times
+
+----------------------------------------------------------------------
+
+Linearized renewal equation
+
+	Neglect things that change infectiousness, early in an outbreak
+
+	$$i(t) = \int{k(\tau)i(t-\tau) \,d\tau}$$
+
+		$i$ is \emph{incidence} -- rate of new cases
+
+		$k$ is the transmission kernel
+
+	$$k(\tau) = \Rx g(\tau),$$ 
+
+		\Rx\ is the effective reproductive number
+
+		$g(\tau)$ (integrates to 1)  
+		is the \emph{intrinsic} generation distribution
+
+----------------------------------------------------------------------
+
+Euler-Lotka equation 
+
+	Model
+
+		$$i(t) = \Rx\int{g(\tau)i(t-\tau) \,d\tau}$$
+
+	Exponential phase
+
+		Disease grows with characteristic time $C=1/r$
+
+		$$i(t) = i(0) \exp(t/C)$$
+
+	Conclusion
+
+		$$1/\Rx = \int{g(\tau)\exp(-\tau/C) \,d\tau}$$
+
+----------------------------------------------------------------------
+
+Interpretation: the ``effective'' generation time
 
 	If the generation interval were absolutely fixed at a time interval
 	of $G$, then 
@@ -317,8 +362,10 @@ TSS The ``effective'' generation time
 	true:
 
 		$${\Rx} = \exp(\hat G/C)$$
-		
-	We can show $\hat G$ is a ``filtered mean'' of the distribution $g$:
+
+	Then:
+
+		$$1/\Rx = \int{g(\tau)\exp(-\tau/C) \,d\tau}$$
 
 		$$\exp(-\hat G/C) = \langle \exp(-\tau/C) \rangle_g.$$,
 
