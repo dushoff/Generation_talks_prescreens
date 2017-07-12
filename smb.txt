@@ -792,30 +792,45 @@ SS Intervention strength
 
 PSLIDE Epidemic strength
 
+BC
+
 FIG ss_pix/ess.Rout-0.pdf
 
+NC
 
-----------------------------------------------------------------------
+	\Rx, the epidemic strength, is the area under the curve.
 
-Epidemic strength
-
-FIG ss_pix/ess.Rout-2.pdf
+EC
 
 ----------------------------------------------------------------------
 
 Strength of intervention
 
-BCC
+BC
 
 FIG ss_pix/ess.Rout-2.pdf
 
 NC
 
-	… by what factor do I need to reduce this curve to eliminate the ep
+	\ldots by what factor do I need to reduce this curve to eliminate the epidemic
 
 EC
 
 ----------------------------------------------------------------------
+
+PSLIDE Different interventions
+
+FIG ss_pix/ess.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Different interventions
+
+FIG ss_pix/ess.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Measuring intervention strength
 
 	Imagine we have an intervention that reduces transmission
 
@@ -835,7 +850,121 @@ EC
 
 ----------------------------------------------------------------------
 
-SS Weird generation-interval stuff
+The strength paradigm
+
+	$k(\tau) = \Rx g(\tau)$
+	
+		$g$ is the intrinsic generation interval
+
+		$\Rx$ is the strength of the epidemic
+
+	If $L(\tau) \equiv L$, then $\theta=L$ is the strength of the intervention
+
+	In general, $\theta$ is a (harmonic) mean of $L$
+
+		weighted by $g(\tau)$, but not affected by \Rx.
+
+	Epidemic is controlled if $\theta > \Rx$
+
+----------------------------------------------------------------------
+
+SS Intervention speed
+
+----------------------------------------------------------------------
+
+Epidemic speed
+
+BC
+
+PIC FIG ss_pix/ess.Rout-0.pdf
+
+NC
+
+	$r$, the epidemic speed, is the ``discount'' rate required to balance the
+	tendency to grow
+
+EC
+
+----------------------------------------------------------------------
+
+Epidemic speed
+
+BC
+
+PIC FIG ss_pix/ess.Rout-3.pdf
+
+NC
+
+	$k(\tau) = \exp(r\tau) b(\tau)$, where $b(\tau)$ is the initial backward
+	generation interval
+
+EC
+
+----------------------------------------------------------------------
+
+Speed of intervention
+
+BC
+
+FIG ss_pix/ess.Rout-3.pdf
+
+NC
+
+	\ldots how quickly do I need to reduce this curve to eliminate the epidemic
+
+EC
+
+----------------------------------------------------------------------
+
+PSLIDE Different interventions
+
+FIG ss_pix/ess.Rout-3.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Different interventions
+
+FIG ss_pix/ess.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Measuring intervention speed
+
+	Define the \emph{speed} of an intervention be $\phi = r-\hat r$ -- the
+	amount by which the intervention slows down spread. 
+
+	We then have:
+
+		$\ds 1 =
+			\left\langle \frac{\exp(\phi\tau)}{L(\tau)} \right\rangle_{b(\tau)}$
+
+	$\phi$ is \emph{sort of a mean} of the \emph{hazard} associated with $L$
+
+		Averaged over the initial \emph{backwards} generation interval
+
+	Outbreak can be controlled if $\phi > r$.
+
+----------------------------------------------------------------------
+
+The speed paradigm
+
+	$k(\tau) = \exp(r\tau) b(\tau)$,
+	
+		$r$ is the speed of the epidemic
+
+		$b$ is the initial backward generation interval
+
+	If $h(\tau) \equiv h$ ($L(\tau) \equiv \exp(h\tau)$), then $\phi=h$ is the speed of the intervention
+
+	In general, $\phi$ is a (weird) mean of $L$
+
+		weighted by $b(\tau)$, but not (otherwise) affected by $r$.
+
+	Epidemic is controlled if $\phi > \Rx$
+
+----------------------------------------------------------------------
+
+SS Weirdness
 
 ----------------------------------------------------------------------
 
@@ -849,6 +978,7 @@ DEFHEAD \Rx\ and the generation interval
 	g(\tau)$
 
 ----------------------------------------------------------------------
+
 
 DEFHEAD \Rx\ and the generation interval
 
@@ -918,22 +1048,6 @@ Strength of intervention
 		distribution $g$.
 
 	Outbreak can be controlled if $\theta > \Rx$
-
-----------------------------------------------------------------------
-
-Speed of intervention
-
-	Define the \emph{speed} of an intervention be $\phi = r-\hat r$ -- the
-	amount by which the intervention slows down spread. 
-
-	$\ds 1 =
-		\left\langle \frac{\exp(\phi\tau)}{L(\tau)} \right\rangle_{b(\tau)}$
-
-	$\phi$ is \emph{sort of a mean} of the \emph{hazard} associated with $L$
-
-		Averaged over the initial \emph{backwards} generation interval
-
-	Outbreak can be controlled if $\phi > r$.
 
 ----------------------------------------------------------------------
 
