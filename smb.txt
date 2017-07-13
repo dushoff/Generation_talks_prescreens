@@ -1,5 +1,4 @@
-Epidemic strength and speed: rethinking metrics for infectious disease
-spread and control.
+Epidemic strength and speed: rethinking metrics for infectious disease spread and control.
 
 \vfill
 
@@ -16,6 +15,8 @@ Jonathan Dushoff
 ----------------------------------------------------------------------
 
 EXTRA Abstract
+
+Mathematical modeling plays a key role in forecasting epidemics, and in planning interventions. Two key measures are "big ℛ" and "little r", which I will interpret as measuring epidemic "strength" and "speed". I will discuss how these two quantities are linked by generation-interval distributions, and interpret this link using approximations and "filtered means". I will talk about measuring the strength and speed of interventions, on the same scale that we measure strength and speed of epidemics, and argue that little r is under-rated – in particular, that there are strong parallels between the interpretation of big ℛ as a measure of how difficult an epidemic is to control, and an analogous interpretation of little r.
 
 ----------------------------------------------------------------------
 
