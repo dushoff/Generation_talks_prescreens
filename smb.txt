@@ -279,11 +279,11 @@ Conditional effect of generation time
 
 	\emph{Given} the reproductive number $\Rx$
 
-		faster generation time $G$ means faster spread time $C$
+		faster generation time $G$ means faster growth rate $r$
 
 		More danger
 
-	\emph{Given} the spread time $C$
+	\emph{Given} the growth rate $r$
 
 		faster generation time $G$ means \emph{smaller} \Rx
 
@@ -291,53 +291,124 @@ Conditional effect of generation time
 
 ----------------------------------------------------------------------
 
-Speed abstraction
+Linking framework
 
-	$$
-	\mathrm{Epidemic~speed} = 
-	\mathrm{Epidemic~strength} \times
-	\mathrm{Generation~speed}
-	$$
+	$
+	\mathrm{Epidemic~speed} (r)= 
+	\mathrm{Epidemic~strength} (\Rx) \times
+	\mathrm{Generation~speed} (1/G)
+	$
 
-	$$
+		$ r = \Rx / G $ (Wrong)
+
+	$
 	\mathrm{Epidemic~strength} = 
 	{\mathrm{Epidemic~speed} \over
 	\mathrm{Generation~speed}}
-	$$
+	$
+
+		$ \Rx = r G $ (Wrong)
 
 ----------------------------------------------------------------------
 
-TSS The ``effective'' generation time
+SS ``Effective'' generation times
+
+----------------------------------------------------------------------
+
+Linearized renewal equation
+
+	Neglect things that change infectiousness, early in an outbreak
+
+	$$i(t) = \int{k(\tau)i(t-\tau) \,d\tau}$$
+
+		$i$ is \emph{incidence} -- rate of new cases
+
+		$k$ is the transmission kernel
+
+	$$k(\tau) = \Rx g(\tau),$$ 
+
+		\Rx\ is the effective reproductive number
+
+		$g(\tau)$ (integrates to 1)  
+		is the \emph{intrinsic} generation distribution
+
+----------------------------------------------------------------------
+
+Euler-Lotka equation 
+
+	Model
+
+		$$i(t) = \int{k(\tau)i(t-\tau) \,d\tau}$$
+
+	Exponential phase
+
+		Disease grows with characteristic time $C=1/r$
+
+		$$i(t) = i(0) \exp(rt)$$
+
+	Conclusion
+
+		$$1 = \int{k(\tau)\exp(-r\tau) \,d\tau}$$
+
+		$$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$$
+
+----------------------------------------------------------------------
+
+Interpretation: the ``effective'' generation time
 
 	If the generation interval were absolutely fixed at a time interval
 	of $G$, then 
 
-		$${\Rx} = \exp(G/C)$$
+		$${\Rx} = \exp(rG)$$
 
 	\emph{Define} the effective generation time so that this remains
 	true:
 
-		$${\Rx} = \exp(\hat G/C)$$
-		
-	We can show $\hat G$ is a ``filtered mean'' of the distribution $g$:
+		$${\Rx} = \exp(r\hat G)$$
 
-		$$\exp(-\hat G/C) = \langle \exp(-\tau/C) \rangle_g.$$,
+	Then:
+
+		$$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$$
+
+		$$\exp(-r\hat G) = \langle \exp(-r\tau) \rangle_g.$$
 
 ----------------------------------------------------------------------
 
-$C = 15d$
+Linking framework
+
+	$
+	\mathrm{Epidemic~speed} (r)= 
+	\mathrm{Epidemic~strength} (\Rx) \times
+	\mathrm{Generation~speed} (1/G)
+	$
+
+		$ r = \log(\Rx / \hat G) $
+
+	$
+	\mathrm{Epidemic~strength} = 
+	{\mathrm{Epidemic~speed} \over
+	\mathrm{Generation~speed}}
+	$
+
+		$ \Rx = \exp(r \hat G) $ 
+
+	$$\exp(-r\hat G) = \langle \exp(-r\tau) \rangle_g.$$
+
+----------------------------------------------------------------------
+
+$C = 1/r = 15d$
 
 FIG Generation_distributions/lognormal.filtered.Rout-0.pdf
 
 ----------------------------------------------------------------------
 
-$C = 30d$
+$C= 1/r  = 30d$
 
 FIG Generation_distributions/lognormal.filtered.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
-$C = 45d$
+$C= 1/r  = 45d$
 
 FIG Generation_distributions/lognormal.filtered.Rout-2.pdf
 
@@ -412,7 +483,7 @@ An approximation
 	Define $\kappa = {\sigma^2_G}/{\mu^2_G}$ -- the squared
 	coefficient of variation of the generation distribution
 
-	$\Rx \approx (1 + \kappa \bar G/C)^{1/\kappa}$
+	$\Rx \approx (1 + r \kappa \bar G)^{1/\kappa}$
 
 		Equal when $G$ has a gamma distribution
 
@@ -646,6 +717,258 @@ EC
 
 ----------------------------------------------------------------------
 
+Is \Rx\ better than $r$?
+
+	\Rx\ predicts final size
+
+	\Rx\ predicts long-term incidence
+
+	\Rx\ gives a threshold for control
+
+		and tells us how much control is necessary
+
+----------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
+
+SS HIV example
+
+----------------------------------------------------------------------
+
+Can treatment stop the HIV epidemic?
+
+FIG web_drop/cocktail.jpg
+
+----------------------------------------------------------------------
+
+Are HIV generations fast or slow?
+
+BCC
+
+	Fast generations mean:
+
+		Testing and treating will help less
+
+		\emph{but} lower epidemic strength
+
+NCC
+
+\vspace{-0.4in}
+
+CFIG Generation_distributions/steps.Rout-1.pdf
+
+\vspace{-0.4in}
+
+CFIG Generation_distributions/steps.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+How fast do people need to be treated?
+
+	Idealized case: 
+
+		$k(\tau) \rightarrow$
+
+		$\hat k(\tau) = k(\tau) \exp (-h \tau)$, where $h$ is the ``hazard"
+		(instantaneous rate) of treatment
+
+	Euler-Lotka
+
+		$$1 = \int{\hat k(\tau)\exp(-\hat r\tau) \,d\tau}$$
+
+		$$ = \int{k(\tau)\exp(-h\tau)\exp(-\hat r\tau) \,d\tau}$$
+
+		$$ \hat r = r - h$$
+
+	Required treatment hazard is equal to $r$!
+
+----------------------------------------------------------------------
+
+SS Intervention strength
+
+----------------------------------------------------------------------
+
+PSLIDE Epidemic strength
+
+BC
+
+FIG ss_pix/ess.Rout-0.pdf
+
+NC
+
+	\Rx, the epidemic strength, is the area under the curve.
+
+EC
+
+----------------------------------------------------------------------
+
+Strength of intervention
+
+BC
+
+FIG ss_pix/ess.Rout-2.pdf
+
+NC
+
+	\ldots by what factor do I need to reduce this curve to eliminate the epidemic
+
+EC
+
+----------------------------------------------------------------------
+
+PSLIDE Different interventions
+
+FIG ss_pix/ess.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Different interventions
+
+FIG ss_pix/ess.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Measuring intervention strength
+
+	Imagine we have an intervention that reduces transmission
+
+		$k(\tau) \to k(\tau)/L(\tau)$
+
+		Define \emph{strength} $\theta = \Rx/\hatR$ -- the proportional amount
+		by which the intervention reduces transmission.
+
+	We then have:
+
+		$\ds \theta = 1/\left\langle 1/L(\tau) \right\rangle_{g(\tau)}$
+
+		$\theta$ is \emph{the harmonic mean} of $L$, weighted by the generation
+		distribution $g$.
+
+	Outbreak can be controlled if $\theta > \Rx$
+
+----------------------------------------------------------------------
+
+The strength paradigm
+
+	$k(\tau) = \Rx g(\tau)$
+	
+		$g$ is the intrinsic generation interval
+
+		$\Rx$ is the strength of the epidemic
+
+	If $L(\tau) \equiv L$, then $\theta=L$ is the strength of the intervention
+
+	In general, $\theta$ is a (harmonic) mean of $L$
+
+		weighted by $g(\tau)$, but not affected by \Rx.
+
+	Epidemic is controlled if $\theta > \Rx$
+
+----------------------------------------------------------------------
+
+SS Intervention speed
+
+----------------------------------------------------------------------
+
+Epidemic speed
+
+BC
+
+PIC FIG ss_pix/ess.Rout-0.pdf
+
+NC
+
+	$r$, the epidemic speed, is the ``discount'' rate required to balance the
+	tendency to grow
+
+EC
+
+----------------------------------------------------------------------
+
+Epidemic speed
+
+BC
+
+PIC FIG ss_pix/ess.Rout-3.pdf
+
+NC
+
+	$k(\tau) = \exp(r\tau) b(\tau)$, where $b(\tau)$ is the initial backward
+	generation interval
+
+EC
+
+----------------------------------------------------------------------
+
+Speed of intervention
+
+BC
+
+FIG ss_pix/ess.Rout-3.pdf
+
+NC
+
+	\ldots how quickly do I need to reduce this curve to eliminate the epidemic
+
+EC
+
+----------------------------------------------------------------------
+
+PSLIDE Different interventions
+
+FIG ss_pix/ess.Rout-3.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Different interventions
+
+FIG ss_pix/ess.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Measuring intervention speed
+
+	Define the \emph{speed} of an intervention be $\phi = r-\hat r$ -- the
+	amount by which the intervention slows down spread. 
+
+	We then have:
+
+		$\ds 1 =
+			\left\langle \frac{\exp(\phi\tau)}{L(\tau)} \right\rangle_{b(\tau)}$
+
+	$\phi$ is \emph{sort of a mean} of the \emph{hazard} associated with $L$
+
+		Averaged over the initial \emph{backwards} generation interval
+
+	Outbreak can be controlled if $\phi > r$.
+
+----------------------------------------------------------------------
+
+The speed paradigm
+
+	$k(\tau) = \exp(r\tau) b(\tau)$,
+	
+		$r$ is the speed of the epidemic
+
+		$b$ is the initial backward generation interval
+
+	If $h(\tau) \equiv h$ ($L(\tau) \equiv \exp(h\tau)$), then $\phi=h$ is the speed of the intervention
+
+	In general, $\phi$ is a (weird) mean of $L$
+
+		weighted by $b(\tau)$, but not (otherwise) affected by $r$.
+
+	Epidemic is controlled if $\phi > \Rx$
+
+----------------------------------------------------------------------
+
+SS Weirdness
+
+----------------------------------------------------------------------
+
 DEFHEAD \Rx\ and the generation interval
 
 	$\ds i(t) = \int{k(\tau)i(t-\tau) \,d\tau}$
@@ -656,6 +979,7 @@ DEFHEAD \Rx\ and the generation interval
 	g(\tau)$
 
 ----------------------------------------------------------------------
+
 
 DEFHEAD \Rx\ and the generation interval
 
@@ -728,22 +1052,6 @@ Strength of intervention
 
 ----------------------------------------------------------------------
 
-Speed of intervention
-
-	Define the \emph{speed} of an intervention be $\phi = r-\hat r$ -- the
-	amount by which the intervention slows down spread. 
-
-	$\ds 1 =
-		\left\langle \frac{\exp(\phi\tau)}{L(\tau)} \right\rangle_{b(\tau)}$
-
-	$\phi$ is \emph{sort of a mean} of the \emph{hazard} associated with $L$
-
-		Averaged over the initial \emph{backwards} generation interval
-
-	Outbreak can be controlled if $\phi > r$.
-
-----------------------------------------------------------------------
-
 A new way of looking
 
 FIG web_drop/lens.jpg
@@ -775,41 +1083,6 @@ NCC
 CFIG web_drop/tutu.jpg
 
 EC
-
-----------------------------------------------------------------------
-
-SS HIV example
-
-----------------------------------------------------------------------
-
-Can treatment stop the HIV epidemic?
-
-FIG web_drop/cocktail.jpg
-
-----------------------------------------------------------------------
-
-Are HIV generations fast or slow?
-
-BCC
-
-	Fast generations mean:
-
-		Testing and treating will help less
-
-		\emph{but} lower epidemic strength
-
-NCC
-
-\vspace{-0.4in}
-
-CFIG Generation_distributions/steps.Rout-1.pdf
-
-\vspace{-0.4in}
-
-CFIG Generation_distributions/steps.Rout-0.pdf
-
-EC
-
 ----------------------------------------------------------------------
 
 Condom intervention
