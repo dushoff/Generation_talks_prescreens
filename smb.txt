@@ -170,11 +170,21 @@ Speed
 
 	Time scale is $C=1/r$
 
-		Ebola, $C \approx 1 \mathrm{month}$
+----------------------------------------------------------------------
 
-		HIV in SSA, $C \approx 18 \mathrm{month}$
+Ebola outbreak
 
-	ADD Ebola, HIV slides
+FIG my_images/weitz_full.pdf
+
+$C \approx 1 \mathrm{month}$. Fast.
+
+----------------------------------------------------------------------
+
+HIV in sub-Saharan Africa
+
+FIG SIR_simulations/hiv_plot.Rout-0.pdf
+
+$C \approx 18 \mathrm{month}$. Horrifyingly fast.
 
 ----------------------------------------------------------------------
 
@@ -212,7 +222,7 @@ Basic reproductive number
 
 ----------------------------------------------------------------------
 
-Final size
+EXTRA Final size
 
 ADD Content
 
@@ -314,6 +324,22 @@ SS ``Effective'' generation times
 
 ----------------------------------------------------------------------
 
+Renewal equation
+
+	The renewal equation is a broad framework that covers a wide range of
+	possible models (including standard box models)
+
+		$$i(t) = S(t) \int{k(\tau)i(t-\tau) \,d\tau}$$
+
+		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
+
+		$S(t)$ is the proportion of the population susceptible
+
+		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
+		after becoming infected
+
+----------------------------------------------------------------------
+
 Linearized renewal equation
 
 	Neglect things that change infectiousness, early in an outbreak
@@ -373,6 +399,18 @@ Interpretation: the ``effective'' generation time
 
 ----------------------------------------------------------------------
 
+Filtered means
+
+	Many things we know about are examples of filtered means
+
+		Geometric mean (log function)
+
+		Harmonic mean (reciprocal function)
+
+		Root mean square (square) 
+
+----------------------------------------------------------------------
+
 Linking framework
 
 	$
@@ -381,17 +419,9 @@ Linking framework
 	\mathrm{Generation~speed} (1/G)
 	$
 
-		$ r = \log(\Rx / \hat G) $
+		$ r = \log(\Rx) / \hat G $,
 
-	$
-	\mathrm{Epidemic~strength} = 
-	{\mathrm{Epidemic~speed} \over
-	\mathrm{Generation~speed}}
-	$
-
-		$ \Rx = \exp(r \hat G) $ 
-
-	$$\exp(-r\hat G) = \langle \exp(-r\tau) \rangle_g.$$
+	where $\exp(-r\hat G) = \langle \exp(-r\tau) \rangle_g.$
 
 ----------------------------------------------------------------------
 
@@ -410,6 +440,32 @@ FIG Generation_distributions/lognormal.filtered.Rout-1.pdf
 $C= 1/r  = 45d$
 
 FIG Generation_distributions/lognormal.filtered.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+Filtered means have intuitive properties
+
+	Shifts in distribution shift the mean about how you would expect
+
+		More late transmission means longer $\hat G$
+
+	Importance of values depends on value of the filter function
+
+	We can predict from the filter function what the effects of
+	increasing variance will be
+
+	As distribution gets narrower, $\hat G$ approaches $\bar G$
+
+----------------------------------------------------------------------
+
+The filtering function
+		
+	$\exp(-\hat G/C) = \langle \exp(-\tau/C) \rangle_g$,
+
+	$\hat G$ is the mean of the generation distribution $g(\tau)$ ...
+
+	Filtered by the discount function associated with the rate of
+	exponential growth of the epidemic 
 
 ----------------------------------------------------------------------
 
@@ -728,10 +784,7 @@ Is \Rx\ better than $r$?
 
 ----------------------------------------------------------------------
 
-
-----------------------------------------------------------------------
-
-SS HIV example
+EXTRA SS HIV interventions
 
 ----------------------------------------------------------------------
 
@@ -940,6 +993,8 @@ Measuring intervention speed
 
 	$\phi$ is \emph{sort of a mean} of the \emph{hazard} associated with $L$
 
+		Because $L(t) = \exp(ht)$ when hazard is constant
+
 		Averaged over the initial \emph{backwards} generation interval
 
 	Outbreak can be controlled if $\phi > r$.
@@ -960,128 +1015,12 @@ The speed paradigm
 
 		weighted by $b(\tau)$, but not (otherwise) affected by $r$.
 
-	Epidemic is controlled if $\phi > \Rx$
+	Epidemic is controlled if $\phi > r$
 
 ----------------------------------------------------------------------
 
-SS Weirdness
+SS HIV estimates
 
-----------------------------------------------------------------------
-
-DEFHEAD \Rx\ and the generation interval
-
-	$\ds i(t) = \int{k(\tau)i(t-\tau) \,d\tau}$
-
-	$\Rx = \int{k(\tau) d\tau}$
-
-	Define the intrinsic generation interval distribution: $k(\tau) = \Rx
-	g(\tau)$
-
-----------------------------------------------------------------------
-
-
-DEFHEAD \Rx\ and the generation interval
-
-FIG ss_pix/ess.Rout-0.pdf
-
-----------------------------------------------------------------------
-
-DEFHEAD \Rx\ and the generation interval
-
-FIG ss_pix/ess.Rout-2.pdf
-
-----------------------------------------------------------------------
-
-DEFHEAD $r$ and the (other) generation interval
-
-	$\ds i(t) = \int{k(\tau)i(t-\tau) \,d\tau}$
-
-	if $i(t)$ grows like $\exp(rt)$, then 
-
-	$\ds 1 = \int{k(\tau) \exp(-r\tau) \,d\tau}$
-
-	$b_0(\tau) = k(\tau) \exp(-r\tau)$ is the initial \emph{backwards}
-	generation interval
-
-----------------------------------------------------------------------
-
-DEFHEAD $r$ and the (other) generation interval
-
-FIG ss_pix/ess.Rout-3.pdf
-
-----------------------------------------------------------------------
-
-HIGHFIG ss_pix/ess.Rout-1.pdf
-
-----------------------------------------------------------------------
-
-HIGHFIG ss_pix/hss.Rout-0.pdf
-
-----------------------------------------------------------------------
-
-HIGHFIG ss_pix/hss.Rout-2.pdf
-
-----------------------------------------------------------------------
-
-HIGHFIG ss_pix/hss.Rout-3.pdf
-
-----------------------------------------------------------------------
-
-HIGHFIG ss_pix/hss.Rout-1.pdf
-
-----------------------------------------------------------------------
-
-Strength of intervention
-
-	Imagine we have an intervention that reduces transmission
-
-		$k(\tau) \to k(\tau)/L(\tau)$
-
-		Define \emph{strength} $\theta = \Rx/\hatR$ -- the proportional amount
-		by which the intervention reduces transmission.
-
-	We then have:
-
-		$\ds \theta = 1/\left\langle 1/L(\tau) \right\rangle_{g(\tau)}$
-
-		$\theta$ is \emph{the harmonic mean} of $L$, weighted by the generation
-		distribution $g$.
-
-	Outbreak can be controlled if $\theta > \Rx$
-
-----------------------------------------------------------------------
-
-A new way of looking
-
-FIG web_drop/lens.jpg
-
-----------------------------------------------------------------------
-
-Measuring the epidemic
-
-BCC
-
-CFIG web_drop/ew_measles.png
-
-NCC
-
-CFIG fitting_code/mexican_plots.Rout-0.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Measuring the intervention
-
-BCC
-
-CFIG web_drop/vaccination.jpg
-
-NCC
-
-CFIG web_drop/tutu.jpg
-
-EC
 ----------------------------------------------------------------------
 
 Condom intervention
@@ -1150,13 +1089,49 @@ FIG ss_pix/flat.scen.Rout-5.pdf
 
 ----------------------------------------------------------------------
 
+TSS Ways of looking
+
+FIG web_drop/lens.jpg
+
+----------------------------------------------------------------------
+
+Measuring the epidemic
+
+BCC
+
+CFIG web_drop/ew_measles.png
+
+NCC
+
+CFIG fitting_code/mexican_plots.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Measuring the intervention
+
+BCC
+
+CFIG web_drop/vaccination.jpg
+
+NCC
+
+CFIG web_drop/tutu.jpg
+
+EC
+
+----------------------------------------------------------------------
+
 Conclusion
 
-	This perspective helps us understand why find and treat predictions are
-	robust to assumptions about transmission
+	$r$ and $\Rx$ have more in common than we think
 
 	Sometimes ``strength'' and sometimes ``speed'' can help us see epidemic
 	control questions more clearly
+
+	This perspective helps us understand why find and treat predictions are
+	robust to assumptions about transmission
 
 ----------------------------------------------------------------------
 
@@ -1169,3 +1144,30 @@ Thanks
 	Collaborators
 
 	Funders: NSERC, CIHR
+
+----------------------------------------------------------------------
+
+EXTRA SS Control example figures
+
+----------------------------------------------------------------------
+
+
+HIGHFIG ss_pix/ess.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+HIGHFIG ss_pix/hss.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+HIGHFIG ss_pix/hss.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+HIGHFIG ss_pix/hss.Rout-3.pdf
+
+----------------------------------------------------------------------
+
+HIGHFIG ss_pix/hss.Rout-1.pdf
+
+----------------------------------------------------------------------
