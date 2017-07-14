@@ -468,6 +468,19 @@ The filtering function
 
 ----------------------------------------------------------------------
 
+Linking framework
+
+	$
+		\mathrm{Epidemic~strength} (\Rx) = 
+		{\mathrm{Epidemic~speed} (r) \over
+		\mathrm{Generation~speed} (1/G)}
+	$
+
+		$ \Rx  = \exp(r\hat G) $
+
+----------------------------------------------------------------------
+
+
 Example: Post-death transmission and safe burial
 
 BC
@@ -547,7 +560,7 @@ Tangled web
 
 		$\Rx = 1 + r \bar G?$
 
---- ------------------------------------------------------------------
+----------------------------------------------------------------------
 
 An approximation
 
@@ -663,11 +676,11 @@ Approximating the distribution
 
 BCC
 
-WIDEFIG Generation_distributions/lognormal.hist.Rout.pdf
+WIDEFIG Generation_distributions/lognormal.histcomp.Rout.pdf
 
 NCC
 
-WIDEFIG Generation_distributions/lognormal.ga.hist.Rout.pdf
+WIDEFIG Generation_distributions/lognormal.ga.histcomp.Rout.pdf
 
 EC
 
@@ -703,6 +716,10 @@ Summary
 		Estimating the mean generation interval is not enough
 
 		But estimating the mean and CV may be enough
+
+	Filtered mean conclusions still apply:
+
+		increased generation times imply larger \Rx.
 
 ----------------------------------------------------------------------
 
@@ -754,11 +771,27 @@ CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
 
 ----------------------------------------------------------------------
 
-What changes backward intervals?
+Renewal equation
 
-	Backward intervals differ from intrinsic intervals because:
+	$i(t) = S(t) \int{k(\tau)i(t-\tau) \,d\tau}$
 
-		the number of infected HERE!!
+	$i_s(t) = S(t) k(t-s) i(s)$
+
+	Backward intervals 
+
+		Who infected the people infected at time $t$?
+	
+			$\propto k(t-s) i(s)$
+
+		Depends on $k$, but also on changes in $i(s)$
+
+	Forward intervals 
+
+		Who did the people infected at time $s$ infect?
+	
+			$\propto S(t) k(t-s)$
+
+		Depends on $k$, but also on changes in $S(t)$
 
 ----------------------------------------------------------------------
 
@@ -790,7 +823,7 @@ Conclusion
 
 	Lack of care in defining generation intervals can lead to bias
 
-		Results also tell us how to correct this bias
+		These biases can be corrected
 
 ----------------------------------------------------------------------
 
@@ -880,6 +913,23 @@ EC
 
 ----------------------------------------------------------------------
 
+Eaton and Hallett
+
+	Predicted effectiveness of test and treat intervention minimally sensitive to proportion of early transmission
+
+	Fast transmission:
+
+		low proportion prevented, but low $\Rx$ estimate
+
+
+	Slow transmission:
+
+		high proportion prevented, but high $\Rx$ estimate
+
+	CREDIT Eaton JW, Hallett TB.  Proc Natl Acad Sci U S A. 2014 Nov 11;111(45):16202-7.
+
+----------------------------------------------------------------------
+
 How fast do people need to be treated?
 
 	Idealized case: 
@@ -951,8 +1001,8 @@ Measuring intervention strength
 
 		$k(\tau) \to k(\tau)/L(\tau)$
 
-		Define \emph{strength} $\theta = \Rx/\hatR$ -- the proportional amount
-		by which the intervention reduces transmission.
+		Define intervention \emph{strength} $\theta = \Rx/\hatR$ -- the
+		proportional amount by which the intervention reduces transmission.
 
 	We then have:
 
@@ -1025,7 +1075,7 @@ FIG ss_pix/ess.Rout-3.pdf
 
 NC
 
-	\ldots how quickly do I need to reduce this curve to eliminate the epidemic
+	\ldots how \emph{quickly} do I need to reduce this curve to eliminate the epidemic
 
 EC
 
@@ -1045,7 +1095,7 @@ FIG ss_pix/ess.Rout-1.pdf
 
 Measuring intervention speed
 
-	Define the \emph{speed} of an intervention be $\phi = r-\hat r$ -- the
+	Define intervention \emph{speed} $\phi = r-\hat r$ -- the
 	amount by which the intervention slows down spread. 
 
 	We then have:
