@@ -309,12 +309,10 @@ Linking framework
 	\mathrm{Generation~speed} (1/G)
 	$
 
-		$ r = \Rx / G $ (Wrong)
-
 	$
-	\mathrm{Epidemic~strength} = 
-	{\mathrm{Epidemic~speed} \over
-	\mathrm{Generation~speed}}
+	\mathrm{Epidemic~strength} (\Rx) = 
+	{\mathrm{Epidemic~speed} (r) \over
+	\mathrm{Generation~speed} (1/G)}
 	$
 
 		$ \Rx = r G $ (Wrong)
@@ -415,14 +413,12 @@ Filtered means
 Linking framework
 
 	$
-	\mathrm{Epidemic~speed} (r)= 
-	\mathrm{Epidemic~strength} (\Rx) \times
-	\mathrm{Generation~speed} (1/G)
+		\mathrm{Epidemic~strength} (\Rx) = 
+		{\mathrm{Epidemic~speed} (r) \over
+		\mathrm{Generation~speed} (1/G)}
 	$
 
-		$ r = \log(\Rx) / \hat G $,
-
-	where $\exp(-r\hat G) = \langle \exp(-r\tau) \rangle_g.$
+		$ \Rx  = \exp(r\hat G) $
 
 ----------------------------------------------------------------------
 
@@ -461,12 +457,14 @@ Filtered means have intuitive properties
 
 The filtering function
 		
-	$\exp(-\hat G/C) = \langle \exp(-\tau/C) \rangle_g$,
+	$\exp(-r \hat G) = \langle \exp(-r \tau) \rangle_g$,
 
 	$\hat G$ is the mean of the generation distribution $g(\tau)$ ...
 
 	Filtered by the discount function associated with the rate of
 	exponential growth of the epidemic 
+
+		i.e., the relative importance of a contribution at that time
 
 ----------------------------------------------------------------------
 
@@ -532,6 +530,25 @@ SS Moment approximations
 
 ----------------------------------------------------------------------
 
+Tangled web
+
+	The filtered mean is useful -- but complicated
+
+		Filtering function is not scale free.
+
+	Unless the \emph{generation interval} (not recovery time) is
+	absolutely fixed, $\hat G$ will change even when $g$ does not
+
+	How is
+	
+		$\Rx = \exp(r \hat G)$
+
+	Consistent with the result from ODEs
+
+		$\Rx = 1 + r \bar G?$
+
+--- ------------------------------------------------------------------
+
 An approximation
 
 	We connect these quantities with a moment approximation
@@ -546,6 +563,18 @@ An approximation
 		Simple and straightforward
 
 		When is it a useful approximation?
+
+----------------------------------------------------------------------
+
+Compound-interest interpretation
+
+	Define $\Rx \approx (1 + r \kappa \bar G)^{1/\kappa} \equiv X(r \bar G; 1/\kappa)$
+
+	$X$ is the compound-interest approximation to the exponential
+
+		Linear when $\kappa=1$ (i.e., when $g$ is exponential)
+
+		Approaches exponential as $\kappa \to 0$
 
 ----------------------------------------------------------------------
 
@@ -605,6 +634,18 @@ EC
 
 ----------------------------------------------------------------------
 
+Qualitative response
+
+	For a given value of $\bar G$, smaller values of $\kappa$ mean:
+
+		less variation in generation interval
+
+		less compounding of growth
+
+		greater \Rx\ required for a given $r$
+
+----------------------------------------------------------------------
+
 Fitting to Ebola
 
 	Simulate generation intervals based on data and approach from
@@ -638,6 +679,18 @@ FIG Generation_distributions/lognormal.curve.Rout.pdf
 
 ----------------------------------------------------------------------
 
+Linking framework
+
+	$
+		\mathrm{Epidemic~strength} (\Rx) = 
+		{\mathrm{Epidemic~speed} (r) \over
+		\mathrm{Generation~speed} (1/G)}
+	$
+
+		$ \Rx  = X(r\bar G; 1/\kappa)$
+
+----------------------------------------------------------------------
+
 Summary
 
 	Generation intervals are the missing link between $r$ and \Rx
@@ -647,9 +700,9 @@ Summary
 
 	For many practical applications:
 
-		Knowing the mean generation interval is not enough
+		Estimating the mean generation interval is not enough
 
-		But knowing the mean and CV may be enough
+		But estimating the mean and CV may be enough
 
 ----------------------------------------------------------------------
 
@@ -697,7 +750,15 @@ Forward and backward intervals
 
 FIG my_images/GI_PRSB_1.jpg
 
-CREDIT 16 Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
+CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
+
+----------------------------------------------------------------------
+
+What changes backward intervals?
+
+	Backward intervals differ from intrinsic intervals because:
+
+		the number of infected HERE!!
 
 ----------------------------------------------------------------------
 
