@@ -29,6 +29,7 @@ origins.draft.pdf: origins.txt
 ## Talk for SMB Jul 2017
 smb.outline.pdf: smb.txt
 smb.draft.pdf: smb.txt
+smb.final.pdf: smb.txt
 
 ## Copyright
 

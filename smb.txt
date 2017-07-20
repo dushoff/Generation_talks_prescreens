@@ -1,6 +1,4 @@
 
-----------------------------------------------------------------------
-
 Epidemic strength and speed: rethinking metrics for infectious disease spread and control.
 
 \vfill
@@ -16,6 +14,11 @@ Jonathan Dushoff
 \vfill
 
 ----------------------------------------------------------------------
+
+FIG web_drop/hourglass.jpg
+
+----------------------------------------------------------------------
+
 
 EXTRA Abstract
 
@@ -383,7 +386,7 @@ SS ``Effective'' generation times
 
 Box models
 
-WIDEFIG SIR_model_family/sir.three.pdf
+WIDEFIG SIR_model_family/sir.four.pdf
 
 WIDEFIG SIR_model_family/seir.four.pdf
 
@@ -458,9 +461,17 @@ Euler-Lotka equation
 
 Interpretation: generating functions
 
+BC
+
 	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
 
 	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
+
+NC
+
+CFIG web_drop/black_box.png
+
+EC
 
 ----------------------------------------------------------------------
 
@@ -475,6 +486,11 @@ Interpretation: ``effective'' generation times
 		$$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$$
 
 		$$\exp(-r\hat G) = \langle \exp(-r\tau) \rangle_g.$$
+
+		A filtered mean:
+		
+			The discounted value of $\hat G$ is the expectation of the discounted
+			values across the distribution
 
 ----------------------------------------------------------------------
 
@@ -639,7 +655,7 @@ An approximation
 
 	$\Rx \approx (1 + r \kappa \bar G)^{1/\kappa}$
 
-		Equal when $G$ has a gamma distribution
+		Equal when $g(\tau)$ has a gamma distribution
 
 		Simple and straightforward
 
@@ -772,7 +788,7 @@ Linking framework
 
 		$ r \approx (1/\bar G) \times \ell(\Rx; \kappa_g) $
 
-		$\ell$ is defined as the inverse of $X$
+		$\ell$ is the inverse of $X$
 
 ----------------------------------------------------------------------
 
@@ -793,7 +809,7 @@ Ebola burial example
 
 		Increases estimate of $\Rx$
 
-	\ldots increases variance
+	\ldots increases variation
 
 		Decreases estimate of $\Rx$
 
@@ -1065,9 +1081,7 @@ How fast do people need to be treated?
 	RHS is what we would get from an idealized ``find and remove''
 	intervention
 
-		Required treatment hazard is equal to $r$!
-
-		hazard is per-capita removal rate
+		Required treatment ``hazard'' (per-capita removal rate) is equal to $r$!
 
 ----------------------------------------------------------------------
 
@@ -1139,24 +1153,6 @@ Measuring intervention strength
 	distribution $g$.
 
 	Outbreak can be controlled if $\theta > \Rx$
-
-----------------------------------------------------------------------
-
-The strength paradigm
-
-	$k(\tau) = \Rx g(\tau)$
-	
-		$g$ is the intrinsic generation interval
-
-		$\Rx$ is the strength of the epidemic
-
-	If $L(\tau) \equiv L$, then $\theta=L$ is the strength of the intervention
-
-	In general, $\theta$ is a (harmonic) mean of $L$
-
-		weighted by $g(\tau)$, but not affected by \Rx.
-
-	Epidemic is controlled if $\theta > \Rx$
 
 ----------------------------------------------------------------------
 
@@ -1240,7 +1236,7 @@ Measuring intervention speed
 
 ----------------------------------------------------------------------
 
-The hazard scale
+EXTRA The hazard scale
 
 	The natural scale for thinking about \emph{speed} of interventions is the
 	\emph{hazard} of control as a function of time since infection $\tau$
@@ -1250,6 +1246,24 @@ The hazard scale
 	$L = \exp ( \int^\tau {h(\sigma) d\sigma} )$
 
 	The proportional rate at which risk is reduced
+
+----------------------------------------------------------------------
+
+The strength paradigm
+
+	$k(\tau) = \Rx g(\tau)$
+	
+		$g$ is the intrinsic generation interval
+
+		$\Rx$ is the strength of the epidemic
+
+	If $L(\tau) \equiv L$, then $\theta=L$ is the strength of the intervention
+
+	In general, $\theta$ is a (harmonic) mean of $L$
+
+		weighted by $g(\tau)$, but not affected by \Rx.
+
+	Epidemic is controlled if $\theta > \Rx$
 
 ----------------------------------------------------------------------
 
@@ -1265,7 +1279,7 @@ The speed paradigm
 
 	In general, $\phi$ is a (weird) mean of $h$
 
-		weighted by $b(\tau)$, but not (otherwise) affected by $r$.
+		weighted by $b(\tau)$, but not affected by $r$.
 
 	Epidemic is controlled if $\phi > r$
 
@@ -1287,7 +1301,7 @@ FIG ss_pix/HIVkernel.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
-Fast scenario
+High early transmission
 
 FIG ss_pix/HIVkernel.Rout-2.pdf
 
@@ -1300,7 +1314,7 @@ FIG ss_pix/HIVkernel.Rout-1.pdf
 ----------------------------------------------------------------------
 
 
-Slow scenario
+Low early transmission
 
 FIG ss_pix/HIVkernel.Rout-0.pdf
 
@@ -1429,7 +1443,7 @@ Examples
 
 		Information is speed-like
 
-		Interventions: vaccination (strength?); isoloation and control (speed?)
+		Interventions: vaccination (strength?); isolation and control (speed?)
 
 ----------------------------------------------------------------------
 
