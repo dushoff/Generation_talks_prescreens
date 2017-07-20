@@ -1,28 +1,3 @@
-EXTRA
-
-	Fix ebola plot Growing epidemics and elsewhere
-
-	Better titling and templating
-
-	Better estimate for C_ebola
-
-	Improve filtered mean pix (maybe add a blank one?)
-
-	Copies of C_various figures with explanations
-
-	Clock
-
-	Replace HIV generation pictures
-
-	Find and fix weird "R"
-
-	Add big R values for HIV scenarios
-
-	Legends
-
-	More approximation tests (measles, rabies)
-
-	More pictures for Chyun
 
 ----------------------------------------------------------------------
 
@@ -122,7 +97,7 @@ CFIG web_drop/ebola_ward.jpg
 
 NCC
 
-CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-3.pdf
+CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
 
 EC
 
@@ -225,7 +200,7 @@ Ebola outbreak
 
 FIG my_images/weitz_full.pdf
 
-$C \approx 1 \mathrm{month}$. Fast.
+$C \approx 1 \,\mathrm{month}$. Sort-of fast.
 
 ----------------------------------------------------------------------
 
@@ -233,15 +208,15 @@ Mexican flu
 
 FIG fitting_code/mexican_plots.Rout-0.pdf
 
-$C \approx 1 \mathrm{week}$. Not so fast.
+$C \approx 1 \,\mathrm{week}$. Sort-of fast.
 
 ----------------------------------------------------------------------
 
 HIV in sub-Saharan Africa
 
-FIG SIR_simulations/hiv_plot.Rout-0.pdf
+FIG SIR_simulations/za_gens.Rout-0.pdf
 
-$C \approx 18 \mathrm{month}$. Horrifyingly fast.
+$C \approx 18 \,\mathrm{month}$. Horrifyingly fast.
 
 ----------------------------------------------------------------------
 
@@ -355,6 +330,31 @@ EC
 
 ----------------------------------------------------------------------
 
+Ebola outbreak
+
+FIG my_images/weitz_full.pdf
+
+$C \approx 1 \,\mathrm{month}$, $G \approx 2 \,\mathrm{week}$
+
+----------------------------------------------------------------------
+
+Mexican flu
+
+FIG fitting_code/mexican_plots.Rout-0.pdf
+
+$C \approx 1 \,\mathrm{week}$, $G \approx 3 \,\mathrm{day}$
+
+----------------------------------------------------------------------
+
+HIV in sub-Saharan Africa
+
+FIG SIR_simulations/za_gens.Rout-0.pdf
+
+$C \approx 18 \,\mathrm{month}$, $G \approx 4 \,\mathrm{years}$
+
+----------------------------------------------------------------------
+
+
 Linking framework
 
 	Epidemic speed ($r$) is a \emph{product}:
@@ -371,9 +371,9 @@ Linking framework
 
 	Epidemic speed ($r$) is a \emph{product}:
 
-		something to do with generation speed $\times$
+		(something to do with) generation speed $\times$
 
-		something to do with epidemic strength
+		(something to do with) epidemic strength
 
 ----------------------------------------------------------------------
 
@@ -409,6 +409,8 @@ Renewal equation
 
 Infection kernel 
 
+BCC
+
 	$k(\tau)$ is the expected rate at which you infect at time $\tau$ after
 	being infected
 
@@ -419,6 +421,12 @@ Infection kernel
 	$k(\tau)/\Rx$ is a distribution:
 
 		$g(\tau)$, the \emph{intrinsic} generation distribution
+
+NCC
+
+FIG ss_pix/ess.Rout-2.pdf
+
+EC
 
 ----------------------------------------------------------------------
 
@@ -452,7 +460,7 @@ Interpretation: generating functions
 
 	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
 
-ADD WL citation
+	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
 
 ----------------------------------------------------------------------
 
@@ -486,13 +494,15 @@ Linking framework
 
 	Epidemic speed ($r$) is a \emph{product}:
 
-		something to do with generation speed $\times$
+		(something to do with) generation speed $\times$
 
-		something to do with epidemic strength
+		(something to do with) epidemic strength
 
 	In particular:
 
 		$ r = (1/\hat G) \times \log(\Rx) $
+
+		$ \hat G$ is the effective mean generation time
 
 ----------------------------------------------------------------------
 
@@ -520,7 +530,9 @@ Filtered means have intuitive properties
 
 		More late transmission means longer $\hat G$
 
-	As distribution gets narrower, $\hat G$ approaches the mean $\bar G$
+		Longer $\hat G$ means higher $\Rx$ for a given $r$
+
+	As distribution gets narrower, $\hat G$ increases toward the mean $\bar G$
 
 ----------------------------------------------------------------------
 
@@ -614,7 +626,7 @@ Tangled web
 
 	Consistent with the result from ODEs
 
-		$\Rx = 1 + r \bar G?$
+		$\Rx = 1 + r \bar G$?
 
 ----------------------------------------------------------------------
 
@@ -752,9 +764,9 @@ Linking framework
 
 	Epidemic speed ($r$) is a \emph{product}:
 
-		something to do with generation speed $\times$
+		(something to do with) generation speed $\times$
 
-		something to do with epidemic strength
+		(something to do with) epidemic strength
 
 	In particular:
 
@@ -763,6 +775,17 @@ Linking framework
 		$\ell$ is defined as the inverse of $X$
 
 ----------------------------------------------------------------------
+
+Other diseases
+
+	This approximation works suspiciously well for measles parameters
+
+	Noticeably less well for rabies parameters
+
+		Can be improved using gamma-based estimates of the moments
+
+----------------------------------------------------------------------
+
 
 Ebola burial example
 
@@ -791,6 +814,8 @@ Summary
 		Estimating the mean generation interval is not enough
 
 		But estimating the mean and CV may be enough
+
+		A good basis for understanding and propagating uncertainty
 
 	Filtered mean remains intuitively useful
 
@@ -847,7 +872,9 @@ BC
 
 NC
 
-CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-3.pdf
+CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
+
+CFIG SIR_simulations/za_gens.Rout-0.pdf
 
 EC
 
@@ -927,10 +954,6 @@ Strength: $\Rx$ -- the reproductive number
 BCC
 
 	Expected number of new cases per cases
-	
-	$\Rx = \beta D S/N$
-
-		Disease increases iff $\Rx>1$
 
 NCC
 
@@ -944,15 +967,11 @@ Speed: $r$ -- the growth rate
 
 BCC
 
-	$\ds i(t) \approx i(0) \exp(rt)$
-
-	$\ds C = 1/r$
-
-	$\ds T_2 = \ln(2)/r$
+	Instantaneous rate of growth: $\ds i(t) \approx i(0) \exp(rt)$
 
 NCC
 
-CFIG SIR_simulations/hiv_plot.Rout-0.pdf
+CFIG SIR_simulations/za_gens.Rout-0.pdf
 
 EC
 
@@ -962,15 +981,15 @@ Is \Rx\ better than $r$?
 
 	\Rx\ is better for long-term predictions
 
-		Final size, equilibria
+		$r$ is better for short-term predictions
 
-	$r$ is better for short-term predictions
+	\Rx\ gives a threshold for spread
 
-	\Rx\ gives a threshold for control
+		So does $r$!
 
-		and tells us how much control is necessary
+	\Rx\ can be compared with intervention strength
 
-	What about $r$?
+		???
 
 ----------------------------------------------------------------------
 
@@ -980,7 +999,19 @@ EXTRA SS HIV interventions
 
 Can treatment stop the HIV epidemic?
 
-FIG web_drop/cocktail.jpg
+BC
+
+	Modern treatments are well tolerated and highly effective
+
+	Virus is undetectable, and transmission is negligible
+
+	Can active testing and treatment stop the epidemic?
+
+NC
+
+CFIG web_drop/cocktail.jpg
+
+EC
 
 ----------------------------------------------------------------------
 
@@ -1031,7 +1062,12 @@ How fast do people need to be treated?
 
 		$1 = \int{k(\tau)\exp(-r\tau) \,d\tau}$
 
-	Required treatment hazard is equal to $r$!
+	RHS is what we would get from an idealized ``find and remove''
+	intervention
+
+		Required treatment hazard is equal to $r$!
+
+		hazard is per-capita removal rate
 
 ----------------------------------------------------------------------
 
@@ -1077,23 +1113,30 @@ PSLIDE Different interventions
 
 FIG ss_pix/ess.Rout-1.pdf
 
+
+----------------------------------------------------------------------
+
+Measuring the intervention
+
+	We imagine an intervention with potentially variable effect over the course of infection, $L(\tau)$
+
+	Assume the intervention takes
+	
+		$k(\tau) \to$
+	
+		$\hat k(\tau) = k(\tau)/L(\tau)$
+
 ----------------------------------------------------------------------
 
 Measuring intervention strength
 
-	Imagine we have an intervention that reduces transmission
+	Define intervention \emph{strength} $\theta = \Rx/\hatR$ -- the
+	proportional amount by which the intervention reduces transmission.
 
-		$k(\tau) \to k(\tau)/L(\tau)$
+	$\ds \theta = 1/\left\langle 1/L(\tau) \right\rangle_{g(\tau)}$
 
-		Define intervention \emph{strength} $\theta = \Rx/\hatR$ -- the
-		proportional amount by which the intervention reduces transmission.
-
-	We then have:
-
-		$\ds \theta = 1/\left\langle 1/L(\tau) \right\rangle_{g(\tau)}$
-
-		$\theta$ is \emph{the harmonic mean} of $L$, weighted by the generation
-		distribution $g$.
+	$\theta$ is \emph{the harmonic mean} of $L$, weighted by the generation
+	distribution $g$.
 
 	Outbreak can be controlled if $\theta > \Rx$
 
@@ -1197,6 +1240,19 @@ Measuring intervention speed
 
 ----------------------------------------------------------------------
 
+The hazard scale
+
+	The natural scale for thinking about \emph{speed} of interventions is the
+	\emph{hazard} of control as a function of time since infection $\tau$
+
+	$h = \frac{dL}{Ldt}$
+
+	$L = \exp ( \int^\tau {h(\sigma) d\sigma} )$
+
+	The proportional rate at which risk is reduced
+
+----------------------------------------------------------------------
+
 The speed paradigm
 
 	$k(\tau) = \exp(r\tau) b(\tau)$,
@@ -1207,7 +1263,7 @@ The speed paradigm
 
 	If $h(\tau) \equiv h$ ($L(\tau) \equiv \exp(h\tau)$), then $\phi=h$ is the speed of the intervention
 
-	In general, $\phi$ is a (weird) mean of $L$
+	In general, $\phi$ is a (weird) mean of $h$
 
 		weighted by $b(\tau)$, but not (otherwise) affected by $r$.
 
@@ -1221,7 +1277,7 @@ SS HIV example
 
 Epidemic speed
 
-NEW CURVE
+FIG SIR_simulations/za_gens.Rout-0.pdf
 
 ----------------------------------------------------------------------
 
@@ -1250,6 +1306,12 @@ FIG ss_pix/HIVkernel.Rout-0.pdf
 
 ----------------------------------------------------------------------
 
+Range of estimates
+
+FIG ss_pix/flat.scen.Rout-6.pdf
+
+----------------------------------------------------------------------
+
 Condom intervention
 
 FIG ss_pix/HIVmed.Rout-4.pdf
@@ -1262,15 +1324,27 @@ FIG ss_pix/HIVmed.Rout-5.pdf
 
 ----------------------------------------------------------------------
 
-Range of estimates
+Condom intervention
 
-FIG ss_pix/test.scen.Rout-4.pdf
+FIG ss_pix/flat.scen.Rout-4.pdf
 
 ----------------------------------------------------------------------
 
-Test and treat
+Test and treat (low early transmission)
 
 FIG ss_pix/test.scen.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+Test and treat (high early transmission)
+
+FIG ss_pix/test.scen.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+Range of estimates
+
+FIG ss_pix/test.scen.Rout-4.pdf
 
 ----------------------------------------------------------------------
 
@@ -1335,6 +1409,27 @@ NCC
 CFIG web_drop/tutu.jpg
 
 EC
+
+----------------------------------------------------------------------
+
+Examples
+
+	Measles
+
+		Information (long-term) is strength-like
+
+		Intervention (vaccine) also strength-like
+
+	HIV
+
+		Information and intervention are both ``speed-like''
+
+
+	Ebola vaccination
+
+		Information is speed-like
+
+		Interventions: vaccination (strength?); isoloation and control (speed?)
 
 ----------------------------------------------------------------------
 
