@@ -9,7 +9,13 @@ SMB 2017
 
 Jonathan Dushoff
 
+\vfill
+
 \url{http://lalashan.mcmaster.ca/DushoffLab}
+
+\url{http://www.ici3d.org}
+
+\url{https://github.com/dushoff/Generation_talks}
 
 \vfill
 
@@ -238,7 +244,6 @@ EC
 
 ----------------------------------------------------------------------
 
-
 DEFHEAD $\Rx$ and control
 
 	We describe epidemic strength with big \Rx
@@ -253,8 +258,19 @@ DEFHEAD $\Rx$ and control
 
 ----------------------------------------------------------------------
 
-DEFHEAD $\Rx$ and control
+DEFHEAD $\Rx$ and equilibrium
 
+	If we have $\Rx$ new cases per case when everyone is susceptible
+
+	And 1 case per case (on average) at equilibrium:
+
+		Proportion susceptible at equilibrium is $S = 1/\Rx$
+
+		Proportion affected at equilibrium is $V = 1 - 1/\Rx$
+
+----------------------------------------------------------------------
+
+DEFHEAD $\Rx$ and control
 
 BC
 
