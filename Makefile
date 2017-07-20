@@ -39,7 +39,7 @@ Sources += copy.tex
 
 ## Directories
 
-dirs += Lecture_images ss_pix Generation_distributions fitting_code SIR_model_family SIR_simulations
+dirs += Lecture_images ss_pix Generation_distributions fitting_code SIR_model_family SIR_simulations WA_Ebola_Outbreak
 dfiles: $(dirs:%=%/Makefile)
 Sources += $(ms) $(dirs)
 
