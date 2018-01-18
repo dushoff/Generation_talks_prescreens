@@ -8,7 +8,7 @@ target = Makefile
 
 # make files
 
-Sources += Makefile .gitignore README.md sub.mk LICENSE.md todo.md
+Sources += Makefile .ignore README.md sub.mk LICENSE.md todo.md
 
 Drop = ~/Dropbox
 include sub.mk
