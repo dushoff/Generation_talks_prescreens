@@ -21,7 +21,7 @@ Jonathan Dushoff
 
 ----------------------------------------------------------------------
 
-FIG web_drop/hourglass.jpg
+FIG webpix/hourglass.jpg
 
 ----------------------------------------------------------------------
 
@@ -38,11 +38,11 @@ SEC Introduction
 
 Infectious diseases
 
-FIG web_drop/flu_masks.jpg
+FIG webpix/flu_masks.jpg
 
 ----------------------------------------------------------------------
 
-FIG web_drop/burial_team.jpg
+FIG webpix/burial_team.jpg
 
 ----------------------------------------------------------------------
 
@@ -58,7 +58,7 @@ Models
 
 BCC
 
-CFIG web_drop/flat.png
+CFIG webpix/flat.png
 
 NCC
 
@@ -90,7 +90,7 @@ CFIG my_images/trans.jpg
 
 NCC
 
-CFIG web_drop/ew_measles.png
+CFIG webpix/ew_measles.png
 
 EC
 
@@ -102,7 +102,7 @@ SUBH Dynamic modeling connects scales
 
 BCC
 
-CFIG web_drop/ebola_ward.jpg
+CFIG webpix/ebola_ward.jpg
 
 NCC
 
@@ -118,7 +118,7 @@ SUBH Dynamic modeling connects scales
 
 BC
 
-CFIG web_drop/aedes.jpg
+CFIG webpix/aedes.jpg
 
 NC
 
@@ -238,7 +238,7 @@ CFIG my_images/endemic.Rout-0.png
 
 NC
 
-CFIG web_drop/aedes.jpg
+CFIG webpix/aedes.jpg
 
 EC
 
@@ -278,7 +278,7 @@ CFIG my_images/endemic.Rout-0.png
 
 NC
 
-CFIG web_drop/aedes.jpg
+CFIG webpix/aedes.jpg
 
 EC
 
@@ -485,7 +485,7 @@ BC
 
 NC
 
-CFIG web_drop/black_box.png
+CFIG webpix/black_box.png
 
 EC
 
@@ -595,7 +595,7 @@ BC
 
 NC
 
-FIG web_drop/burial_team.jpg
+FIG webpix/burial_team.jpg
 
 EC
 
@@ -1041,7 +1041,7 @@ BC
 
 NC
 
-CFIG web_drop/cocktail.jpg
+CFIG webpix/cocktail.jpg
 
 EC
 
@@ -1407,7 +1407,7 @@ FIG ss_pix/flat.scen.Rout-5.pdf
 
 TSS Ways of looking
 
-FIG web_drop/lens.jpg
+FIG webpix/lens.jpg
 
 ----------------------------------------------------------------------
 
@@ -1415,7 +1415,7 @@ Measuring the epidemic
 
 BCC
 
-CFIG web_drop/ew_measles.png
+CFIG webpix/ew_measles.png
 
 NCC
 
@@ -1429,11 +1429,11 @@ Measuring the intervention
 
 BCC
 
-CFIG web_drop/vaccination.jpg
+CFIG webpix/vaccination.jpg
 
 NCC
 
-CFIG web_drop/tutu.jpg
+CFIG webpix/tutu.jpg
 
 EC
 

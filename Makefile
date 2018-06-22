@@ -9,10 +9,27 @@ target = Makefile
 # make files
 
 Sources += Makefile .ignore README.md sub.mk LICENSE.md todo.md
+Ignore += .gitignore
 
-Drop = ~/Dropbox
-include sub.mk
-my_images = $(Drop)/my_images
+msrepo = https://github.com/dushoff
+ms = makestuff
+Ignore += local.mk
+-include local.mk
+-include $(ms)/os.mk
+
+# -include $(ms)/perl.def
+
+Sources += $(ms)
+Makefile: $(ms) $(ms)/Makefile
+$(ms):
+	git submodule add -b master $(msrepo)/$(ms)
+
+## Only meant to work with makestuff.sub
+$(ms)/%.mk: $(ms) $(ms)/Makefile ;
+$(ms)/Makefile:
+	git submodule update -i
+
+######################################################################
 
 -include $(ms)/newtalk.def
 
@@ -30,6 +47,8 @@ origins.draft.pdf: origins.txt
 smb.outline.pdf: smb.txt
 smb.draft.pdf: smb.txt
 smb.final.pdf: smb.txt
+
+## SMB 2018
 
 ## Copyright
 
@@ -53,8 +72,12 @@ Sources += $(ms) $(dirs)
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
 
--include $(ms)/newlatex.mk
--include $(ms)/newtalk.mk
-
 -include $(ms)/modules.mk
--include $(ms)/images.mk
+-include $(ms)/newtalk.mk
+-include $(ms)/texdeps.mk
+-include $(ms)/wrapR.mk
+-include $(ms)/webpix.mk
+
+######################################################################
+
+## -include $(ms)/images.mk

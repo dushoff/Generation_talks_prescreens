@@ -1,6 +1,3 @@
-[submodule "makestuff"]
-	path = makestuff
-	url = https://github.com/dushoff/makestuff.git
 [submodule "ss_pix"]
 	path = ss_pix
 	url = https://github.com/dushoff/ss_pix.git
@@ -22,3 +19,7 @@
 [submodule "WA_Ebola_Outbreak"]
 	path = WA_Ebola_Outbreak
 	url = https://github.com/Outbreak-analysis/WA_Ebola_Outbreak.git
+[submodule "makestuff"]
+	path = makestuff
+	url = https://github.com/dushoff/makestuff
+	branch = master
