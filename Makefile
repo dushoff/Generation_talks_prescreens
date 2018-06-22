@@ -33,7 +33,7 @@ $(ms)/Makefile:
 
 -include $(ms)/newtalk.def
 
-Ignore += beamer.tmp
+Ignore += beamer.tmp local.txt.format
 
 ######################################################################
 
