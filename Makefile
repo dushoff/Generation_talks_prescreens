@@ -48,6 +48,8 @@ smb.outline.pdf: smb.txt
 smb.draft.pdf: smb.txt
 smb.final.pdf: smb.txt
 
+## smb.draft.tex: smb.txt
+
 ## SMB 2018
 
 ## Copyright
@@ -62,10 +64,9 @@ mdirs += ss_pix Generation_distributions fitting_code SIR_model_family SIR_simul
 
 ## Disease_data fitting_code Generation_distributions SIR_model_family SIR_simulations ss_pix WA_Ebola_Outbreak
 
-dirs += $(mdirs)
+hotdirs += $(mdirs)
 
-dfiles: $(dirs:%=%/Makefile)
-Sources += $(ms) $(dirs)
+Sources += $(ms) $(mdirs)
 
 ######################################################################
 

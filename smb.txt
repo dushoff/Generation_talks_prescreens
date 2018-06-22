@@ -90,7 +90,7 @@ CFIG my_images/trans.jpg
 
 NCC
 
-CFIG webpix/ew_measles.png
+CFIG Disease_data/ewmeas.Rout-0.pdf
 
 EC
 
@@ -1415,7 +1415,7 @@ Measuring the epidemic
 
 BCC
 
-CFIG webpix/ew_measles.png
+CFIG Disease_data/ewmeas.Rout-0.pdf
 
 NCC
 
