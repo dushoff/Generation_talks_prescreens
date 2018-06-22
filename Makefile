@@ -33,6 +33,8 @@ $(ms)/Makefile:
 
 -include $(ms)/newtalk.def
 
+Ignore += beamer.tmp
+
 ######################################################################
 
 Sources += $(wildcard *.txt)
@@ -41,6 +43,7 @@ Sources += $(wildcard *.txt)
 ## sd ~/git/talks
 
 ## Talk for Origins symposium November 2016
+## Does not work and DO NOT fix
 origins.draft.pdf: origins.txt
 
 ## Talk for SMB Jul 2017
@@ -55,6 +58,17 @@ smb.final.pdf: smb.txt
 ## Copyright
 
 Sources += copy.tex
+
+######################################################################
+
+## Images
+
+Sources += $(wildcard *.step)
+
+ebola.html: ebola.step
+hiv.html: hiv.step
+pix.html: pix.step
+vaccine.html: vaccine.step
 
 ######################################################################
 
