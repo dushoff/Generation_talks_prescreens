@@ -54,6 +54,10 @@ smb.final.pdf: smb.txt
 ## smb.draft.tex: smb.txt
 
 ## SMB 2018
+Sources += hetero.abs
+hetero.outline.pdf: hetero.txt
+hetero.draft.pdf: hetero.txt
+hetero.final.pdf: hetero.txt
 
 ## Copyright
 
