@@ -42,6 +42,8 @@ Sources += $(wildcard *.txt)
 ## Earlier stuff is probably in
 ## sd ~/git/talks
 
+## Clearwater? Waterloo? Poster?
+
 ## Talk for Origins symposium November 2016
 ## Does not work and DO NOT fix
 origins.draft.pdf: origins.txt
@@ -52,6 +54,10 @@ smb.draft.pdf: smb.txt
 smb.final.pdf: smb.txt
 
 ## smb.draft.tex: smb.txt
+
+## Taiwan AIMS (overlap with SMB/hetero? what else?)
+Sources += aims.abs
+
 
 ## SMB 2018
 Sources += hetero.abs

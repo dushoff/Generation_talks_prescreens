@@ -1,3 +1,7 @@
+474. Generation intervals in heterogeneous populations
+ Dr. Jonathan Dushoff (McMaster University)
+ 12/07/2018, 11:30
+ 
 Generation intervals are an important and often-neglected component of the disease-transmission process. Mathematical models often assume exponentially distributed latent and infectious periods, but the interval between when a focal individual was infected and when they infect others (and the distribution of such intervals) can play a crucial role in parameterizing models and in making inferences and forecasts.
 
 I will outline some issues involved in estimating generation intervals in populations with both spatial and individual-level heterogeneity, and discuss how these effect disease forecasts and estimates of disease parameters.
