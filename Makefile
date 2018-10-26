@@ -15,23 +15,23 @@ msrepo = https://github.com/dushoff
 ms = makestuff
 Ignore += local.mk
 -include local.mk
--include $(ms)/os.mk
+-include makestuff/os.mk
 
-# -include $(ms)/perl.def
+# -include makestuff/perl.def
 
-Sources += $(ms)
-Makefile: $(ms) $(ms)/Makefile
-$(ms):
-	git submodule add -b master $(msrepo)/$(ms)
+Sources += makestuff
+Makefile: makestuff $(ms)/Makefile
+makestuff:
+	git submodule add -b master $(msrepo)/makestuff
 
 ## Only meant to work with makestuff.sub
-$(ms)/%.mk: $(ms) $(ms)/Makefile ;
-$(ms)/Makefile:
+makestuff/%.mk: $(ms) $(ms)/Makefile ;
+makestuff/Makefile:
 	git submodule update -i
 
 ######################################################################
 
--include $(ms)/newtalk.def
+-include makestuff/newtalk.def
 
 Ignore += beamer.tmp local.txt.format
 
@@ -59,6 +59,10 @@ smb.final.pdf: smb.txt
 
 ## smb.draft.tex: smb.txt
 
+
+######################################################################
+## Cancelled talks (father illness)
+
 ## Taiwan AIMS (overlap with SMB/hetero? what else?)
 Sources += aims.abs
 
@@ -67,6 +71,15 @@ Sources += hetero.abs
 hetero.outline.pdf: hetero.txt
 hetero.draft.pdf: hetero.txt
 hetero.final.pdf: hetero.txt
+######################################################################
+
+## Forecasting talk (developing for U. Chicago 2018 Oct 26 (Fri))
+
+fido.outline.pdf: fido.txt
+fido.draft.pdf: fido.txt
+fido.final.pdf: fido.txt
+
+######################################################################
 
 ## Copyright
 
@@ -87,25 +100,28 @@ vaccine.html: vaccine.step
 
 ## Directories
 
-mdirs += ss_pix Generation_distributions fitting_code SIR_model_family SIR_simulations WA_Ebola_Outbreak Disease_data
+mdirs += ss_pix Generation_distributions fitting_code SIR_model_family SIR_simulations WA_Ebola_Outbreak Disease_data 
+
+github = https://github.com
+notebook:
+	git submodule add -b gh-pages $(github)/dushoff/$@.git
 
 ## Disease_data fitting_code Generation_distributions SIR_model_family SIR_simulations ss_pix WA_Ebola_Outbreak
 
 hotdirs += $(mdirs)
+Sources += makestuff $(mdirs)
 
-Sources += $(ms) $(mdirs)
-
-######################################################################
-
--include $(ms)/git.mk
--include $(ms)/visual.mk
-
--include $(ms)/modules.mk
--include $(ms)/newtalk.mk
--include $(ms)/texdeps.mk
--include $(ms)/wrapR.mk
--include $(ms)/webpix.mk
+alldirs = $(mdirs) notebook
 
 ######################################################################
 
-## -include $(ms)/images.mk
+-include makestuff/git.mk
+-include makestuff/visual.mk
+
+## This all seems terribly broken
+## -include makestuff/repos/dushoff_repos.mk
+-include makestuff/repos/hotcold.mk
+-include makestuff/newtalk.mk
+-include makestuff/texdeps.mk
+-include makestuff/wrapR.mk
+-include makestuff/webpix.mk

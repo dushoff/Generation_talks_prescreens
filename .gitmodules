@@ -23,3 +23,7 @@
 	path = makestuff
 	url = https://github.com/dushoff/makestuff
 	branch = master
+[submodule "notebook"]
+	path = notebook
+	url = https://github.com/dushoff/notebook.git
+	branch = gh-pages

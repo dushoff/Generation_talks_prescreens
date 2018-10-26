@@ -1,0 +1,45 @@
+
+EXTRA Abstract
+
+Dynamical models are a key tool for forecasting infectious-disease
+outbreaks, and for evaluating the potential impacts of various
+interventions. I will talk about the under-appreciated role of disease
+generation times in disease modeling, and discuss applications to
+Ebola, canine rabies and HIV.
+
+----------------------------------------------------------------------
+
+
+NOFRAME
+
+\newcommand{\jdtitle}
+	{Forecasting infectious-disease outbreaks}
+\newcommand{\jdauth}
+	{Jonathan Dushoff, McMaster University}
+\newcommand{\years}
+	{2012--2018} 
+\newcommand{\wdate}
+	{U. Chicago, Oct 2018}
+
+----------------------------------------------------------------------
+
+WORKSHOP
+
+----------------------------------------------------------------------
+
+SEC Overview
+
+----------------------------------------------------------------------
+
+SS Problem
+
+----------------------------------------------------------------------
+
+SS Solution
+
+----------------------------------------------------------------------
+
+SS New problem
+
+----------------------------------------------------------------------
+
