@@ -100,7 +100,7 @@ Sources += $(ms) $(mdirs)
 -include $(ms)/newtalk.mk
 -include $(ms)/texdeps.mk
 -include $(ms)/wrapR.mk
-## -include $(ms)/webpix.mk
+-include $(ms)/webpix.mk
 
 ######################################################################
 
