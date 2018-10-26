@@ -35,6 +35,10 @@ $(ms)/Makefile:
 
 Ignore += beamer.tmp local.txt.format
 
+Sources += jd.local
+jd.lmk:
+	$(CP) jd.local local.mk
+
 ######################################################################
 
 Sources += $(wildcard *.txt)
