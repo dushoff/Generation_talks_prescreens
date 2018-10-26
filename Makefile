@@ -58,7 +58,6 @@ smb.final.pdf: smb.txt
 ## Taiwan AIMS (overlap with SMB/hetero? what else?)
 Sources += aims.abs
 
-
 ## SMB 2018
 Sources += hetero.abs
 hetero.outline.pdf: hetero.txt
@@ -101,7 +100,7 @@ Sources += $(ms) $(mdirs)
 -include $(ms)/newtalk.mk
 -include $(ms)/texdeps.mk
 -include $(ms)/wrapR.mk
--include $(ms)/webpix.mk
+## -include $(ms)/webpix.mk
 
 ######################################################################
 
