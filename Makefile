@@ -109,7 +109,7 @@ notebook:
 ## Disease_data fitting_code Generation_distributions SIR_model_family SIR_simulations ss_pix WA_Ebola_Outbreak
 
 hotdirs += $(mdirs)
-Sources += makestuff $(mdirs)
+Sources += makestuff $(mdirs) notebook
 
 alldirs = $(mdirs) notebook
 
