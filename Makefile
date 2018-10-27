@@ -75,6 +75,7 @@ hetero.final.pdf: hetero.txt
 
 ## Forecasting talk (developing for U. Chicago 2018 Oct 26 (Fri))
 
+## fido.draft.tex: fido.txt
 fido.outline.pdf: fido.txt
 fido.draft.pdf: fido.txt
 fido.final.pdf: fido.txt
@@ -99,12 +100,9 @@ vaccine.html: vaccine.step
 ######################################################################
 
 ## Directories
+## hacking around for Chicago; will this ever be good
 
 mdirs += ss_pix Generation_distributions fitting_code SIR_model_family SIR_simulations WA_Ebola_Outbreak Disease_data 
-
-github = https://github.com
-notebook:
-	git submodule add -b gh-pages $(github)/dushoff/$@.git
 
 ## Disease_data fitting_code Generation_distributions SIR_model_family SIR_simulations ss_pix WA_Ebola_Outbreak
 
@@ -112,6 +110,12 @@ hotdirs += $(mdirs)
 Sources += makestuff $(mdirs) notebook
 
 alldirs = $(mdirs) notebook
+
+notebook/%: notebook/Makefile
+	$(makethere)
+
+notebook/Makefile:
+	git submodule update -i
 
 ######################################################################
 

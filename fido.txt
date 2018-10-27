@@ -9,11 +9,12 @@ Ebola, canine rabies and HIV.
 
 ----------------------------------------------------------------------
 
-
 NOFRAME
 
 \newcommand{\jdtitle}
 	{Forecasting infectious-disease outbreaks}
+\newcommand{\jdsub}
+	{The role of generation intervals}
 \newcommand{\jdauth}
 	{Jonathan Dushoff, McMaster University}
 \newcommand{\years}
@@ -31,7 +32,34 @@ SEC Overview
 
 ----------------------------------------------------------------------
 
-SS Problem
+TSS Problem
+
+	I am fundamentally a math person \ldots
+
+----------------------------------------------------------------------
+
+PICSLIDE FIG notebook/pythagoras.Rout.pdf
+
+What is the pattern of Pythagorean triples of integers $a^2 + b^2 = c^2$?
+
+----------------------------------------------------------------------
+
+PICSLIDE FIG notebook/filledCircle.Rout-2.pdf
+
+Divide a square and a circle each into two complementary subsets that are pairwise similar
+
+----------------------------------------------------------------------
+
+PICSLIDE FIG notebook/average.Rout.pdf
+
+How many at-bats does it take to get a given batting average?
+
+----------------------------------------------------------------------
+
+RSLIDE Problem
+
+	I am fundamentally a math person \ldots, but I want to do work that is
+	relevant to people
 
 ----------------------------------------------------------------------
 
@@ -40,6 +68,54 @@ SS Solution
 ----------------------------------------------------------------------
 
 SS New problem
+
+----------------------------------------------------------------------
+
+SEC Model framework
+
+----------------------------------------------------------------------
+
+SS Compartmental models
+
+----------------------------------------------------------------------
+
+SS Pros and cons
+
+----------------------------------------------------------------------
+
+SS Generation intervals
+
+----------------------------------------------------------------------
+
+SEC The \rR\ relationship
+
+----------------------------------------------------------------------
+
+Ebola example
+
+----------------------------------------------------------------------
+
+Filtered means
+
+----------------------------------------------------------------------
+
+Approximations
+
+----------------------------------------------------------------------
+
+SEC Generations in time
+
+----------------------------------------------------------------------
+
+SEC Generations in space
+
+----------------------------------------------------------------------
+
+SEC Speed and strength
+
+----------------------------------------------------------------------
+
+HIV 
 
 ----------------------------------------------------------------------
 
