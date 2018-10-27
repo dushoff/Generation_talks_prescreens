@@ -50,9 +50,11 @@ Sources += $(wildcard *.txt)
 
 ## Talk for Origins symposium November 2016
 ## Does not work and DO NOT fix
+## IS in push!
 origins.draft.pdf: origins.txt
 
 ## Talk for SMB Jul 2017
+## Also in push
 smb.outline.pdf: smb.txt
 smb.draft.pdf: smb.txt
 smb.final.pdf: smb.txt
@@ -88,6 +90,9 @@ Sources += copy.tex
 
 ######################################################################
 
+## Is this sharing a good idea or not?
+imageDrop = ~/Dropbox/disease_model_lectures/
+
 ## Images
 
 Sources += $(wildcard *.step)
@@ -106,11 +111,21 @@ mdirs += ss_pix Generation_distributions fitting_code SIR_model_family SIR_simul
 
 ## Disease_data fitting_code Generation_distributions SIR_model_family SIR_simulations ss_pix WA_Ebola_Outbreak
 
+## pardirs may not be good; doing it on the plane to Chicago
+disdirs += Endemic_curves
+
+$(disdirs):
+	cd .. && $(MAKE) disease_model_talks
+	cd ../disease_model_talks && $(MAKE) $@ $@/Makefile
+	$(LN) ../disease_model_talks/$@ .
+
 hotdirs += $(mdirs)
+colddirs += $(disdirs)
 Sources += makestuff $(mdirs) notebook
 
-alldirs = $(mdirs) notebook
+alldirs += $(mdirs) notebook $(disdirs)
 
+## Is this necessary, or does hotcold work?
 notebook/%: notebook/Makefile
 	$(makethere)
 
@@ -122,10 +137,11 @@ notebook/Makefile:
 -include makestuff/git.mk
 -include makestuff/visual.mk
 
-## This all seems terribly broken
-## -include makestuff/repos/dushoff_repos.mk
--include makestuff/repos/hotcold.mk
 -include makestuff/newtalk.mk
 -include makestuff/texdeps.mk
 -include makestuff/wrapR.mk
 -include makestuff/webpix.mk
+-include makestuff/hotcold.mk
+
+## Repo stuff is definitely in flux
+## -include makestuff/repos/dushoff_repos.mk
