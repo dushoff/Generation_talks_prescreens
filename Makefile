@@ -111,19 +111,28 @@ mdirs += ss_pix Generation_distributions fitting_code SIR_model_family SIR_simul
 
 ## Disease_data fitting_code Generation_distributions SIR_model_family SIR_simulations ss_pix WA_Ebola_Outbreak
 
-## pardirs may not be good; doing it on the plane to Chicago
+## may not be good; doing it on the plane to Chicago
 disdirs += Endemic_curves
 
 $(disdirs):
 	cd .. && $(MAKE) disease_model_talks
 	cd ../disease_model_talks && $(MAKE) $@ $@/Makefile
 	$(LN) ../disease_model_talks/$@ .
+Ignore += $(disdirs)
 
+rabies_R0/figures: rabies_R0 ;
+pardirs += rabies_R0
+$(pardirs):
+	cd .. && $(MAKE) $@
+	$(LN) ../$@ .
+Ignore += $(pardirs)
+
+## Managing out of order
 hotdirs += $(mdirs)
 colddirs += $(disdirs)
 Sources += makestuff $(mdirs) notebook
 
-alldirs += $(mdirs) notebook $(disdirs)
+alldirs += $(mdirs) notebook $(disdirs) $(pardirs)
 
 ## Is this necessary, or does hotcold work?
 notebook/%: notebook/Makefile
@@ -131,6 +140,17 @@ notebook/%: notebook/Makefile
 
 notebook/Makefile:
 	git submodule update -i
+
+######################################################################
+
+tmpfigs:
+	$(MKDIR)
+
+%.png: %.svg
+	$(convert)
+
+tmpfigs/%: ~/Dropbox/HIV_presentations/images/%
+	$(copy)
 
 ######################################################################
 
