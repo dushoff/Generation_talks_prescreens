@@ -3,9 +3,11 @@ EXTRA
 
 * EXTRA
 
+* Stats are scary pic (a bad SL forecast)
+
 * Something about the hammer and nail
 
-* Linking (move most of the slide up, question whether to have it where it is)
+* Red carpet (right after first Big)
 
 * Intuition for narrowing (cf. current Qualitative response ? slide)
 
@@ -15,7 +17,7 @@ EXTRA
 	* Error not propagated
 	* Ad hoc methods
 
-* Rabies GI pix
+* Split Theory and simulation graph in two!
 
 ----------------------------------------------------------------------
 
@@ -250,17 +252,20 @@ FIG SIR_simulations/hiv_plot.Rout-4.pdf
 
 ----------------------------------------------------------------------
 
-Breaking assumptions
+Limitations
 
-	Spatial homogeneity: everywhere is the same
+	Many conclusions from this framework make strong assumptions:
 
-	Individual homogeneity: everyone is the same
+		\textbf{Spatial homogeneity:} everywhere is the same
 
-		and everyone is everywhere
+		\textbf{Individual homogeneity:} everyone is the same
 
-	Temporal homogeneity
+			and everyone is everywhere
 
-		It doesn't matter how long I've been infected, I'm either infected or not
+		\textbf{Temporal homogeneity:}
+
+			It doesn't matter how long I've been infected, I'm either infected or
+			not
 
 ----------------------------------------------------------------------
 
@@ -268,11 +273,11 @@ TSEC The \rR\ relationship
 
 	We're very interested in the relationship between little $r$ and \big \Rx.
 
-	We might have better estimates of $r$
+	We might have good estimates of $r$ only
 
 		e.g., West African Ebola outbreak, HIV in Africa
 
-	Or we might have better estimates of \Rx.
+	Or we might have good estimates of \Rx only
 
 		Measles, influenza
 
@@ -407,11 +412,15 @@ Linking framework
 
 	Epidemic speed ($r$) is a \emph{product}:
 
-		(something to do with) generation speed $\times$
+		(something to do with) generation speed 
 
-		(something to do with) epidemic strength
+		$\times$ (something to do with) epidemic strength
 
-	Epidemic strength (related to \Rx) is therefore q \emph{quotient}
+	Epidemic strength (related to \Rx) is therefore a \emph{quotient}
+
+		Epidemic speed
+
+		$\div$ (something to do with) generation speed
 
 ----------------------------------------------------------------------
 
@@ -510,20 +519,35 @@ Qualitative response
 
 ----------------------------------------------------------------------
 
-Fitting to Ebola
+Intuition
 
-	Simulate generation intervals based on data and approach from
-	WHO report
+	Longer generation times mean less speed
 
-	Use both lognormals and gammas
+		$\implies$ more strength, when speed is fixed
 
-		WHO used gammas
+	What about more variation?
 
-		Lognormals should be more challenging
+		More action (both before and after the mean time)
+
+		But what happens early is more important in a growing system
+
+	More variation means more speed
+
+		$\implies$ less strength, when speed is fixed
 
 ----------------------------------------------------------------------
 
-Approximating the distribution
+How well do approximations work
+
+	Simulate realistic generation intervals for various diseases
+
+	Compare approximate \rR\ relationship with known exact relationship
+
+		Known because we are testing ourselves with simulated data
+
+----------------------------------------------------------------------
+
+Ebola distribution
 
 BCC
 
@@ -537,9 +561,21 @@ EC
 
 ----------------------------------------------------------------------
 
-Approximating the curve
+Ebola curve
 
 FIG Generation_distributions/lognormal.curve.Rout.pdf
+
+----------------------------------------------------------------------
+
+Measles curve
+
+FIG link_calculations/measles.pdf
+
+----------------------------------------------------------------------
+
+Rabies curve
+
+FIG link_calculations/rabies.pdf
 
 ----------------------------------------------------------------------
 
@@ -550,6 +586,8 @@ Summary
 	We need better methods for estimating them, and propagating
 	uncertainty to other parts of the model
 
+	Filtered means may help with intuition
+
 	For many practical applications:
 
 		Estimating the mean generation interval is not enough
@@ -557,8 +595,6 @@ Summary
 		But estimating the mean and CV may be enough
 
 		A good basis for understanding and propagating uncertainty
-
-	Filtered mean remains intuitively useful
 
 ----------------------------------------------------------------------
 
@@ -649,6 +685,14 @@ What changes backward intervals?
 
 ----------------------------------------------------------------------
 
+Backward intervals
+
+WIDEFIG backward.jpg
+
+CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
+
+----------------------------------------------------------------------
+
 What changes forward intervals?
 
 	Who I am likely to infect depends on:
@@ -659,9 +703,9 @@ What changes forward intervals?
 
 ----------------------------------------------------------------------
 
-Theory and simulation
+Forward intervals
 
-FIG my_images/GI_PRSB_4.jpg
+WIDEFIG forward.jpg
 
 CREDIT Champredon and Dushoff, 2015. DOI:10.1098/rspb.2015.2026
 
@@ -682,7 +726,7 @@ Conclusion
 
 ----------------------------------------------------------------------
 
-TSEC Other kinds of interval
+TSEC Other kinds of generation interval
 
 	Once you think carefully about generation intervals, they're everywhere
 
@@ -696,7 +740,7 @@ Generations in space
 
 	How do local interactions affect realized generation intervals?
 
-FIG tmpfigs/network.png
+WIDEFIG tmpfigs/network.png
 
 ----------------------------------------------------------------------
 
@@ -716,7 +760,13 @@ Surprising results
 
 ----------------------------------------------------------------------
 
-EXTRA Pic from Daniel
+Observed and estimated intervals
+
+PIC WIDEFIG networkSEIR/fig/diagram.pdf
+
+----------------------------------------------------------------------
+
+PIC WIDEFIG networkSEIR/fig/corrected_box.Rout.pdf
 
 ----------------------------------------------------------------------
 
@@ -750,7 +800,11 @@ Rabies
 
 ----------------------------------------------------------------------
 
-EXTRA Pic from Mike
+FIG rabies_R0/Dogs_SIestPlots.Rout.pdf
+
+----------------------------------------------------------------------
+
+FIG rabies_correlations
 
 ----------------------------------------------------------------------
 
@@ -847,14 +901,33 @@ EC
 
 PSLIDE Different interventions
 
+BC
+
 FIG ss_pix/ess.Rout-2.pdf
+
+NC
+
+	idealized vaccination
+
+	removes a fixed proportion of people 
+
+EC
 
 ----------------------------------------------------------------------
 
 PSLIDE Different interventions
 
+BC
+
 FIG ss_pix/ess.Rout-1.pdf
 
+NC
+
+	idealized quarantine
+
+	removes people at a fixed rate
+
+EC
 
 ----------------------------------------------------------------------
 
@@ -958,7 +1031,28 @@ EC
 
 ----------------------------------------------------------------------
 
-Examples
+HIV
+
+	The importance of transmission speed to HIV control is easier to understand
+	using the speed paradigm
+
+		We know the speed of invasion
+
+			$\approx 0.7/\mathrm{yr}$
+
+			Characteristic scale $\approx 1.4\mathrm{yr}$
+
+		And can hypothesize the speed of intervention
+
+			Or aim to go fast enough
+
+----------------------------------------------------------------------
+
+Paradigms are complementary
+
+	HIV
+
+		Information and current intervention are both ``speed-like''
 
 	Measles
 
@@ -966,15 +1060,11 @@ Examples
 
 		Intervention (vaccine) also strength-like
 
-	HIV
-
-		Information and current intervention are both ``speed-like''
-
 	Ebola vaccination
 
 		Information is speed-like
 
-		Interventions: vaccination (strength?); isolation and control (speed?)
+		Pre-emptive vaccination is strength-like
 
 ----------------------------------------------------------------------
 
@@ -991,4 +1081,22 @@ Thanks
 	Collaborators
 
 	Funders: NSERC, CIHR
+
+----------------------------------------------------------------------
+
+Linking framework
+
+	Epidemic speed ($r$) is a \emph{product}:
+
+		(something to do with) generation speed $\times$
+
+		(something to do with) epidemic strength
+
+	In particular:
+
+		$ r \approx (1/\bar G) \times \ell(\Rx; \kappa_g) $
+
+		$\ell$ is the inverse of $X$
+
+----------------------------------------------------------------------
 

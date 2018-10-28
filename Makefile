@@ -107,9 +107,11 @@ vaccine.html: vaccine.step
 ## Directories
 ## hacking around for Chicago; will this ever be good
 
+## Module directories
 mdirs += ss_pix Generation_distributions fitting_code SIR_model_family SIR_simulations WA_Ebola_Outbreak Disease_data 
-
-## Disease_data fitting_code Generation_distributions SIR_model_family SIR_simulations ss_pix WA_Ebola_Outbreak
+hotdirs += $(mdirs)
+Sources += $(mdirs)
+alldirs += $(mdirs)
 
 ## may not be good; doing it on the plane to Chicago
 disdirs += Endemic_curves
@@ -118,21 +120,31 @@ $(disdirs):
 	cd .. && $(MAKE) disease_model_talks
 	cd ../disease_model_talks && $(MAKE) $@ $@/Makefile
 	$(LN) ../disease_model_talks/$@ .
+colddirs += $(disdirs)
 Ignore += $(disdirs)
+alldirs += $(disdirs)
 
 rabies_R0/figures: rabies_R0 ;
 pardirs += rabies_R0
+
+networkSEIR/fig: networkSEIR ;
+pardirs += networkSEIR
+
+pardirs += rabies_correlations
+
+## generation_links:  ;
+pardirs += generation_links
+
+## Hack
+# ln -s ../generation_links/link_calculations/ ##
+# sd link_calculations ##
+
+## pardirs not in alldirs; should be fine if we SYNC from gitroot sometimes.
 $(pardirs):
 	cd .. && $(MAKE) $@
 	$(LN) ../$@ .
 Ignore += $(pardirs)
-
-## Managing out of order
-hotdirs += $(mdirs)
-colddirs += $(disdirs)
-Sources += makestuff $(mdirs) notebook
-
-alldirs += $(mdirs) notebook $(disdirs) $(pardirs)
+colddirs += $(pardirs)
 
 ## Is this necessary, or does hotcold work?
 notebook/%: notebook/Makefile
@@ -141,8 +153,12 @@ notebook/%: notebook/Makefile
 notebook/Makefile:
 	git submodule update -i
 
+Sources += notebook
+alldirs += notebook 
+
 ######################################################################
 
+Ignore += tmpfigs
 tmpfigs:
 	$(MKDIR)
 
@@ -151,6 +167,17 @@ tmpfigs:
 
 tmpfigs/%: ~/Dropbox/HIV_presentations/images/%
 	$(copy)
+
+######################################################################
+
+## Manipulate images
+Ignore += *.jpg
+
+forward.jpg: my_images/GI_PRSB_4.jpg
+	convert -crop 1280x640+0+0 $< $@
+
+backward.jpg: my_images/GI_PRSB_4.jpg
+	convert -crop 1280x640+0+640 $< $@
 
 ######################################################################
 
