@@ -9,15 +9,9 @@ EXTRA
 
 * Red carpet (right after first Big)
 
-* Intuition for narrowing (cf. current Qualitative response ? slide)
-
-* Measles and rabies pix from Daniel paper
-
 * Generation intervals are the poor relations
 	* Error not propagated
 	* Ad hoc methods
-
-* Split Theory and simulation graph in two!
 
 ----------------------------------------------------------------------
 
@@ -804,7 +798,7 @@ FIG rabies_R0/Dogs_SIestPlots.Rout.pdf
 
 ----------------------------------------------------------------------
 
-FIG rabies_correlations
+FIG rabies_correlations/Dogs_correlations.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
@@ -1074,9 +1068,7 @@ FIG webpix/lens.jpg
 
 Thanks
 
-	Organizers
-
-	Audience
+	Department
 
 	Collaborators
 
