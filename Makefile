@@ -135,6 +135,7 @@ pardirs += rabies_correlations
 ## generation_links:  ;
 pardirs += generation_links
 
+Ignore += link_calculations
 ## Hack
 # ln -s ../generation_links/link_calculations/ ##
 # sd link_calculations ##

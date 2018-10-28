@@ -1,10 +1,6 @@
 
 EXTRA
 
-* EXTRA
-
-* Stats are scary pic (a bad SL forecast)
-
 * Something about the hammer and nail
 
 * Red carpet (right after first Big)
@@ -22,6 +18,18 @@ outbreaks, and for evaluating the potential impacts of various
 interventions. I will talk about the under-appreciated role of disease
 generation times in disease modeling, and discuss applications to
 Ebola, canine rabies and HIV.
+
+----------------------------------------------------------------------
+
+FIG webpix/hammer.jpg
+
+----------------------------------------------------------------------
+
+FIG webpix/spending.jpg
+
+----------------------------------------------------------------------
+
+FIG webpix/red_carpet.jpg
 
 ----------------------------------------------------------------------
 
@@ -116,7 +124,9 @@ New problem
 
 ----------------------------------------------------------------------
 
-EXTRA Ebola forecast pix
+Ebola forecasting
+
+FIG my_images/sierraLeone.hybrid.compare.Rout-2.pdf
 
 ----------------------------------------------------------------------
 
@@ -969,15 +979,19 @@ EC
 
 ----------------------------------------------------------------------
 
-PSLIDE Different interventions
-
-FIG ss_pix/ess.Rout-3.pdf
-
-----------------------------------------------------------------------
 
 PSLIDE Different interventions
+
+BC
 
 FIG ss_pix/ess.Rout-1.pdf
+
+NC
+
+	Sometimes it's easier to estimate strength, sometimes speed
+
+EC
+
 
 ----------------------------------------------------------------------
 
