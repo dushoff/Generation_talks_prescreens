@@ -112,11 +112,7 @@ FIG my_images/sierraLeone.hybrid.compare.Rout-2.pdf
 
 ----------------------------------------------------------------------
 
-SEC Model framework
-
-----------------------------------------------------------------------
-
-TSS Compartmental models
+TSEC Compartmental models
 
 SUBH Divide people into categories:
 
@@ -412,7 +408,7 @@ Linking framework
 
 		$\times$ (something to do with) epidemic strength
 
-	Epidemic strength (related to \Rx) is therefore a \emph{quotient}
+	Epidemic strength is therefore (approximately) a \emph{quotient}
 
 		Epidemic speed
 
@@ -500,6 +496,9 @@ Compound-interest interpretation
 		Linear when $\kappa=1$ (i.e., when $g$ is exponential)
 
 		Approaches exponential as $\kappa \to 0$
+
+	Key quantity is $r\bar G$: the relative length of the generation interval
+	compared to the characteristic time scale of spread
 
 ----------------------------------------------------------------------
 
@@ -770,15 +769,17 @@ Surprising results
 
 	\Rx\ on networks generally \emph{smaller} than values estimated using $r$.
 
-		Because people don't question the intrinsic generation interval
+		CREDIT Trapman et al., 2016. JRS Interface DOI:10.1098/rsif.2016.0288
+
+	Because people don't question the intrinsic generation interval
 
 		Local interactions
 
-			⇒ wasted contacts
+		⇒ wasted contacts
 
-			⇒ shorter generation intervals
+		⇒ shorter generation intervals
 
-			⇒ smaller estimates of \Rx.
+		⇒ smaller estimates of \Rx.
 
 ----------------------------------------------------------------------
 
