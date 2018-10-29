@@ -3,12 +3,6 @@ EXTRA
 
 * Something about the hammer and nail
 
-* Red carpet (right after first Big)
-
-* Generation intervals are the poor relations
-	* Error not propagated
-	* Ad hoc methods
-
 ----------------------------------------------------------------------
 
 EXTRA Abstract
@@ -18,18 +12,6 @@ outbreaks, and for evaluating the potential impacts of various
 interventions. I will talk about the under-appreciated role of disease
 generation times in disease modeling, and discuss applications to
 Ebola, canine rabies and HIV.
-
-----------------------------------------------------------------------
-
-FIG webpix/hammer.jpg
-
-----------------------------------------------------------------------
-
-FIG webpix/spending.jpg
-
-----------------------------------------------------------------------
-
-FIG webpix/red_carpet.jpg
 
 ----------------------------------------------------------------------
 
@@ -185,6 +167,14 @@ Big \Rx
 
 	A disease can invade a population if and only if $\Rx>1$.
 
+	Often focus on initial period (may also say $\Ro$)
+
+----------------------------------------------------------------------
+
+RHEAD Big \Rx
+
+FIG webpix/red_carpet.jpg
+
 ----------------------------------------------------------------------
 
 RHEAD Homogeneous endemic curve
@@ -247,6 +237,8 @@ little $r$
 
 		HIV in SSA, $C \approx 18 \mathrm{month}$
 
+	Often focus on initial period (may also say $r_0$)
+
 
 ----------------------------------------------------------------------
 
@@ -281,7 +273,7 @@ TSEC The \rR\ relationship
 
 		e.g., West African Ebola outbreak, HIV in Africa
 
-	Or we might have good estimates of \Rx only
+	Or we might have good estimates of \Rx\ only
 
 		Measles, influenza
 
@@ -336,10 +328,10 @@ WIDEFIG SIR_model_family/brides.four.pdf
 What happens if we account for burial transmission?
 
 	We've made the disease transmitting process slower, so obviously Ebola is
-	less dangerous than we thought
+	\emph{less} dangerous than we thought
 
-	We've added another source of transmission, so obviously Ebola is more
-	dangerous than we thought
+	We've added another source of transmission, so obviously Ebola is
+	\emph{more} dangerous than we thought
 
 	What we learn depends on what we know!
 
@@ -583,6 +575,24 @@ FIG link_calculations/rabies.pdf
 
 ----------------------------------------------------------------------
 
+Generation intervals
+
+BCC
+
+CFIG webpix/spending.jpg
+
+NCC
+
+	Sort of the poor relations of disease-modeling world
+
+	Ad hoc methods
+
+	Error often not propagated
+
+EC
+
+----------------------------------------------------------------------
+
 Summary
 
 	Generation intervals are the missing link between $r$ and \Rx
@@ -732,11 +742,19 @@ Conclusion
 
 TSEC Other kinds of generation interval
 
+BCC
+
+CFIG webpix/hammer.jpg
+
+NCC
+
 	Once you think carefully about generation intervals, they're everywhere
 
 	Spatial heterogeneity
 
 	Individual heterogeneity
+
+EC
 
 ----------------------------------------------------------------------
 
@@ -770,6 +788,8 @@ PIC WIDEFIG networkSEIR/fig/diagram.pdf
 
 ----------------------------------------------------------------------
 
+Outbreak estimation
+
 PIC WIDEFIG networkSEIR/fig/corrected_box.Rout.pdf
 
 ----------------------------------------------------------------------
@@ -801,6 +821,10 @@ Rabies
 		incubation time + extra latent time + waiting time
 
 		extra latent time + waiting time + incubation time
+
+----------------------------------------------------------------------
+
+FIG rabies_R0/figures/interval.png
 
 ----------------------------------------------------------------------
 
@@ -897,7 +921,8 @@ FIG ss_pix/ess.Rout-2.pdf
 
 NC
 
-	\ldots by what factor do I need to reduce this curve to eliminate the epidemic
+	\ldots by what factor do I need to reduce this curve to eliminate the
+	epidemic?
 
 EC
 
@@ -973,12 +998,12 @@ FIG ss_pix/ess.Rout-3.pdf
 
 NC
 
-	\ldots how \emph{quickly} do I need to reduce this curve to eliminate the epidemic
+	\ldots how \emph{quickly} do I need to reduce this curve to eliminate the
+	epidemic?
 
 EC
 
 ----------------------------------------------------------------------
-
 
 PSLIDE Different interventions
 
