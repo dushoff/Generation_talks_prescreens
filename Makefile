@@ -163,7 +163,7 @@ alldirs += notebook
 
 Ignore += tmpfigs
 tmpfigs:
-	$(MKDIR)
+	$(MD)
 
 %.png: %.svg
 	$(convert)
