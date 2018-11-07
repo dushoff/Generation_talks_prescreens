@@ -127,7 +127,10 @@ alldirs += $(disdirs)
 rabies_R0/figures: rabies_R0 ;
 pardirs += rabies_R0
 
-networkSEIR/fig: networkSEIR ;
+networkSEIR/fig: 
+	$(MAKE) networkSEIR
+	$(makethere)
+
 pardirs += networkSEIR
 
 pardirs += rabies_correlations
@@ -147,23 +150,24 @@ $(pardirs):
 	cd .. && $(MAKE) $@
 	$(LN) ../$@ .
 Ignore += $(pardirs)
-colddirs += $(pardirs)
+colddirs += networkSEIR/fig $(pardirs)
 
 ## Is this necessary, or does hotcold work?
-notebook/%: notebook/Makefile
+notebook/%: 
+	$(MAKE) notebook
 	$(makethere)
 
-notebook/Makefile:
-	git submodule update -i
+notebook:
+	git clone -b gh-pages https://github.com/dushoff/notebook.git
 
-Sources += notebook
+Ignore += notebook
 alldirs += notebook 
 
 ######################################################################
 
 Ignore += tmpfigs
 tmpfigs:
-	$(MD)
+	$(mkdir)
 
 %.png: %.svg
 	$(convert)
@@ -195,3 +199,4 @@ backward.jpg: my_images/GI_PRSB_4.jpg
 
 ## Repo stuff is definitely in flux
 ## -include makestuff/repos/dushoff_repos.mk
+## -include makestuff/repos/dushoff_repos.def
