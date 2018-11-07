@@ -136,9 +136,11 @@ pardirs += rabies_correlations
 pardirs += generation_links
 
 Ignore += link_calculations
-## Hack
-# ln -s ../generation_links/link_calculations/ ##
-# sd link_calculations ##
+## Not working!
+link_calculations: 
+	$(MAKE) generation_links
+	cd generation_links && $(MAKE) makestuff && $(MAKE) $@/Makefile
+	ln -s generation_links/$@/ .
 
 ## pardirs not in alldirs; should be fine if we SYNC from gitroot sometimes.
 $(pardirs):
