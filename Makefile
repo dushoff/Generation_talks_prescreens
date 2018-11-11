@@ -50,9 +50,11 @@ Sources += $(wildcard *.txt)
 
 ## Talk for Origins symposium November 2016
 ## Does not work and DO NOT fix
+## IS in push!
 origins.draft.pdf: origins.txt
 
 ## Talk for SMB Jul 2017
+## Also in push
 smb.outline.pdf: smb.txt
 smb.draft.pdf: smb.txt
 smb.final.pdf: smb.txt
@@ -94,6 +96,9 @@ Sources += copy.tex
 
 ######################################################################
 
+## Is this sharing a good idea or not?
+imageDrop = ~/Dropbox/disease_model_lectures/
+
 ## Images
 
 Sources += $(wildcard *.step)
@@ -108,30 +113,96 @@ vaccine.html: vaccine.step
 ## Directories
 ## hacking around for Chicago; will this ever be good
 
+## Module directories
 mdirs += ss_pix Generation_distributions fitting_code SIR_model_family SIR_simulations WA_Ebola_Outbreak Disease_data 
-
-## Disease_data fitting_code Generation_distributions SIR_model_family SIR_simulations ss_pix WA_Ebola_Outbreak
-
 hotdirs += $(mdirs)
-Sources += makestuff $(mdirs) notebook
+Sources += $(mdirs)
+alldirs += $(mdirs)
 
-alldirs = $(mdirs) notebook
+## may not be good; doing it on the plane to Chicago
+disdirs += Endemic_curves
 
-notebook/%: notebook/Makefile
+$(disdirs):
+	cd .. && $(MAKE) disease_model_talks
+	cd ../disease_model_talks && $(MAKE) $@ $@/Makefile
+	$(LN) ../disease_model_talks/$@ .
+colddirs += $(disdirs)
+Ignore += $(disdirs)
+alldirs += $(disdirs)
+
+rabies_R0/figures: rabies_R0 ;
+pardirs += rabies_R0
+
+networkSEIR/fig: 
+	$(MAKE) networkSEIR
 	$(makethere)
 
-notebook/Makefile:
-	git submodule update -i
+pardirs += networkSEIR
+
+pardirs += rabies_correlations
+
+## generation_links:  ;
+pardirs += generation_links
+
+Ignore += link_calculations
+## Not working!
+link_calculations: 
+	$(MAKE) generation_links
+	cd generation_links && $(MAKE) makestuff && $(MAKE) $@/Makefile
+	ln -s generation_links/$@/ .
+
+## pardirs not in alldirs; should be fine if we SYNC from gitroot sometimes.
+$(pardirs):
+	cd .. && $(MAKE) $@
+	$(LN) ../$@ .
+Ignore += $(pardirs)
+colddirs += networkSEIR/fig $(pardirs)
+
+## Is this necessary, or does hotcold work?
+notebook/%: 
+	$(MAKE) notebook
+	$(makethere)
+
+notebook:
+	git clone -b gh-pages https://github.com/dushoff/notebook.git
+
+Ignore += notebook
+alldirs += notebook 
+
+######################################################################
+
+Ignore += tmpfigs
+tmpfigs:
+	$(mkdir)
+
+%.png: %.svg
+	$(convert)
+
+tmpfigs/%: ~/Dropbox/HIV_presentations/images/%
+	$(copy)
+
+######################################################################
+
+## Manipulate images
+Ignore += *.jpg
+
+forward.jpg: my_images/GI_PRSB_4.jpg
+	convert -crop 1280x640+0+0 $< $@
+
+backward.jpg: my_images/GI_PRSB_4.jpg
+	convert -crop 1280x640+0+640 $< $@
 
 ######################################################################
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
 
-## This all seems terribly broken
-## -include makestuff/repos/dushoff_repos.mk
--include makestuff/repos/hotcold.mk
 -include makestuff/newtalk.mk
 -include makestuff/texdeps.mk
 -include makestuff/wrapR.mk
 -include makestuff/webpix.mk
+-include makestuff/hotcold.mk
+
+## Repo stuff is definitely in flux
+## -include makestuff/repos/dushoff_repos.mk
+## -include makestuff/repos/dushoff_repos.def
