@@ -1,0 +1,18 @@
+
+PRESENT
+
+Jonathan Dushoff, McMaster University
+
+	\emph{Scientific philosophy}: Measure twice, cut once
+
+		Simulate your assumptions
+
+		Simulate your analysis
+
+		Keep a data journal \ldots
+
+	\emph{Burning question}: How do we communicate to policy makers and the
+	public about uncertainty?
+
+HFIG 0.5 notebook/average.Rout.pdf
+
