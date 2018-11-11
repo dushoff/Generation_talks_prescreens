@@ -80,6 +80,12 @@ fido.outline.pdf: fido.txt
 fido.draft.pdf: fido.txt
 fido.final.pdf: fido.txt
 
+## bridging.draft.tex: bridging.txt
+bridging.outline.pdf: bridging.txt
+bridging.draft.pdf: bridging.txt
+bridging.final.pdf: bridging.txt
+
+
 ######################################################################
 
 ## Copyright
