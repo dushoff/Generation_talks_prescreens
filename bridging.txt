@@ -1,3 +1,15 @@
+EXTRA To do 
+
+Euler equation?
+
+Population-level slick equation
+
+New Barca pic from Daniel
+
+Look for pix in MS
+
+----------------------------------------------------------------------
+
 
 EXTRA Abstract
 
@@ -356,7 +368,7 @@ Linking framework
 
 ----------------------------------------------------------------------
 
-Filtered means
+EXTRA Filtered means
 
 	There is a sensible way to define an ``effective'' generation time 
 
@@ -800,29 +812,3 @@ Linking framework
 		$ r \approx (1/\bar G) \times \ell(\Rx; \kappa_g) $
 
 		$\ell$ is the inverse of $X$
-
-----------------------------------------------------------------------
-
-Conference suggestions
-
-	Philosophy
-
-		Measure twice, cut once
-
-			Simulate your assumptions
-
-			Simulate your analysis
-
-			Keep a data journal \ldots
-
-	Burning question
-		
-		How do we communicate to policy makers and the
-		public about uncertainty?
-
-----------------------------------------------------------------------
-
-The bat
-
-HFIG 0.8 notebook/average.Rout.pdf
-
