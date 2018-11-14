@@ -87,12 +87,6 @@ bridging.outline.pdf: bridging.txt
 bridging.draft.pdf: bridging.txt
 bridging.final.pdf: bridging.txt
 
-## birs_rant.draft.tex: birs_rant.txt
-birs_rant.outline.pdf: birs_rant.txt
-birs_rant.draft.pdf: birs_rant.txt
-birs_rant.final.pdf: birs_rant.txt
-
-
 ######################################################################
 
 ## Copyright

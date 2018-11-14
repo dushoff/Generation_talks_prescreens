@@ -743,7 +743,13 @@ PIC WIDEFIG networkSEIR/fig/diagram.pdf
 
 Outbreak estimation
 
-PIC WIDEFIG networkSEIR/fig/corrected_box.Rout.pdf
+PIC WIDEFIG my_images/cmp_reproductive.pdf
+
+----------------------------------------------------------------------
+
+Validation
+
+PIC WIDEFIG my_images/compare2.pdf
 
 ----------------------------------------------------------------------
 
