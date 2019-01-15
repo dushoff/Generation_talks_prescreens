@@ -87,7 +87,6 @@ bridging.outline.pdf: bridging.txt
 bridging.draft.pdf: bridging.txt
 bridging.final.pdf: bridging.txt
 
-
 ######################################################################
 
 ## Copyright
