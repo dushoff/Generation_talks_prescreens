@@ -158,6 +158,7 @@ Ignore += $(pardirs)
 colddirs += networkSEIR/fig $(pardirs)
 
 ## Is this necessary, or does hotcold work?
+## Why is notebook here at all??
 notebook/%: 
 	$(MAKE) notebook
 	$(makethere)
