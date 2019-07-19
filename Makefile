@@ -61,6 +61,10 @@ smb.final.pdf: smb.txt
 
 ## smb.draft.tex: smb.txt
 
+## SMB 2019 Time-since-infection overview
+overview.outline.pdf: overview.txt
+overview.draft.pdf: overview.txt
+overview.final.pdf: overview.txt
 
 ######################################################################
 ## Cancelled talks (father illness)
