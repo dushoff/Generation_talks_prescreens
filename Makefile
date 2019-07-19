@@ -86,6 +86,11 @@ fido.outline.pdf: fido.txt
 fido.draft.pdf: fido.txt
 fido.final.pdf: fido.txt
 
+## bridging.draft.tex: bridging.txt
+bridging.outline.pdf: bridging.txt
+bridging.draft.pdf: bridging.txt
+bridging.final.pdf: bridging.txt
+
 ######################################################################
 
 ## Copyright
@@ -157,6 +162,7 @@ Ignore += $(pardirs)
 colddirs += networkSEIR/fig $(pardirs)
 
 ## Is this necessary, or does hotcold work?
+## Why is notebook here at all??
 notebook/%: 
 	$(MAKE) notebook
 	$(makethere)
