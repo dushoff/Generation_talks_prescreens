@@ -154,11 +154,6 @@ link_calculations:
 	cd generation_links && $(MAKE) makestuff && $(MAKE) $@/Makefile
 	ln -s generation_links/$@/ .
 
-## pardirs not in alldirs; should be fine if we SYNC from gitroot sometimes.
-$(pardirs):
-	cd .. && $(MAKE) $@
-	$(LN) ../$@ .
-Ignore += $(pardirs)
 colddirs += networkSEIR/fig $(pardirs)
 
 ## Is this necessary, or does hotcold work?
