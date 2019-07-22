@@ -156,17 +156,16 @@ link_calculations:
 
 colddirs += networkSEIR/fig $(pardirs)
 
+######################################################################
+
 ## Is this necessary, or does hotcold work?
 ## Why is notebook here at all??
+pardirs += notebook 
 notebook/%: 
 	$(MAKE) notebook
 	$(makethere)
 
-notebook:
-	git clone -b gh-pages https://github.com/dushoff/notebook.git
-
 Ignore += notebook
-alldirs += notebook 
 
 ######################################################################
 
