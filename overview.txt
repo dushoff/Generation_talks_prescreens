@@ -17,7 +17,7 @@ Jonathan Dushoff
 
 ----------------------------------------------------------------------
 
-Why might we care about these models
+Why might we care about modeling TSI
 
 	Questions
 
