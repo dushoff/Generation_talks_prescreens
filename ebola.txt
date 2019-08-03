@@ -1,0 +1,169 @@
+
+Modeling Ebola
+
+----------------------------------------------------------------------
+
+SEC Introduction
+
+----------------------------------------------------------------------
+
+Goals
+
+----------------------------------------------------------------------
+
+Infectious diseases
+
+FIG webpix/flu_masks.jpg
+
+----------------------------------------------------------------------
+
+Infectious diseases
+
+FIG webpix/burial_team.jpg
+
+----------------------------------------------------------------------
+
+Models
+
+BCC
+
+CFIG webpix/flat.png
+
+NCC
+
+	A model is a simplified view of the world
+
+	Allows linking between assumptions and outcomes
+
+EC
+
+----------------------------------------------------------------------
+
+Dynamic models
+
+SUBH Connect scales
+
+WIDEFIG SIR_model_family/sir.three.pdf
+
+Small-scale events $\displaystyle \Leftrightarrow$ Large-scale patterns and outcomes
+
+----------------------------------------------------------------------
+
+Measles
+
+SUBH Dynamic modeling connects scales
+
+BCC
+
+CFIG my_images/trans.jpg
+
+NCC
+
+CFIG Disease_data/ewmeas.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Ebola
+
+SUBH Dynamic modeling connects scales
+
+BCC
+
+CFIG webpix/ebola_ward.jpg
+
+NCC
+
+CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Statistics and theory
+
+	Dynamical models are required to bridge scales
+
+	Statistical frameworks are required to interpret noisy data
+
+	We need tools that can incorporate dynamical mechanisms into
+	frameworks that allow statistical inference
+
+	Simple dynamical theories allow clearer interpretation and inspire
+	better techniques
+
+----------------------------------------------------------------------
+
+SEC Speed and strength
+
+----------------------------------------------------------------------
+
+Speed
+
+	We measure epidemic speed using little $r$:
+
+		The ratio of the \emph{change} in disease impact to the \emph{amount} of
+		disease impact
+
+		\emph{Units}: [1/time]
+
+		Disease increases like $e^{rt}$
+
+	Time scale is $C=1/r$
+
+----------------------------------------------------------------------
+
+Ebola outbreak
+
+FIG my_images/weitz_full.pdf
+
+$C \approx 1 \,\mathrm{month}$. Sort-of fast.
+
+----------------------------------------------------------------------
+
+Strength of epidemics
+
+BC
+
+CFIG my_images/endemic.Rout-0.png
+
+NC
+
+CFIG webpix/aedes.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+DEFHEAD $\Rx$ and control
+
+	We describe epidemic strength with big \Rx
+
+	Number of potential new cases per case
+
+		Not accounting for proportion susceptible
+
+	To eliminate disease, we must:
+
+		Reduce effective reproduction by a factor of \Rx
+
+----------------------------------------------------------------------
+
+SEC Dynamic effects of sub-clinical infections
+
+----------------------------------------------------------------------
+
+SEC Ethics of clinical trials
+
+----------------------------------------------------------------------
+
+SEC Dynamics and trial design
+
+----------------------------------------------------------------------
+
+SEC Challenges
+
+----------------------------------------------------------------------
+
+Conclusions

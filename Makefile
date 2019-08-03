@@ -6,6 +6,11 @@ target = Makefile
 
 ######################################################################
 
+vim_session: 
+	bash -cl "vm target.mk generations.txt ebola.txt smb.txt"
+
+######################################################################
+
 # make files
 
 Sources += Makefile .ignore README.md sub.mk LICENSE.md todo.md
@@ -21,10 +26,7 @@ Ignore += local.mk
 
 Sources += makestuff
 Makefile: makestuff $(ms)/Makefile
-makestuff:
-	git submodule add -b master $(msrepo)/makestuff
 
-## Only meant to work with makestuff.sub
 makestuff/%.mk: $(ms) $(ms)/Makefile ;
 makestuff/Makefile:
 	git submodule update -i
@@ -43,10 +45,9 @@ jd.lmk:
 
 Sources += $(wildcard *.txt)
 
-## Earlier stuff is probably in
-## sd ~/git/talks
+## Earlier stuff is possibly in bitbucket talks directory
 
-## Clearwater? Waterloo? Poster?
+## Clearwater? Waterloo? Poster? Arizona?
 
 ## Talk for Origins symposium November 2016
 ## Does not work and DO NOT fix
@@ -66,7 +67,17 @@ overview.outline.pdf: overview.txt
 overview.draft.pdf: overview.txt
 overview.final.pdf: overview.txt
 
+## Tokyo 2019
+generations.outline.pdf: generations.txt
+generations.draft.pdf: generations.txt ## generations.draft.log
+generations.final.pdf: generations.txt
+
+ebola.outline.pdf: ebola.txt
+ebola.draft.pdf: ebola.txt
+ebola.final.pdf: ebola.txt
+
 ######################################################################
+
 ## Cancelled talks (father illness)
 
 ## Taiwan AIMS (overlap with SMB/hetero? what else?)

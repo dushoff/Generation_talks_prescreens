@@ -1,147 +1,4 @@
 
-Epidemic strength and speed: rethinking metrics for infectious disease spread and control.
-
-\vfill
-
-SMB 2017
-
-\vfill
-
-Jonathan Dushoff
-
-\vfill
-
-\url{http://lalashan.mcmaster.ca/DushoffLab}
-
-\url{http://www.ici3d.org}
-
-\url{https://github.com/dushoff/Generation_talks}
-
-\vfill
-
-----------------------------------------------------------------------
-
-FIG webpix/hourglass.jpg
-
-----------------------------------------------------------------------
-
-
-EXTRA Abstract
-
-Mathematical modeling plays a key role in forecasting epidemics, and in planning interventions. Two key measures are "big ℛ" and "little r", which I will interpret as measuring epidemic "strength" and "speed". I will discuss how these two quantities are linked by generation-interval distributions, and interpret this link using approximations and "filtered means". I will talk about measuring the strength and speed of interventions, on the same scale that we measure strength and speed of epidemics, and argue that little r is under-rated – in particular, that there are strong parallels between the interpretation of big ℛ as a measure of how difficult an epidemic is to control, and an analogous interpretation of little r.
-
-----------------------------------------------------------------------
-
-SEC Introduction
-
-----------------------------------------------------------------------
-
-Infectious diseases
-
-FIG webpix/flu_masks.jpg
-
-----------------------------------------------------------------------
-
-FIG webpix/burial_team.jpg
-
-----------------------------------------------------------------------
-
-EXTRA
-
-FIG Disease_data/us2000.Rout.pdf
-
-----------------------------------------------------------------------
-
-# The role of modeling
-
-Models
-
-BCC
-
-CFIG webpix/flat.png
-
-NCC
-
-	A model is a simplified view of the world
-
-	Allows linking between assumptions and outcomes
-
-EC
-
-----------------------------------------------------------------------
-
-EXTRA Dynamic models
-
-SUBH Connect scales
-
-WIDEFIG SIR_model_family/sir.three.pdf
-
-Small-scale events $\displaystyle \Leftrightarrow$ Large-scale patterns and outcomes
-
-----------------------------------------------------------------------
-
-EXTRA Measles
-
-SUBH Dynamic modeling connects scales
-
-BCC
-
-CFIG my_images/trans.jpg
-
-NCC
-
-CFIG Disease_data/ewmeas.Rout-0.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-Ebola
-
-SUBH Dynamic modeling connects scales
-
-BCC
-
-CFIG webpix/ebola_ward.jpg
-
-NCC
-
-CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
-
-EC
-
-----------------------------------------------------------------------
-
-EXTRA Yellow fever
-
-SUBH Dynamic modeling connects scales
-
-BC
-
-CFIG webpix/aedes.jpg
-
-NC
-
-CFIG my_images/endemic.Rout-0.png
-
-EC
-
-----------------------------------------------------------------------
-
-Statistics and theory
-
-	Dynamical models are required to bridge scales
-
-	Statistical frameworks are required to interpret noisy data
-
-	We need tools that can incorporate dynamical mechanisms into frameworks that
-	allow statistical inference
-
-	Simple dynamical theories allow clearer interpretation and inspire better
-	techniques
-
-----------------------------------------------------------------------
-
 EXTRA SS Speed of epidemics
 
 ----------------------------------------------------------------------
@@ -229,6 +86,7 @@ $C \approx 18 \,\mathrm{month}$. Horrifyingly fast.
 
 ----------------------------------------------------------------------
 
+
 EXTRA TSS Strength of epidemics
 
 BC
@@ -273,7 +131,7 @@ DEFHEAD $\Rx$ and control
 
 BC
 
-CFIG ss_pix/endemic.Rout-0.png
+CFIG my_images/endemic.Rout-0.png
 
 NC
 

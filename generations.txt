@@ -1,0 +1,302 @@
+
+EXTRA
+
+	Intrinsic stuff when filling in renewal section
+
+----------------------------------------------------------------------
+
+Modeling and estimating generation intervals
+
+\vfill
+
+SMB 2019
+
+\vfill
+
+Jonathan Dushoff
+
+\vfill
+
+\url{https://github.com/dushoff/Generation_talks}
+
+\vfill
+
+----------------------------------------------------------------------
+
+SEC Introduction
+
+----------------------------------------------------------------------
+
+How long is a disease generation?
+
+BCC
+
+	If I am infected on day 0, when do I infect you?
+
+	When do you infect Dr.~Akhmetzhanov?
+
+	NCC
+
+CFIG Generation_distributions/gamHist.Rout-4.pdf
+
+	EC
+
+----------------------------------------------------------------------
+
+Goals
+
+	Introduce a generation-based framework for modeling
+
+	Discuss importance of generation intervals
+
+	Discuss how generation intervals are defined and measured
+
+	Maybe:
+
+		Talk about space and networks
+
+		Talk about individual-level heterogeneity
+
+----------------------------------------------------------------------
+
+SEC The renewal equation
+
+----------------------------------------------------------------------
+
+Compartments vs.~cohorts
+
+	We have a some simplified biological assumptions about how a disease spreads
+
+	We can implement these assumptions into a model:
+
+		Track \textbf{compartments}: S, I, R, \ldots
+
+		\emph{or} track \textbf{cohorts}
+
+----------------------------------------------------------------------
+
+Cohort approach
+
+	Model 
+
+		$$ \frac{dS}{dt} = \mu S - \beta SI/N$$
+
+		$$ \frac{dI}{dt} = \beta SI/N - \gamma I
+
+	What happens to a cohort infected at time 0?
+
+		$$ \frac{dI}{d\tau} = - \gamma I $$
+
+		$$ I(\tau) = I(0)\exp(-\gamma\tau) $$
+
+	We can write cohort equations for more complicated models as well
+
+----------------------------------------------------------------------
+
+Another view of the model
+
+	Model \textbf{incidence} $i$:
+
+		$$ \frac{dS}{dt} = \mu S - i(t) $$
+
+		$$ \frac{dI}{dt} = i(t) - \gamma I$$
+
+		$$ i(t) = \beta SI/N $$
+
+----------------------------------------------------------------------
+
+Cohort approach
+
+	We can use standard methods for the differential equation:
+
+		$$ \frac{dI}{dt} = i(t) - \gamma I
+
+	or we can just write down the answer using a cohort approach:
+
+		$$ I(t) = \int I(t-\tau, \tau)) d\tau$$
+
+		$$ = \int i(t-\tau) \exp (-\gamma \tau)) d\tau$$
+
+	This answer makes \emph{biological} sense
+
+----------------------------------------------------------------------
+
+Cohort-based equation
+
+	We can eliminate $I$ and write:
+
+		$$ \frac{dS}{dt} = \mu S - i(t) $$
+
+		$$ i(t) = \frac{S}{N} \int \beta i(t-\tau) \exp (-\gamma \tau)) d\tau$$
+
+	This is the \emph{same model}
+
+		Same assumptions, same dynamics
+
+	We can generalize our compartmental assumptions:
+
+		$$ i(t) = \frac{S}{N} \int i(t-\tau) k(\tau) d\tau$$
+
+----------------------------------------------------------------------
+
+Renewal equation
+
+	$$ i(t) = \frac{S}{N} \int i(t-\tau) k(\tau) d\tau$$
+
+	$k(\tau)$ is the infection ``kernel'' -- it describes how an incident (new,
+	occurring) case tends to cause other incident cases over time
+
+		As a function of time since infection
+
+	What are the advantages or disadvantages of this cohort-based approach,
+	compared to a general compartmental model?
+
+	How would you estimate an infection kernel?
+
+----------------------------------------------------------------------
+
+SEC The \rR\ link
+
+----------------------------------------------------------------------
+
+Speed
+
+	We measure epidemic speed using little $r$:
+
+		The ratio of the \emph{change} in disease impact to the \emph{amount} of
+		disease impact
+
+		\emph{Units}: [1/time]
+
+		Disease increases like $e^{rt}$
+
+	Time scale is $C=1/r$
+
+----------------------------------------------------------------------
+
+Ebola outbreak
+
+FIG my_images/weitz_full.pdf
+
+$C \approx 1 \,\mathrm{month}$. Sort-of fast.
+
+----------------------------------------------------------------------
+
+Mexican flu
+
+FIG fitting_code/mexican_plots.Rout-0.pdf
+
+$C \approx 1 \,\mathrm{week}$. Sort-of fast.
+
+----------------------------------------------------------------------
+
+HIV in sub-Saharan Africa
+
+FIG SIR_simulations/za_gens.Rout-0.pdf
+
+$C \approx 18 \,\mathrm{month}$. Horrifyingly fast.
+
+----------------------------------------------------------------------
+
+Strength of epidemics
+
+BC
+
+CFIG my_images/endemic.Rout-0.png
+
+NC
+
+CFIG webpix/aedes.jpg
+
+EC
+
+----------------------------------------------------------------------
+
+DEFHEAD $\Rx$ and control
+
+	We describe epidemic strength with big \Rx
+
+	Number of potential new cases per case
+
+		Not accounting for proportion susceptible
+
+	To eliminate disease, we must:
+
+		Reduce effective reproduction by a factor of \Rx
+
+----------------------------------------------------------------------
+
+SEC Types of generation interval
+
+----------------------------------------------------------------------
+
+SEC Estimation in time and space
+
+----------------------------------------------------------------------
+
+SEC Individual-level heterogeneity
+
+----------------------------------------------------------------------
+
+Conclusions
+
+
+
+SEC The \rR\ link
+
+----------------------------------------------------------------------
+
+SEC Types of generation interval
+
+----------------------------------------------------------------------
+
+SEC Estimation in time and space
+
+----------------------------------------------------------------------
+
+SEC Individual-level heterogeneity
+
+----------------------------------------------------------------------
+
+Conclusions
+
+
+
+Renewal equation
+
+	We can eliminate $I$ and write:
+
+		$$ \frac{dS}{dt} = \mu S - i(t) $$
+
+		$$ i(t) = \frac{S}{N} \int \beta i(t-\tau) \exp (-\gamma \tau)) d\tau$$
+
+	This is the \emph{same model}
+
+		Same assumptions, same dynamics
+
+	We can generalize our compartmental assumptions:
+
+		$$ i(t) = \frac{S}{N} \int i(t-\tau) k(\tau) d\tau$$
+
+----------------------------------------------------------------------
+
+SEC The \rR\ link
+
+----------------------------------------------------------------------
+
+SEC Types of generation interval
+
+----------------------------------------------------------------------
+
+SEC Estimation in time and space
+
+----------------------------------------------------------------------
+
+SEC Individual-level heterogeneity
+
+----------------------------------------------------------------------
+
+Conclusions
+
+
+
