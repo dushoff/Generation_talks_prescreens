@@ -77,7 +77,7 @@ ebola.draft.pdf: ebola.txt
 ebola.final.pdf: ebola.txt
 
 ## Legacy directory
-## Ignore += Ebola_math
+Ignore += Ebola_math
 
 Ebola_math: dir=~/Dropbox/academicWW/
 Ebola_math:
