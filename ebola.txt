@@ -1,4 +1,19 @@
 
+EXTRA Ebola burial example
+
+	Burial transmission increases the mean generation interval
+
+		Increases estimate of $\Rx$
+
+	\ldots increases variation
+
+		Decreases estimate of $\Rx$
+
+	Based on filtered mean, we know that the net effect of shifting transmission
+	later, must be to increase the estimate
+
+----------------------------------------------------------------------
+
 EXTRA Start and end by framing
 
 	Maybe use Close the loop stuff from Rutgers talk?
@@ -25,23 +40,34 @@ EXTRA Start and end by framing
 
 Modeling Ebola
 
+\vfill
+
+Tachikawa infectious boot camp,  2019
+
+\vfill
+
+Jonathan Dushoff, McMaster University
+
+\vfill
+
+\url{https://github.com/dushoff/Generation_talks}
+
+\vfill
+
+
 ----------------------------------------------------------------------
 
-SEC Introduction
+SEC Dynamic modeling of infectious diseases
 
 ----------------------------------------------------------------------
 
-Goals
-
-----------------------------------------------------------------------
-
-Infectious diseases
+EXTRA Infectious diseases
 
 FIG webpix/flu_masks.jpg
 
 ----------------------------------------------------------------------
 
-Infectious diseases
+EXTRA Infectious diseases
 
 FIG webpix/burial_team.jpg
 
@@ -119,22 +145,102 @@ Statistics and theory
 
 ----------------------------------------------------------------------
 
-SEC Speed and strength
+Questions
+
+BC
+
+	Your model is not reality
+
+	But it may help you answer a specific research question
+
+	The model you use should be tailored to your question
+
+		What are the relevant details?
+
+NC
+
+CFIG webpix/flat.png
+
+EC
 
 ----------------------------------------------------------------------
 
-Speed
+SEC Early Ebola models
 
-	We measure epidemic speed using little $r$:
+----------------------------------------------------------------------
 
-		The ratio of the \emph{change} in disease impact to the \emph{amount} of
-		disease impact
+TSS Process error and observation error
 
-		\emph{Units}: [1/time]
+	\textbf{Observation error}: we don't observe the world perfectly
 
-		Disease increases like $e^{rt}$
+	\textbf{Process error}: we think our dynamical system has a fundamental random component
 
-	Time scale is $C=1/r$
+		This is usually the only way to model processes where we treat
+		individuals as individuals
+
+	Doing both of these things is hard
+
+----------------------------------------------------------------------
+
+Lekone and Finkenstadt, 2006
+
+	Modeled a small 1995 Ebola outbreak in DR Congo
+
+	Used latent variables to consider both process error and observation error
+
+	Result: More realistic model $\implies$ more uncertainty
+
+	CREDIT DOI: 10.1111/j.1541-0420.2006.00609.x
+
+----------------------------------------------------------------------
+
+SS Projection models
+
+----------------------------------------------------------------------
+
+The CDC projection
+
+	Meltzer 2014 estimated $>1$ million cases by ``Jan 20, 2015'' unless
+	effective action was taken
+
+	Model contained contained many compartments for infected people
+
+		disease stage, linkage to treatment
+
+	Very crude handling of contact patterns, susceptibles
+
+----------------------------------------------------------------------
+
+FIG Ebola_math/straw.Rout.pdf
+
+----------------------------------------------------------------------
+
+Projection models
+
+	Wrong level of detail
+
+	But they did address a question:
+
+		Does the West Africa Ebola epidemic have the potential to be a global
+		crisis?
+
+----------------------------------------------------------------------
+
+The Epidemic
+
+BCC
+
+FIG Ebola_math/WHO/liberia150429.npc.tsplot.Rout-3.pdf
+
+NCC
+
+FIG Ebola_math/WHO/sierraLeone150429.npc.tsplot.Rout-3.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+SEC Burial
 
 ----------------------------------------------------------------------
 
@@ -142,7 +248,7 @@ Ebola outbreak
 
 FIG my_images/weitz_full.pdf
 
-$C \approx 1 \,\mathrm{month}$. Sort-of fast.
+$C \approx 1 \,\mathrm{month}$.
 
 ----------------------------------------------------------------------
 

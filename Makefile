@@ -76,6 +76,14 @@ ebola.outline.pdf: ebola.txt
 ebola.draft.pdf: ebola.txt
 ebola.final.pdf: ebola.txt
 
+## Legacy directory
+## Ignore += Ebola_math
+
+Ebola_math: dir=~/Dropbox/academicWW/
+Ebola_math:
+	$(linkdir)
+
+
 ######################################################################
 
 ## Cancelled talks (father illness)
@@ -129,7 +137,7 @@ vaccine.html: vaccine.step
 ## hacking around for Chicago; will this ever be good
 
 ## Module directories
-mdirs += ss_pix Generation_distributions fitting_code SIR_model_family SIR_simulations WA_Ebola_Outbreak Disease_data 
+mdirs += ss_pix Generation_distributions fitting_code SIR_model_family SIR_simulations WA_Ebola_Outbreak Disease_data contact_trace
 hotdirs += $(mdirs)
 Sources += $(mdirs)
 alldirs += $(mdirs)
@@ -146,7 +154,7 @@ Ignore += $(disdirs)
 alldirs += $(disdirs)
 
 rabies_R0/figures: rabies_R0 ;
-pardirs += rabies_R0
+pardirs += rabies_R0 contact_trace
 
 networkSEIR/fig: 
 	$(MAKE) networkSEIR
