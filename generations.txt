@@ -226,61 +226,327 @@ DEFHEAD $\Rx$ and control
 
 ----------------------------------------------------------------------
 
-SEC Types of generation interval
+DEFHEAD $\Rx$ and equilibrium
+
+	If we have $\Rx$ new cases per case when everyone is susceptible
+
+	And 1 case per case (on average) at equilibrium:
+
+		Proportion susceptible at equilibrium is $S = 1/\Rx$
+
+		Proportion affected at equilibrium is $V = 1 - 1/\Rx$
 
 ----------------------------------------------------------------------
 
-SEC Estimation in time and space
+DEFHEAD $\Rx$ and control
+
+BC
+
+CFIG my_images/endemic.Rout-0.png
+
+NC
+
+CFIG webpix/aedes.jpg
+
+EC
 
 ----------------------------------------------------------------------
 
-SEC Individual-level heterogeneity
+SEC Linking strength and speed 
 
 ----------------------------------------------------------------------
 
-Conclusions
+TSS Generation intervals
 
+BC
 
+CFIG Generation_distributions/gamHist.Rout-4.pdf
 
-SEC The \rR\ link
+NC
 
-----------------------------------------------------------------------
+	The generation distribution measures generations of the disease
 
-SEC Types of generation interval
+		Interval between ``index'' infection and resulting infection
 
-----------------------------------------------------------------------
+	Do fast disease generations mean more danger or less danger?
 
-SEC Estimation in time and space
-
-----------------------------------------------------------------------
-
-SEC Individual-level heterogeneity
+EC
 
 ----------------------------------------------------------------------
 
-Conclusions
+Conditional effect of generation time
+
+	\emph{Given} the reproductive number $\Rx$
+
+		faster generation time $G$ means faster growth rate $r$
+
+		More danger
+
+	\emph{Given} the growth rate $r$
+
+		faster generation time $G$ means \emph{smaller} \Rx
+
+		Less danger
+
+----------------------------------------------------------------------
 
 
+Generations and \Rx
+
+FIG Generation_distributions/steps.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+Generations and \Rx
+
+FIG Generation_distributions/steps.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+EXTRA Generations and \Rx
+
+BCC
+
+CFIG Generation_distributions/steps.Rout-1.pdf
+
+NCC
+
+CFIG Generation_distributions/steps.Rout-0.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+Ebola outbreak
+
+FIG my_images/weitz_full.pdf
+
+$C \approx 1 \,\mathrm{month}$, $G \approx 2 \,\mathrm{week}$
+
+----------------------------------------------------------------------
+
+Mexican flu
+
+FIG fitting_code/mexican_plots.Rout-0.pdf
+
+$C \approx 1 \,\mathrm{week}$, $G \approx 3 \,\mathrm{day}$
+
+----------------------------------------------------------------------
+
+HIV in sub-Saharan Africa
+
+FIG SIR_simulations/za_gens.Rout-0.pdf
+
+$C \approx 18 \,\mathrm{month}$, $G \approx 4 \,\mathrm{years}$
+
+----------------------------------------------------------------------
+
+
+Linking framework
+
+	Epidemic speed ($r$) is a \emph{product}:
+
+		generation speed $\times$
+
+		epidemic strength
+
+	WRONG
+
+----------------------------------------------------------------------
+
+Linking framework
+
+	Epidemic speed ($r$) is a \emph{product}:
+
+		(something to do with) generation speed $\times$
+
+		(something to do with) epidemic strength
+
+----------------------------------------------------------------------
+
+SS ``Effective'' generation times
+
+----------------------------------------------------------------------
+
+Box models
+
+WIDEFIG SIR_model_family/sir.four.pdf
+
+WIDEFIG SIR_model_family/seir.four.pdf
+
+----------------------------------------------------------------------
 
 Renewal equation
 
-	We can eliminate $I$ and write:
+	A broad framework that covers a wide range of
+	underlying models 
 
-		$$ \frac{dS}{dt} = \mu S - i(t) $$
+	$i(t) = S(t) \int{k(\tau)i(t-\tau) \,d\tau}$
 
-		$$ i(t) = \frac{S}{N} \int \beta i(t-\tau) \exp (-\gamma \tau)) d\tau$$
+		$i(t)$ is the \emph{rate} of new infections (per-capita incidence)
 
-	This is the \emph{same model}
+		$S(t)$ is the proportion of the population susceptible
 
-		Same assumptions, same dynamics
+		$k(\tau)$ measures how infectious a person is (on average) at time $\tau$
+		after becoming infected
 
-	We can generalize our compartmental assumptions:
-
-		$$ i(t) = \frac{S}{N} \int i(t-\tau) k(\tau) d\tau$$
+	For invasion, treat $S$ as constant
 
 ----------------------------------------------------------------------
 
-SEC The \rR\ link
+Infection kernel 
+
+BCC
+
+	$k(\tau)$ is the expected rate at which you infect at time $\tau$ after
+	being infected
+
+	$\int_\tau k(\tau) d\tau$ is the expected number of people infected:
+
+		\Rx\, the effective reproductive number
+
+	$k(\tau)/\Rx$ is a distribution:
+
+		$g(\tau)$, the \emph{intrinsic} generation distribution
+
+NCC
+
+FIG ss_pix/ess.Rout-2.pdf
+
+EC
+
+----------------------------------------------------------------------
+
+EXTRA Euler-Lotka equation 
+
+	Model
+
+		$$i(t) = \int{k(\tau)i(t-\tau) \,d\tau}$$
+
+	Exponential phase
+
+		Disease grows with characteristic time $C=1/r$
+
+		$$i(t) = i(0) \exp(rt)$$
+
+----------------------------------------------------------------------
+
+Euler-Lotka equation 
+
+	If we neglect $S$, we expect exponential growth
+
+	$1 = \int{k(\tau)\exp(-r\tau) \,d\tau}$
+
+		i.e., the total of \emph{discounted} contributions is 1
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+----------------------------------------------------------------------
+
+Interpretation: generating functions
+
+BC
+
+	$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$
+
+	CREDIT J Wallinga, M Lipsitch; DOI: 10.1098/rspb.2006.3754
+
+NC
+
+CFIG webpix/black_box.png
+
+EC
+
+----------------------------------------------------------------------
+
+Interpretation: ``effective'' generation times
+
+	Define the effective generation time so that 
+
+		$${\Rx} = \exp(r\hat G)$$
+
+	Then:
+
+		$$1/\Rx = \int{g(\tau)\exp(-r\tau) \,d\tau}$$
+
+		$$\exp(-r\hat G) = \langle \exp(-r\tau) \rangle_g.$$
+
+		A filtered mean:
+		
+			The discounted value of $\hat G$ is the expectation of the discounted
+			values across the distribution
+
+----------------------------------------------------------------------
+
+Filtered means
+
+	Many things we know about are examples of filtered means
+
+		Geometric mean (log function)
+
+		Harmonic mean (reciprocal function)
+
+		Root mean square (square) 
+
+----------------------------------------------------------------------
+
+Linking framework
+
+	Epidemic speed ($r$) is a \emph{product}:
+
+		(something to do with) generation speed $\times$
+
+		(something to do with) epidemic strength
+
+	In particular:
+
+		$ r = (1/\hat G) \times \log(\Rx) $
+
+		$ \hat G$ is the effective mean generation time
+
+----------------------------------------------------------------------
+
+$C = 1/r = 15d$
+
+FIG Generation_distributions/lognormal.filtered.Rout-0.pdf
+
+----------------------------------------------------------------------
+
+$C= 1/r  = 30d$
+
+FIG Generation_distributions/lognormal.filtered.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+$C= 1/r  = 45d$
+
+FIG Generation_distributions/lognormal.filtered.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+Filtered means have intuitive properties
+
+	Shifts in distribution shift the mean about how you would expect
+
+		More late transmission means longer $\hat G$
+
+		Longer $\hat G$ means higher $\Rx$ for a given $r$
+
+	As distribution gets narrower, $\hat G$ increases toward the mean $\bar G$
+
+----------------------------------------------------------------------
+
+The filtering function
+		
+	$\exp(-r \hat G) = \langle \exp(-r \tau) \rangle_g$,
+
+	$\hat G$ is the mean of the generation distribution $g(\tau)$ ...
+
+	Filtered by the discount function associated with the rate of
+	exponential growth of the epidemic 
+
+		i.e., the relative importance of a contribution at that time
+
 
 ----------------------------------------------------------------------
 
@@ -295,8 +561,4 @@ SEC Estimation in time and space
 SEC Individual-level heterogeneity
 
 ----------------------------------------------------------------------
-
-Conclusions
-
-
 

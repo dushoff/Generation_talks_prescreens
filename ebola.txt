@@ -1,4 +1,28 @@
 
+EXTRA Start and end by framing
+
+	Maybe use Close the loop stuff from Rutgers talk?
+
+	Relevant detail, Meltzer etc.
+
+	Ashton talk
+
+		Small/large stuff
+
+		Crude CDC projection stuff
+
+		Additional rRG arrow plots
+
+		Euler equation and Rhat derivations
+
+			Don't say "weighted" when talking about filtered means
+
+		Decent "approximation" section
+
+		A _treatment_ ethics slide; but make sure you understand it (read article?)
+
+----------------------------------------------------------------------
+
 Modeling Ebola
 
 ----------------------------------------------------------------------
@@ -150,6 +174,63 @@ DEFHEAD $\Rx$ and control
 
 ----------------------------------------------------------------------
 
+Example: Post-death transmission and safe burial
+
+BC
+
+	How much Ebola spread occurs before vs.\ after death
+
+	Highly context dependent
+
+		Funeral practices, disease knowledge
+
+	CREDIT Weitz and Dushoff \emph{Scientific Reports} 5:8751.
+
+NC
+
+FIG webpix/burial_team.jpg
+
+EC
+----------------------------------------------------------------------
+
+Standard disease model 
+
+WIDEFIG SIR_model_family/seir.four.pdf
+
+----------------------------------------------------------------------
+
+Disease model including post-death transmission
+
+WIDEFIG SIR_model_family/seird.four.pdf
+
+----------------------------------------------------------------------
+
+Disease model including post-death transmission
+
+WIDEFIG SIR_model_family/brides.four.pdf
+
+----------------------------------------------------------------------
+
+Scenarios
+
+FIG my_images/weitz_full.pdf
+
+----------------------------------------------------------------------
+
+Conclusions
+
+	Different parameters can produce indistinguishable early dynamics
+
+	More after-death transmission implies
+
+		Higher \Ro
+
+		Larger epidemics
+
+		Larger importance of safe burials
+
+----------------------------------------------------------------------
+
 SEC Dynamic effects of sub-clinical infections
 
 ----------------------------------------------------------------------
@@ -159,6 +240,8 @@ SEC Ethics of clinical trials
 ----------------------------------------------------------------------
 
 SEC Dynamics and trial design
+
+Rutgers has a few decent slides
 
 ----------------------------------------------------------------------
 
