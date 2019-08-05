@@ -136,23 +136,9 @@ $C \approx 18 \,\mathrm{month}$. Horrifyingly fast.
 
 ----------------------------------------------------------------------
 
-Strength of epidemics
-
-BC
-
-CFIG ss_pix/endemic.Rout-0.png
-
-NC
-
-SIDEFIG webpix/aedes.jpg
-
-EC
-
-----------------------------------------------------------------------
-
 DEFHEAD $\Rx$ and control
 
-	We describe epidemic strength with big \Rx
+	We describe epidemic \emph{strength} with big \Rx
 
 	Number of potential new cases per case
 
@@ -176,7 +162,7 @@ DEFHEAD $\Rx$ and equilibrium
 
 ----------------------------------------------------------------------
 
-PSLIDE DEFHEAD $\Rx$ and control
+PSLIDE $\Rx$ and control
 
 BC
 
