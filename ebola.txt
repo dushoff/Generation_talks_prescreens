@@ -16,6 +16,8 @@ EXTRA
 
 		A _treatment_ ethics slide; but make sure you understand it (read article?)
 
+	Font size for subclinical stuff
+
 	Think more Small/large stuff (eliminate? add some dialogue?)
 
 	Final Conclusions
@@ -353,14 +355,18 @@ Ebola burial example
 
 	Burial transmission increases the mean generation interval
 
-		Increases estimate of $\Rx$
+		\emph{Increases} estimate of $\Rx$
 
 	\ldots increases variation
 
-		Decreases estimate of $\Rx$
+		\emph{Decreases} estimate of $\Rx$
 
-	Based on filtered mean, we know that the net effect of shifting transmission
-	later, must be to increase the estimate
+	So what's the result?
+
+		It feels like it should increase
+
+		The filtered mean approach tells us: shifting transmission
+		later must increase the estimate
 
 ----------------------------------------------------------------------
 
@@ -376,7 +382,7 @@ Summary
 
 		Larger importance of safe burials
 
-	$r = \mathrm{strength}\times\mathrm{generation~speed}$
+	$r = \mathrm{strength~something}\times\mathrm{generation~speed~something}$
 
 ----------------------------------------------------------------------
 
@@ -389,8 +395,7 @@ TSS Dynamic effects of sub-clinical infections
 
 		In places where past Ebola outbreaks have occurred
 
-	What if $\approx$ 50% of people infected by the virus mount an
-	effective immune response with \emph{sub-clinical} infection?
+	What if $\approx$ 50% of infected people have \emph{sub-clinical} infection?
 
 	CREDIT Bellan et al. \emph{Lancet} 384:1499--1500, October 2014
 
@@ -429,7 +434,6 @@ What is the effect of sub-clinical immunity?
 		Incidence time series?
 
 ----------------------------------------------------------------------
-
 
 Ebola \emph{cases}
 
@@ -526,7 +530,19 @@ Relevant detail
 
 Report what we don't know?
 
-FIG Ebola_math/WHO/sierraLeone150429.npc.tsplot.Rout-3.pdf
+FIG my_images/sierraLeone.hybrid.compare.Rout-3.pdf
+
+----------------------------------------------------------------------
+
+What we don't know
+
+FIG my_images/sierraLeone.hybrid.compare.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+What we don't know!
+
+FIG my_images/sierraLeone.hybrid.compare.Rout-5.pdf
 
 ----------------------------------------------------------------------
 
@@ -544,9 +560,11 @@ BC
 
 	CREDIT Bellan et al., \emph{BMJ} 2014;349:g7518
 
+	Bellan et al., BMJ 2014;349:g7518
+
 NC
 
-FIG my_images/equipoise.jpg
+WIDEFIG my_images/equipoise.jpg
 
 EC
 
@@ -562,28 +580,7 @@ Vaccine trials
 
 ----------------------------------------------------------------------
 
-TSS Ethics
-
-BC
-
-	History of abuse $\to$ strong rules
-
-	In general, you can't put public good ahead of participant
-	interests
-
-	It's hard to achieve clinical equipoise -- would \emph{you} want to
-	be in the control arm?
-
-	CREDIT Bellan et al., \emph{BMJ} 2014;349:g7518
-
-NC
-
-FIG my_images/equipoise.jpg
-
-EC
-----------------------------------------------------------------------
-
-SUB The statistical power and validity of Ebola vaccine trials 
+SS The statistical power and validity of Ebola vaccine trials 
 
 ----------------------------------------------------------------------
 
@@ -611,6 +608,8 @@ Stepped-wedge controlled trials (SWCT)
 	It may be possible to evaluate efficacy by randomizing the
 	\emph{order} in which people are vaccinated
 
+		A free lunch!
+
 	This is a relatively \emph{fragile} idea
 
 		Not as powerful as RCT
@@ -622,19 +621,19 @@ Stepped-wedge controlled trials (SWCT)
 
 Simulated incidence
 
-FIG my_images/projection.pdf
+WIDEFIG my_images/projection.pdf
 
 ----------------------------------------------------------------------
 
 Vaccine rollout scenarios
 
-FIG my_images/rollout.pdf
+WIDEFIG my_images/rollout.pdf
 
 ----------------------------------------------------------------------
 
 Statistical validity
 
-FIG my_images/validity.pdf
+WIDEFIG my_images/validity.pdf
 
 ----------------------------------------------------------------------
 
@@ -654,7 +653,9 @@ Summary
 
 	RCTs surprisingly robust to all kinds of issues
 
-	Permutation tests can rescue of statistical validity 
+		Also allow prioritization
+
+	Permutation tests can rescue statistical validity 
 
 	Changing landscapes
 
@@ -663,6 +664,19 @@ Summary
 
 ----------------------------------------------------------------------
 
-Conclusions
+TSEC Conclusions
 
-ADD
+	Dynamic models allow us to explore the meaning of \emph{scientific}
+	hypotheses
+
+	They are most useful when they help us understand mechanisms in a scientific
+	way
+
+		Don't trust mathematical results that you can't explain
+
+	We need to recognize what we don't know
+
+		Use statistical methods
+
+		Recognize when your uncertainty is large
+
