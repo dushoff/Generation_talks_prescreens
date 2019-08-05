@@ -170,6 +170,7 @@ pardirs += generation_links
 ## 2019 Aug 05 (Mon) rescued plots
 pardirs += subclinical
 
+Ignore += $(pardirs)
 Ignore += link_calculations
 ## Not working!
 link_calculations: 
