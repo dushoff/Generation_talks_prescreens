@@ -71,6 +71,7 @@ overview.final.pdf: overview.txt
 generations.outline.pdf: generations.txt
 generations.draft.pdf: generations.txt ## generations.draft.log
 generations.final.pdf: generations.txt
+generations.handouts.pdf: generations.txt
 
 ebola.outline.pdf: ebola.txt
 ebola.draft.pdf: ebola.txt
