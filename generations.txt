@@ -3,23 +3,58 @@
 
 Modeling and estimating generation intervals
 
-\vfill
+PRESENT \vfill
 
 Tachikawa infectious boot camp,  2019
 
-\vfill
+PRESENT \vfill
 
 Jonathan Dushoff, McMaster University
 
-\vfill
+PRESENT \vfill
 
 \url{https://github.com/dushoff/Generation_talks}
 
-\vfill
+PRESENT \vfill
 
 ----------------------------------------------------------------------
 
-SEC Introduction
+TSEC Introduction
+
+	I talk too fast
+
+	I have too much to tell you
+
+	Interrupt me!
+
+----------------------------------------------------------------------
+
+PSLIDE Who am I? Head
+
+FIG notebook/average.Rout.pdf
+
+
+----------------------------------------------------------------------
+
+PSLIDE Who am I? Heart
+
+FIG notebook/pythagoras.Rout.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Who am I? Stomach
+
+FIG Disease_data/HIV_incidence_all.world.yearly.Rout.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE Who are you?
+
+	Math person
+
+	Health person
+
+	Biology person
 
 ----------------------------------------------------------------------
 
@@ -35,9 +70,15 @@ BCC
 
 NCC
 
-CFIG Generation_distributions/gamHist.Rout-4.pdf
+SIDEFIG Generation_distributions/gamHist.Rout-4.pdf
 
 EC
+
+----------------------------------------------------------------------
+
+PSLIDE How long is a disease generation?
+
+PIC WIDEFIG my_images/generation_girls.png
 
 ----------------------------------------------------------------------
 
@@ -73,7 +114,7 @@ Speed
 
 Ebola outbreak
 
-FIG my_images/weitz_full.pdf
+PIC FIG my_images/weitz_full.pdf
 
 $C \approx 1 \,\mathrm{month}$. Sort-of fast.
 
@@ -81,7 +122,7 @@ $C \approx 1 \,\mathrm{month}$. Sort-of fast.
 
 Mexican flu
 
-FIG fitting_code/mexican_plots.Rout-0.pdf
+PIC FIG fitting_code/mexican_plots.Rout-0.pdf
 
 $C \approx 1 \,\mathrm{week}$. Sort-of fast.
 
@@ -103,7 +144,7 @@ CFIG ss_pix/endemic.Rout-0.png
 
 NC
 
-CFIG webpix/aedes.jpg
+SIDEFIG webpix/aedes.jpg
 
 EC
 
@@ -135,7 +176,7 @@ DEFHEAD $\Rx$ and equilibrium
 
 ----------------------------------------------------------------------
 
-DEFHEAD $\Rx$ and control
+PSLIDE DEFHEAD $\Rx$ and control
 
 BC
 
@@ -155,7 +196,7 @@ SEC The link
 
 BC
 
-CFIG Generation_distributions/gamHist.Rout-4.pdf
+SIDEFIG Generation_distributions/gamHist.Rout-4.pdf
 
 NC
 
@@ -185,7 +226,7 @@ Conditional effect of generation time
 
 ----------------------------------------------------------------------
 
-Generations and \Rx
+PSLIDE Generations and \Rx
 
 FIG Generation_distributions/steps.Rout-1.pdf
 
@@ -193,21 +234,23 @@ FIG Generation_distributions/steps.Rout-1.pdf
 
 Generations and \Rx
 
-FIG Generation_distributions/steps.Rout-0.pdf
+PRESENT FIG Generation_distributions/steps.Rout-0.pdf
+
+NOTES DOUBLEFIG Generation_distributions/steps.Rout-1.pdf Generation_distributions/steps.Rout-0.pdf
 
 ----------------------------------------------------------------------
 
-Generations and \Rx
+PSLIDE Generations and \Rx
 
-BCC
+BSS
 
 CFIG Generation_distributions/steps.Rout-1.pdf
 
-NCC
+NSS
 
 CFIG Generation_distributions/steps.Rout-0.pdf
 
-EC
+ESS
 
 ----------------------------------------------------------------------
 
@@ -221,7 +264,7 @@ $C \approx 1 \,\mathrm{month}$, $G \approx 2 \,\mathrm{week}$
 
 Mexican flu
 
-FIG fitting_code/mexican_plots.Rout-0.pdf
+PRESENT FIG fitting_code/mexican_plots.Rout-0.pdf
 
 $C \approx 1 \,\mathrm{week}$, $G \approx 3 \,\mathrm{day}$
 
@@ -229,7 +272,7 @@ $C \approx 1 \,\mathrm{week}$, $G \approx 3 \,\mathrm{day}$
 
 HIV in sub-Saharan Africa
 
-FIG SIR_simulations/za_gens.Rout-0.pdf
+PRESENT FIG SIR_simulations/za_gens.Rout-0.pdf
 
 $C \approx 18 \,\mathrm{month}$, $G \approx 4 \,\mathrm{years}$
 
@@ -239,13 +282,13 @@ Linking framework
 
 BCC
 
-	Epidemic speed ($r$) is a \emph{product}:
+	PRESENT Epidemic speed ($r$) is a \emph{product}:
 
-		generation speed $\times$
+		PRESENT generation speed $\times$
 
-		epidemic strength
+		PRESENT epidemic strength
 
-	WRONG
+	PRESENT WRONG
 
 NCC
 
@@ -372,7 +415,7 @@ BC
 
 NC
 
-CFIG webpix/black_box.png
+SIDEFIG webpix/black_box.png
 
 EC
 
@@ -429,19 +472,19 @@ Linking framework
 
 ----------------------------------------------------------------------
 
-$C = 1/r = 15d$
+$C = 1/r = 10d$
 
 FIG Generation_distributions/lognormal.filtered.Rout-0.pdf
 
 ----------------------------------------------------------------------
 
-$C= 1/r  = 30d$
+$C= 1/r  = 20d$
 
 FIG Generation_distributions/lognormal.filtered.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
-$C= 1/r  = 45d$
+PSLIDE $C= 1/r  = 30d$
 
 FIG Generation_distributions/lognormal.filtered.Rout-2.pdf
 
@@ -507,13 +550,15 @@ Infectious times and waiting times
 
 		$5\mathrm{d}(1+\kappa)/2$
 
-			$\kappa$ will be defined soon
+			$\kappa$ measures the relative variation of the infectious period
 
 		The waiting period is not the infectious period
 
+			The exponential distribution is trying to trick you!
+
 ----------------------------------------------------------------------
 
-Infectious and waiting periods
+PSLIDE Infectious and waiting periods
 
 FIG Generation_distributions/waiting.Rout-1.pdf
 
@@ -560,7 +605,7 @@ Compound-interest interpretation
 
 ----------------------------------------------------------------------
 
-Moment approximation
+PSLIDE Moment approximation
 
 BCC
 
@@ -574,7 +619,7 @@ EC
 
 ----------------------------------------------------------------------
 
-Moment approximation
+PSLIDE Moment approximation
 
 BCC
 
@@ -588,7 +633,7 @@ EC
 
 ----------------------------------------------------------------------
 
-Moment approximation
+PSLIDE Moment approximation
 
 BCC
 
@@ -606,13 +651,15 @@ Moment approximation
 
 BCC
 
-WIDEFIG Generation_distributions/gamHist.Rout-6.pdf
+PRESENT WIDEFIG Generation_distributions/gamHist.Rout-6.pdf
 
 NCC
 
-WIDEFIG Generation_distributions/gamHist.Rout-7.pdf
+PRESENT WIDEFIG Generation_distributions/gamHist.Rout-7.pdf
 
 EC
+
+NOTES DOUBLEFIG Generation_distributions/gamHist.Rout-6.pdf Generation_distributions/gamHist.Rout-7.pdf
 
 ----------------------------------------------------------------------
 
@@ -645,13 +692,15 @@ Approximating the distribution
 
 BCC
 
-WIDEFIG Generation_distributions/lognormal.histcomp.Rout.pdf
+PRESENT WIDEFIG Generation_distributions/lognormal.histcomp.Rout.pdf
 
 NCC
 
-WIDEFIG Generation_distributions/lognormal.ga.histcomp.Rout.pdf
+PRESENT WIDEFIG Generation_distributions/lognormal.ga.histcomp.Rout.pdf
 
 EC
+
+NOTES DOUBLEFIG Generation_distributions/lognormal.histcomp.Rout.pdf Generation_distributions/lognormal.ga.histcomp.Rout.pdf
 
 ----------------------------------------------------------------------
 
@@ -793,13 +842,13 @@ Correcting
 
 ----------------------------------------------------------------------
 
-What changes backward intervals?
+PSLIDE What changes backward intervals?
 
 FIG my_images/GI_PRSB_2.jpg
 
 ----------------------------------------------------------------------
 
-What changes forward intervals?
+PSLIDE What changes forward intervals?
 
 FIG my_images/GI_PRSB_3.jpg
 
@@ -824,6 +873,8 @@ Conclusion
 	Lack of care in defining generation intervals can lead to bias
 
 		In particular, generation intervals look short during an epidemic outbreak
+
+			Makes diseases look less dangerous!
 
 		These biases can be corrected
 
