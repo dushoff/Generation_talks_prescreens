@@ -1,4 +1,8 @@
 
+# To do
+
+makestuff modernization!
+
 # Status
 
 Using pardirs, which means that people can't make this easily.

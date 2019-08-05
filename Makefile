@@ -83,7 +83,6 @@ Ebola_math: dir=~/Dropbox/academicWW/
 Ebola_math:
 	$(linkdir)
 
-
 ######################################################################
 
 ## Cancelled talks (father illness)
@@ -135,6 +134,7 @@ vaccine.html: vaccine.step
 
 ## Directories
 ## hacking around for Chicago; will this ever be good
+## Well, it's certainly not good now (Japan!)
 
 ## Module directories
 mdirs += ss_pix Generation_distributions fitting_code SIR_model_family SIR_simulations WA_Ebola_Outbreak Disease_data contact_trace
@@ -167,6 +167,9 @@ pardirs += rabies_correlations
 ## generation_links:  ;
 pardirs += generation_links
 
+## 2019 Aug 05 (Mon) rescued plots
+pardirs += subclinical
+
 Ignore += link_calculations
 ## Not working!
 link_calculations: 
@@ -174,7 +177,8 @@ link_calculations:
 	cd generation_links && $(MAKE) makestuff && $(MAKE) $@/Makefile
 	ln -s generation_links/$@/ .
 
-colddirs += networkSEIR/fig $(pardirs)
+## Why should pardirs be cold (or colder than mdirs)?
+hotdirs += networkSEIR/fig $(pardirs)
 
 ######################################################################
 
