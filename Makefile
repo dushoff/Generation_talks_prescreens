@@ -76,6 +76,7 @@ generations.handouts.pdf: generations.txt ## I think it's too long no matter wha
 ebola.outline.pdf: ebola.txt
 ebola.draft.pdf: ebola.txt
 ebola.final.pdf: ebola.txt
+ebola.complete.pdf: ebola.txt
 
 ## Legacy directory
 Ignore += Ebola_math
@@ -138,7 +139,9 @@ vaccine.html: vaccine.step
 ## Well, it's certainly not good now (Japan!)
 
 ## Module directories
-mdirs += ss_pix Generation_distributions fitting_code SIR_model_family SIR_simulations WA_Ebola_Outbreak Disease_data contact_trace
+mdirs += ss_pix Generation_distributions fitting_code SIR_model_family SIR_simulations Disease_data contact_trace
+
+## Changed to cold 2019 Aug 06 (Tue) under pressure
 hotdirs += $(mdirs)
 Sources += $(mdirs)
 alldirs += $(mdirs)
@@ -155,7 +158,7 @@ Ignore += $(disdirs)
 alldirs += $(disdirs)
 
 rabies_R0/figures: rabies_R0 ;
-pardirs += rabies_R0 contact_trace
+pardirs += rabies_R0 contact_trace WA_Ebola_Outbreak
 
 networkSEIR/fig: 
 	$(MAKE) networkSEIR
@@ -170,6 +173,9 @@ pardirs += generation_links
 
 ## 2019 Aug 05 (Mon) rescued plots
 pardirs += subclinical
+
+## 2019 Aug 06 (Tue): more rescuing
+pardirs += hybrid_fitting
 
 Ignore += $(pardirs)
 Ignore += link_calculations

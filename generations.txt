@@ -458,19 +458,19 @@ Linking framework
 
 ----------------------------------------------------------------------
 
-$C = 1/r = 10d$
+DEFHEAD $C = 1/r = 10d$
 
 FIG Generation_distributions/lognormal.filtered.Rout-0.pdf
 
 ----------------------------------------------------------------------
 
-$C= 1/r  = 20d$
+PSLIDE $C= 1/r  = 20d$
 
 FIG Generation_distributions/lognormal.filtered.Rout-1.pdf
 
 ----------------------------------------------------------------------
 
-PSLIDE $C= 1/r  = 30d$
+DEFHEAD $C= 1/r  = 30d$
 
 FIG Generation_distributions/lognormal.filtered.Rout-2.pdf
 

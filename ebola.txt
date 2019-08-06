@@ -1,45 +1,19 @@
 
-
-EXTRA
-
-	Start and end by framing
-
-		Maybe use Close the loop stuff from Rutgers talk?
-
-	Compare the burial sections
-
-	Ebola rR estimates?
-
-	ADD
-
-		Decent "approximation" section
-
-		A _treatment_ ethics slide; but make sure you understand it (read article?)
-
-	Font size for subclinical stuff
-
-	Think more Small/large stuff (eliminate? add some dialogue?)
-
-	Final Conclusions
-
-----------------------------------------------------------------------
-
 Modeling Ebola
 
-\vfill
+TSPACE
 
 Tachikawa infectious boot camp,  2019
 
-\vfill
+TSPACE
 
 Jonathan Dushoff, McMaster University
 
-\vfill
+TSPACE
 
 \url{https://github.com/dushoff/Generation_talks}
 
-\vfill
-
+TSPACE
 
 ----------------------------------------------------------------------
 
@@ -63,7 +37,7 @@ Models
 
 BCC
 
-CFIG webpix/flat.png
+SIDEFIG webpix/flat.png
 
 NCC
 
@@ -91,7 +65,7 @@ SUBH Dynamic modeling connects scales
 
 BCC
 
-CFIG my_images/trans.jpg
+SIDEFIG my_images/trans.jpg
 
 NCC
 
@@ -107,11 +81,11 @@ SUBH Dynamic modeling connects scales
 
 BCC
 
-CFIG webpix/ebola_ward.jpg
+SIDEFIG webpix/ebola_ward.jpg
 
 NCC
 
-CFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
+SIDEFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
 
 EC
 
@@ -145,7 +119,7 @@ BC
 
 NC
 
-CFIG webpix/flat.png
+SIDEFIG webpix/flat.png
 
 EC
 
@@ -216,17 +190,19 @@ The epidemic
 
 BCC
 
-FIG Ebola_math/WHO/liberia150429.npc.tsplot.Rout-3.pdf
+PRESENT WIDEFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf
 
 NCC
 
-FIG Ebola_math/WHO/sierraLeone150429.npc.tsplot.Rout-3.pdf
+PRESENT WIDEFIG WA_Ebola_Outbreak/sierraLeone.npc.tsplot.Rout-1.pdf
 
 EC
 
+NOTES DOUBLEFIG WA_Ebola_Outbreak/liberia.npc.tsplot.Rout-1.pdf WA_Ebola_Outbreak/sierraLeone.npc.tsplot.Rout-1.pdf
+
 ----------------------------------------------------------------------
 
-Reproductive number
+EXTRA Reproductive number
 
 	Expected number of new cases per cases
 	
@@ -240,7 +216,7 @@ Reproductive number
 
 ----------------------------------------------------------------------
 
-Simple conclusions
+EXTRA Simple conclusions
 
 	Tendency to oscillate
 
@@ -295,7 +271,7 @@ SS Burial transmission
 
 ----------------------------------------------------------------------
 
-Ebola outbreak
+REPSLIDE Ebola outbreak
 
 FIG my_images/weitz_full.pdf
 
@@ -321,19 +297,19 @@ BC
 
 NC
 
-FIG webpix/burial_team.jpg
+SIDEFIG webpix/burial_team.jpg
 
 EC
 
 ----------------------------------------------------------------------
 
-Standard disease model 
+PSLIDE Standard disease model 
 
 WIDEFIG SIR_model_family/seir.four.pdf
 
 ----------------------------------------------------------------------
 
-Disease model including post-death transmission
+PSLIDE Disease model including post-death transmission
 
 WIDEFIG SIR_model_family/seird.four.pdf
 
@@ -342,12 +318,6 @@ WIDEFIG SIR_model_family/seird.four.pdf
 Disease model including post-death transmission
 
 WIDEFIG SIR_model_family/brides.four.pdf
-
-----------------------------------------------------------------------
-
-Scenarios
-
-FIG my_images/weitz_full.pdf
 
 ----------------------------------------------------------------------
 
@@ -367,6 +337,12 @@ Ebola burial example
 
 		The filtered mean approach tells us: shifting transmission
 		later must increase the estimate
+
+----------------------------------------------------------------------
+
+REPSLIDE Scenarios
+
+FIG my_images/weitz_full.pdf
 
 ----------------------------------------------------------------------
 
@@ -401,19 +377,19 @@ TSS Dynamic effects of sub-clinical infections
 
 ----------------------------------------------------------------------
 
-Standard epidemic model
+PSLIDE Standard epidemic model
 
 WIDEFIG SIR_model_family/sir.three.pdf
 
 ----------------------------------------------------------------------
 
-Add an exposed class
+PSLIDE Add an exposed class
 
 WIDEFIG SIR_model_family/seir.four.pdf
 
 ----------------------------------------------------------------------
 
-Add asymptomatic immunity
+Add sub-clinical immunity
 
 WIDEFIG SIR_model_family/raise.four.pdf
 
@@ -437,29 +413,34 @@ What is the effect of sub-clinical immunity?
 
 Ebola \emph{cases}
 
-BC
+BCC
 
-CFIG subclinical/base.tsplots.Rout-0.png
+PRESENT CFIG subclinical/base.tsplots.Rout-0.png
 
-NC
+NCC
 
-CFIG subclinical/base.tsplots.Rout-1.png
+PRESENT CFIG subclinical/base.tsplots.Rout-1.png
 
 EC
+
+NOTES DOUBLEPDF subclinical/base.tsplots.Rout
+
 
 ----------------------------------------------------------------------
 
 Ebola \emph{infections}
 
-BC
+BCC
 
-CFIG subclinical/base.tsplots.Rout-2.png
+PRESENT CFIG subclinical/base.tsplots.Rout-2.png
 
-NC
+NCC
 
-CFIG subclinical/base.tsplots.Rout-3.png
+PRESENT CFIG subclinical/base.tsplots.Rout-3.png
 
 EC
+
+NOTES DOUBLEFIG subclinical/base.tsplots.Rout-2.png subclinical/base.tsplots.Rout-3.png
 
 ----------------------------------------------------------------------
 
@@ -481,6 +462,46 @@ Estimation
 
 		Hard: how protected are people who recover from it?
 
+
+----------------------------------------------------------------------
+
+PRESENT SS More on \Rx
+
+----------------------------------------------------------------------
+
+REPSLIDE Fitting to Ebola
+
+	Simulate generation intervals based on data and approach from
+	WHO report
+
+	Use both lognormals and gammas
+	
+		WHO used gammas
+
+		Lognormals should be more challenging
+
+----------------------------------------------------------------------
+
+REPSLIDE Approximating the distribution
+
+BCC
+
+PRESENT WIDEFIG Generation_distributions/lognormal.histcomp.Rout.pdf
+
+NCC
+
+PRESENT WIDEFIG Generation_distributions/lognormal.ga.histcomp.Rout.pdf
+
+EC
+
+NOTES DOUBLEFIG Generation_distributions/lognormal.histcomp.Rout.pdf Generation_distributions/lognormal.ga.histcomp.Rout.pdf
+
+----------------------------------------------------------------------
+
+REPSLIDE Approximating the curve
+
+FIG Generation_distributions/lognormal.curve.Rout.pdf
+
 ----------------------------------------------------------------------
 
 SEC Forecasting
@@ -501,15 +522,18 @@ CREDIT https://doi.org/10.1016/j.epidem.2017.02.011
 
 ----------------------------------------------------------------------
 
-Why do we see medium-sized epidemics?
+PSLIDE What else do we need to add?
 
 BC
 
-	why.txt
+
+Why do we see medium-sized epidemics?
+
+CFIG subclinical/ebola.curve.Rout-0.pdf
 
 NC
 
-CFIG subclinical/ebola.curve.Rout-0.pdf
+CFIG webpix/question.png
 
 EC
 
@@ -528,21 +552,33 @@ Relevant detail
 
 ----------------------------------------------------------------------
 
-Report what we don't know?
+PSLIDE Report what we don't know?
 
-FIG my_images/sierraLeone.hybrid.compare.Rout-3.pdf
+FIG hybrid_fitting/sierraLeone.hybrid.compare.Rout-0.pdf
 
 ----------------------------------------------------------------------
 
-What we don't know
+PSLIDE What we don't know
 
-FIG my_images/sierraLeone.hybrid.compare.Rout-2.pdf
+FIG hybrid_fitting/sierraLeone.hybrid.compare.Rout-1.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE What we don't know
+
+FIG hybrid_fitting/sierraLeone.hybrid.compare.Rout-2.pdf
+
+----------------------------------------------------------------------
+
+PSLIDE What we don't know
+
+FIG hybrid_fitting/sierraLeone.hybrid.compare.Rout-4.pdf
 
 ----------------------------------------------------------------------
 
 What we don't know!
 
-FIG my_images/sierraLeone.hybrid.compare.Rout-5.pdf
+FIG hybrid_fitting/sierraLeone.hybrid.compare.Rout-5.pdf
 
 ----------------------------------------------------------------------
 
@@ -560,11 +596,9 @@ BC
 
 	CREDIT Bellan et al., \emph{BMJ} 2014;349:g7518
 
-	Bellan et al., BMJ 2014;349:g7518
-
 NC
 
-WIDEFIG my_images/equipoise.jpg
+PRESENT WIDEFIG my_images/equipoise.jpg
 
 EC
 
