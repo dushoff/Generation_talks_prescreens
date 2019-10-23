@@ -80,13 +80,14 @@ hetero.final.pdf: hetero.txt
 
 ######################################################################
 
-## Forecasting talk (developing for U. Chicago 2018 Oct 26 (Fri))
+## Forecasting talk (U. Chicago 2018 Oct 26 (Fri))
 
 ## fido.draft.tex: fido.txt
 fido.outline.pdf: fido.txt
 fido.draft.pdf: fido.txt
 fido.final.pdf: fido.txt
 
+## BIRS
 ## bridging.draft.tex: bridging.txt
 bridging.outline.pdf: bridging.txt
 bridging.draft.pdf: bridging.txt
