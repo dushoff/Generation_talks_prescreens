@@ -6,6 +6,11 @@ target = Makefile
 
 ######################################################################
 
+vim_session: 
+	bash -cl "vm target.mk generations.txt ebola.txt smb.txt"
+
+######################################################################
+
 # make files
 
 Sources += Makefile .ignore README.md sub.mk LICENSE.md todo.md
@@ -21,10 +26,7 @@ Ignore += local.mk
 
 Sources += makestuff
 Makefile: makestuff $(ms)/Makefile
-makestuff:
-	git submodule add -b master $(msrepo)/makestuff
 
-## Only meant to work with makestuff.sub
 makestuff/%.mk: $(ms) $(ms)/Makefile ;
 makestuff/Makefile:
 	git submodule update -i
@@ -43,10 +45,9 @@ jd.lmk:
 
 Sources += $(wildcard *.txt)
 
-## Earlier stuff is probably in
-## sd ~/git/talks
+## Earlier stuff is possibly in bitbucket talks directory
 
-## Clearwater? Waterloo? Poster?
+## Clearwater? Waterloo? Poster? Arizona?
 
 ## Talk for Origins symposium November 2016
 ## Does not work and DO NOT fix
@@ -66,7 +67,26 @@ overview.outline.pdf: overview.txt
 overview.draft.pdf: overview.txt
 overview.final.pdf: overview.txt
 
+## Tokyo 2019
+generations.outline.pdf: generations.txt
+generations.draft.pdf: generations.txt ## generations.draft.log
+generations.final.pdf: generations.txt
+generations.handouts.pdf: generations.txt
+
+ebola.outline.pdf: ebola.txt
+ebola.draft.pdf: ebola.txt
+ebola.final.pdf: ebola.txt
+ebola.complete.pdf: ebola.txt
+
+## Legacy directory
+Ignore += Ebola_math
+
+Ebola_math: dir=~/Dropbox/academicWW/
+Ebola_math:
+	$(linkdir)
+
 ######################################################################
+
 ## Cancelled talks (father illness)
 
 ## Taiwan AIMS (overlap with SMB/hetero? what else?)
@@ -117,9 +137,12 @@ vaccine.html: vaccine.step
 
 ## Directories
 ## hacking around for Chicago; will this ever be good
+## Well, it's certainly not good now (Japan!)
 
 ## Module directories
-mdirs += ss_pix Generation_distributions fitting_code SIR_model_family SIR_simulations WA_Ebola_Outbreak Disease_data 
+mdirs += ss_pix Generation_distributions fitting_code SIR_model_family SIR_simulations Disease_data contact_trace
+
+## Changed to cold 2019 Aug 06 (Tue) under pressure
 hotdirs += $(mdirs)
 Sources += $(mdirs)
 alldirs += $(mdirs)
@@ -136,7 +159,7 @@ Ignore += $(disdirs)
 alldirs += $(disdirs)
 
 rabies_R0/figures: rabies_R0 ;
-pardirs += rabies_R0
+pardirs += rabies_R0 contact_trace WA_Ebola_Outbreak
 
 networkSEIR/fig: 
 	$(MAKE) networkSEIR
@@ -149,6 +172,13 @@ pardirs += rabies_correlations
 ## generation_links:  ;
 pardirs += generation_links
 
+## 2019 Aug 05 (Mon) rescued plots
+pardirs += subclinical
+
+## 2019 Aug 06 (Tue): more rescuing
+pardirs += hybrid_fitting
+
+Ignore += $(pardirs)
 Ignore += link_calculations
 ## Not working!
 link_calculations: 
@@ -156,7 +186,8 @@ link_calculations:
 	cd generation_links && $(MAKE) makestuff && $(MAKE) $@/Makefile
 	ln -s generation_links/$@/ .
 
-colddirs += networkSEIR/fig $(pardirs)
+## Why should pardirs be cold (or colder than mdirs)?
+hotdirs += networkSEIR/fig $(pardirs)
 
 ######################################################################
 

@@ -229,6 +229,7 @@ $C \approx 18 \,\mathrm{month}$. Horrifyingly fast.
 
 ----------------------------------------------------------------------
 
+
 EXTRA TSS Strength of epidemics
 
 BC
@@ -273,7 +274,7 @@ DEFHEAD $\Rx$ and control
 
 BC
 
-CFIG ss_pix/endemic.Rout-0.png
+CFIG my_images/endemic.Rout-0.png
 
 NC
 
