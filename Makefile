@@ -1,4 +1,5 @@
 # Generation_talks
+## This is a pre-screens directory with too many submodules
 
 current: target
 target = Makefile
